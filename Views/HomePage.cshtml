@@ -1,0 +1,473 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master";
+	ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid intro position-relative px-5 pt-5">
+    <div class='IntroRow'>
+        <div class="col-lg-6 col-md-9 col-sm-11 alpha">
+          @*<h1>Guaranteed <span class="text-primary">Patient</span> Satisfaction And Quality of <span class="text-primary">Care</span></h1>*@
+          <h1>@Model.MainHeading</h1>
+          <p>@Model.MainSubHeading</p>
+          <div class="btn-gg">
+            <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn started btn-primary mb-5">Get Started</a>
+            <a class="btn more btn-secondary mx-3 mb-5">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-9 d-flex justify-content-center align-items-center beta">
+          <div class="img-container position-relative mx-2">
+            <div class="position-absolute one">
+              <img src="/assets/images/safety.png" alt=""/>
+            </div>
+            @* <img class="" src="/assets/images/portrait.png" alt=""/> *@
+            <img class="" src="@Model?.MainImage?.Url()" alt=""/>
+            <div class="position-absolute two">
+              <img src="/assets/images/Frame.png" alt=""/>
+            </div>
+            <div class="position-absolute three">
+              <img src="/assets/images/first.png" alt=""/>
+          </div>
+          </div>
+        </div>
+    </div>
+    <div class="row customers position-absolute top-100 start-50 translate-middle hide">
+        <div class="col-12 xframe d-flex justify-content-evenly align-items-center">
+            <div>
+                <div class="bframe rounded-4 p-2 position-relative">
+                    <h3 class="p-0 fs-3 fw-bold m-0">+100</h3>
+                    <small class="fs-6 p-0 m-0">Dont just take our word for it</small>
+                    <img src="/assets/images/arrow_.png" class="position-absolute" width="25px" style="top:20%;left:95%" alt=""/>
+                </div>
+            </div>
+            <div class="d-flex f-frame justify-content-center align-items-center">
+                <div class="frame rounded-4 d-block">
+                    <img src="/assets/images/reddington.png" alt=""/>
+                </div>
+                <div class="frame rounded-4">
+                    <img src="/assets/images/lagoon.png" alt=""/>
+                </div>
+                <div class="frame rounded-4">
+                    <img src="/assets/images/eko hospital.png" alt=""/>
+                </div>
+                <div class="frame rounded-4">
+                    <img src="/assets/images/eurcare.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid info px-5 pt-5">
+    <div class="h-100">
+        <div class="row h-100">
+            <div class="col-lg-5 col-md-7 d-flex info-left justify-content-center align-items-center h-100">
+                <div>
+                    @*<h2>Explore all our <span class="text-primary">products</span></h2>*@
+                    @*<p>Record information on health events and checks the quality of services at different levels of health care. Record information on health events and checks the quality of services at different levels of health care.</p>*@
+                    <h2>@Model?.InfoTitle</h2>
+                    <p>@Model?.InfoSubHeading</p>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 d-flex info-right justify-content-center align-items-center">
+                <div class="row fcarde d-flex justify-content-center align-items-center w-100 ms-2">
+                    <div class="col-5 carde mb-5">
+                        <span class="icon icon-h"></span>
+                        <div>
+                            <h3>Genesys HMIS</h3>
+                            <p>Geared towards large practices, Genesys Health Management Information System is an ERP like solution that automates processes across all functional areas and departments.</p>
+                            <button class="btn btn-primary">Get started</button>
+                        </div>
+                    </div>
+                    <div class="col-5 carde mb-5">
+                        <span class="icon icon-clo"></span>
+                        <div>
+                            <h3>Genesys Electronic Medical Records</h3>
+                            <p>Made for small to mid-scale practices that seek mid-level process automation across their functional areas. The EMR is best suited for practices that are already running disparate IT solutions.</p>
+                            <button class="btn btn-primary">Get started</button>
+                        </div>
+                    </div>
+                    <div class="col-5 carde mt-3">
+                        <span class="icon icon-cli"></span>
+                        <div>
+                            <h3>Clinical Specialized Packages</h3>
+                            <p> Made for small to mid-scale practices 
+                                that seek some level (mid-level) of process automation across their functional areas.
+                                It’s best suited for practices that are already running disparate IT solutions.
+                            </p>
+                            <button class="btn btn-primary">Get started</button>
+                        </div>
+                    </div>
+                    <div class="col-5 carde mt-3">
+                        <span class="bi bi-dropbox"></span>
+                        <div>
+                            <h3>Stand-alone Packages</h3>
+                            <p>Designed to meet the needs of independent healthcare categories that are part of the healthcare eco system but don’t quite fall under your routine hospital or clinic classification.</p>
+                            <button class="btn btn-primary">Get started</button>
+                        </div>
+                    </div>
+
+                    @* @foreach(var item in Model.InfoPackage)
+                    {
+                        <div class="col-5 carde mt-3">
+                            <span class="bi bi-dropbox"></span>
+                            <div>
+                                <h3>Stand-alone Packages</h3>
+                                <p>Designed to meet the needs of independent healthcare categories that are part of the healthcare eco system but don’t quite fall under your routine hospital or clinic classification.</p>
+                                <button class="btn btn-primary">Get started</button>
+                            </div>
+                        </div>
+                    } *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid trophy px-5 pt-5">
+    <div class="row w-100 d-flex justify-content-center align-items-center">
+        <div class="text-center mb-5 trophyText">
+            <h1 class="m-0 p-0">Why We Are The MVP </h1>
+            <p class="m-0 p-0">The champ in offering you the best services</p>
+        </div>
+    </div>
+    <div class="row h-75">
+        <div class="col-lg-6 col-md-9 d-flex justify-content-center align-items-center h-100 second">
+            <div class="row">
+                <div class="col-2">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="bi bi-2-circle-fill"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="bi bi-2-circle-fill"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="bi bi-3-circle-fill"></div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="ms-3">
+                        <div class="mb-4">
+                            <h3 class="mb-4 fs-2 fw-bold">WE</h3>
+                            <p class="fs-4">The champ in offering you the best services</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="mb-4 fs-2 fw-bold">WILL</h3>
+                            <p class="fs-4">The champ in offering you the best services</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="mb-4 fs-2 fw-bold">Rock it</h3>
+                            <p class="fs-4">The champ in offering you the best services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-9 d-flex justify-content-center align-items-center h-100">
+            <img src="/assets/images/trophy.png" alt="Trophy" width="400px" />
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid packages px-5 pt-4">
+    <div class="row w-100 d-flex justify-content-center align-items-center">
+        <div class="text-center">
+            <h1 class="m-0 p-0">Flexible Plans For All Sizes</h1>
+            <p class="m-0 p-0">We have solutions made specifically to suit all your needs.</p>
+        </div>
+    </div>
+    <div class="row card-container px-5 pt-5">
+       <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+          <div class="d-flex justify-content-start align-items-center">
+              <img class="sm me-2" src="/assets/images/cross.png" alt=""/>
+              <h3 class="m-0">LITE <span class="title">(EMR)</span></h3>
+          </div>
+          <div class="mt-3">
+            <p><span class="cost">&#8358;5000</span><span class="month">/month</span></p>
+          </div>
+          <div class="">
+            <p>What will you get</p>
+          </div>
+          <div class="mt-0">
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Available to all</p>
+              </div>
+            </div>
+              <div class="text-center pe-3">
+                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+          <div class="d-flex justify-content-start align-items-center">
+              <img class="sm me-2" src="/assets/images/flower.png" alt=""/>
+              <h3 class="m-0">MIDI <span class="title">(EMR)</span></h3>
+          </div>
+          <div class="mt-3">
+            <p><span class="cost">&#8358;5200</span><span class="month">/month</span></p>
+          </div>
+          <div class="">
+            <p>What will you get</p>
+          </div>
+          <div class="mt-0">
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Available to all</p>
+              </div>
+            </div>
+              <div class="text-center pe-3">
+                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+          <div class="d-flex justify-content-start align-items-center">
+              <img class="sm me-2" src="/assets/images/crown.png" alt=""/>
+              <h3 class="m-0">ERP <span class="title">(HMIS)</span></h3>
+          </div>
+          <div class="mt-3">
+            <p><span class="cost">&#8358;5500</span><span class="month">/month</span></p>
+          </div>
+          <div class="">
+            <p>What will you get</p>
+          </div>
+          <div class="mt-0">
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+              <i class="bi bi-check me-3"></i>
+              <div class="w-75">
+                <p class="m-0 pt-2 details pb-2">Available to all</p>
+              </div>
+            </div>
+              <div class="text-center pe-3">
+                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 d-flex justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <h3 class="ms-4 mb-4 hsss">
+                Most commonly asked questions
+            </h3>
+        </div>
+        <div class="col-lg-6 col-md-8 mb-4">
+            <div class="row">
+                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                    <div class="questionTitle">
+                        <p class="m-0 p-0 fs-4 fw-bold">Does my pratice have to be big before using genesys</p>
+                        <button class="question-btn">
+                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                        </button>
+                    </div>
+                    <div class="questionText">
+                        <hr>
+                        <h1>Answer 1</h1>
+                    </div>
+                </div>
+                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                    <div class="questionTitle">
+                        <p class="m-0 p-0 fs-4 fw-bold">What plan is best suited for a large hospital</p>
+                        <button class="question-btn">
+                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                        </button>
+                    </div>
+                    <div class="questionText">
+                        <hr>
+                        <h1>Answer 2</h1>
+                    </div>
+                </div>
+                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                    <div class="questionTitle">
+                        <p class="m-0 p-0 fs-4 fw-bold">Is genesys Health free?</p>
+                        <button class="question-btn">
+                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                        </button>
+                    </div>
+                    <div class="questionText">
+                        <hr>
+                        <h1>Answer 3</h1>
+                    </div>
+                </div>
+                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                    <div class="questionTitle">
+                        <p class="m-0 p-0 fs-4 fw-bold">How long will it take to get my system integrated</p>
+                        <button class="question-btn">
+                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                        </button>
+                    </div>
+                    <div class="questionText">
+                        <hr>
+                        <h1>Answer 4</h1>
+                    </div>
+                </div>
+                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                    <div class="questionTitle">
+                        <p class="m-0 p-0 fs-4 fw-bold">Who is Geneys Health</p>
+                        <button class="question-btn">
+                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                        </button>
+                    </div>
+                    <div class="questionText">
+                        <hr>
+                        <h1>Answer 5</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid testimony px-5 pt-5">
+    <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
+        <div class="mb-5">
+            <h1 class="m-0 p-0">Dont just take our word for it</h1>
+            <p class="m-0 p-0">Here is what the community is saying about us</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center testi-cap mt-5 mb-5">
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="/assets/images/Avatar.png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">We chose Genesys EMR after reviewing several systems. It has been our first EMR. The service has always been exceptional. The product only improved despite starting out head and shoulders above many other systems. It is easy and intuitive."</p>
+                <p class="m-0 p-0">DR BELLO</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="/assets/images/Avatar (1).png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">Our transition was eased by the assistance of Genesys EMR. The software is quick and efficient, yet as complete."</p>
+                <p class="m-0 p-0">DR SAM</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="/assets/images/Avatar (2).png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">We chose Genesys EMR after reviewing several systems. It has been our first EMR. The service has always been exceptional. The product only improved despite starting out head and shoulders above many other systems. It is easy and intuitive.""</p>
+                <p class="m-0 p-0">DR BELLO</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="p-5 container">
+    <div class="join_home p-1 mt-5 d-flex align-items-center">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-7 col-md-9 m-5 second">
+                <h3 style="font-size:28px;font-weight:700;color:#324054;" class="mb-5">
+                    What are you waiting for? <br /> Join thousands of others today.
+                </h3>
+                <p class="mb-5" style="color:#324054;">
+                    Make your patients smile and get your medical practice a fast and efficient EMR/HMIS with GeneSys today! We make running your medical practice easy for you.
+                </p>
+                <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5" style="background-color:#0ABFF8; color:#fff; border-radius:40px;padding:10px 20px;">
+                    MAKE THE SWITCH TODAY
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-7 d-flex justify-content-center align-items-center">
+                <div>
+                    <img src="/assets/images/About Us/fun-3d.png" class="img-fluid" alt="" width="150px"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid newsletter-home">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-md-8 second">
+                <h3 class="sbns">Subscribe to our newsletter</h3>
+                <p class="fs-5">
+                    Psst!!! Hey there. You. Yes, YOU. Stop scrolling and catch up on all the latest health tech stories and news with our GeneSys Health Tech Insider newsletter.<br/><br/>
+
+                    We know you barely have time for all the hustle and bustle of everyday life, but you still want to stay on top of your health trends, 
+                    news and the buzz of healthcare. Our GeneSys Health Tech Insider newsletter is loaded with the best of content across the intersection 
+                    of health and tech. 
+                    We urge you to kick back, chill and relax, while you read.
+                </p>
+                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate" target="_blank" nonvalidate>
+                    <div class="row gap-2 form-group">
+                        <div class="col-7 p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required/>
+                        </div>
+                        <div class="col-4 d-grid p-0 form-group">
+                            <button type="submit" name="subscribe" class="fw-bold fs-5" style="border-radius:0 5px 5px 0; background: #005AC0; border:1px solid transparent; color:white;">Unwind</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <img src="/assets/images/ffv 1.png" width="420px" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

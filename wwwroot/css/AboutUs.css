@@ -1,0 +1,348 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Commissioner&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.aboutUs {
+    background-color: #FFF;
+    height : fit-content;
+}
+
+.aboutUsCont {
+    height: 600px;
+}
+
+.aboutUsCont .left {
+    width : 70%;
+    height : 100%;
+    display: flex;
+    flex-direction : column;
+    justify-content : center;
+    position : relative;
+}
+
+.aboutUsCont .right {
+    width : 30%;
+    height : 100%;
+    display: flex;
+    justify-content : center;
+    align-items : center;
+}
+
+.imgBorder {
+    width: 70%;
+    height: 120%;
+    border: 2px solid;
+    top: 30%;
+    left: 15%;
+    border-image: linear-gradient(to bottom, blue, lightblue) 1;
+    z-index: 2;
+}
+
+.aboutUs2 {
+    background-color: #F2F5FF;
+    height: 600px;
+}
+
+.imgBorderII {
+    width: 64%;
+    height: 350px;
+    top: -20%;
+    left: 18%;
+    z-index: 3;
+}
+
+.imgBorderII > img {
+    object-fit:contain;
+    border-radius: 20px;
+}
+
+.mss {
+    width: 70%;
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    border: 2px solid;
+    border-image: linear-gradient(to bottom, blue, lightblue) 1;
+}
+
+.flexpp {
+    height: 350px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.flexpp::-webkit-scrollbar{
+    width:0;
+}
+
+.Frame {
+    min-width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.Frame:hover {
+    transform : scale(1.05)
+}
+
+.photoFrame {
+    width: 98%;
+    max-height: 250px;
+    margin-bottom: 20px;
+}
+
+.photoFrame > img {
+    width : 100%;
+    height : 100%;
+    object-fit:contain;
+}
+
+.join {
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background-color: #145fd9;
+    border-radius: 40px;
+}
+
+.join h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+ }
+
+.gallery {
+    width: 100%;
+    background-color: #F2F4FE;
+    padding  : 3rem 0;
+}
+
+.design {
+    height: 500px;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.team {
+    height: 500px;
+    width: 100%;
+    background-color: #F2F4FE;
+}
+
+.values {
+    height: fit-content;
+    width: 100%;
+    background-color: #FFF;
+    padding : 80px 40px;
+}
+
+.values img {
+    width : 50rem;
+}
+
+.galCont {
+    height: 600px;
+    padding: 0;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.galCont img{
+    height : 100%;
+    object-fit: contain;
+}
+
+.galCont:hover {
+    transform : scale(1.05)
+}
+
+.vision {
+    width: 100%;
+    margin: 0;
+    margin-top: 10rem;
+    background-color: #F2F4FE;
+    padding: 4rem 2rem 6rem 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision .circle {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background-color: #F2F4FE;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.vision .visionText {
+    text-align: center;
+    width: 40%;
+    color: #324054;
+    z-index: 2;
+}
+
+.vision .visionText h2{
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 200;
+    font-size: 3rem;
+    padding-bottom: 4rem;
+}
+
+.vision .visionText p{
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.mission {
+    width: 100%;
+    margin: 0;
+    margin-top: 5rem;
+    background-color: #FFF;
+    padding: 4rem 2rem 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.mission .missionText {
+    text-align: center;
+    width: 40%;
+    color: #324054;
+    z-index: 2;
+}
+
+.mission .missionText h2{
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 200;
+    font-size: 3rem;
+    padding-bottom: 4rem;
+}
+
+.mission .missionText p{
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.leftVecCon, .rightVecCon {
+    position: absolute;
+}
+
+.leftVecCon {
+    left: 0;
+}
+
+.rightVecCon {
+    right: 0;
+}
+
+.leftVecCon img, .rightVecCon img{
+    width: 40rem;
+}
+
+@media (max-width: 991px) {
+    .hide {
+        display : none;
+    }
+    .aboutUsCont {
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutUsCont .left {
+        width : 90%;
+        padding : 30px 10px;
+        text-align : center;
+        order : 1;
+        margin-top: 1rem;
+    }
+
+    .aboutUsCont .left h1 {
+        font-size : 4rem;
+        line-height : 4.2rem;
+    }
+
+    .aboutUsCont .right {
+        width : 70%;
+        height : 25rem;
+        padding : 5rem 1rem;
+    }
+
+    .mss {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .mss h1 {
+        font-size : 3rem;
+        line-height : 3.4rem;
+    }
+
+    .mss p {
+        font-size : 1.6rem;
+        line-height : 2rem;
+    }
+
+    .team h3 {
+        text-align : center;
+    }
+
+    .join {
+        height: fit-content;
+        text-align: center;
+    }
+
+    .join h3 {
+        font-size:2rem;
+        font-weight:700;
+    }
+
+    .join p {
+        font-size:1.6rem;
+    }
+
+    .design {
+        height : fit-content;
+        padding : 4rem 2rem;
+    }
+
+    .values {
+        text-align : center;
+    }
+
+    .values h2 {
+        font-size : 4rem;
+        line-height : 4.2rem;
+    }
+
+    .values img {
+        width: 38rem;
+    }
+
+    .vision .visionText {
+        width: 90%;
+    }
+
+    .mission .missionText {
+        width: 90%;
+    }
+
+    .leftVecCon, .rightVecCon {
+        top : 7rem;
+    }
+
+    .leftVecCon img, .rightVecCon img{
+        width: 15rem;
+    }
+}

@@ -1,0 +1,317 @@
+.topHead {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #F2F4FE;
+    padding: 3.12rem;
+}
+
+.topHead .topHeadImg {
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.topHead .topHeadImg img {
+    width: 100%;
+    object-fit: fill;
+}
+
+.topHead .topHeadText {
+    margin-top: 2.4rem;
+    text-align: center;
+}
+
+.topHead .topHeadText h2 {
+    font-size: 3.4rem;
+    line-height: 3.8rem;
+    padding-bottom: 20px;
+}
+
+.topHead .topHeadText a {
+    font-size: 1.8rem;
+}
+
+.productSec {
+    padding:  3rem 1.87rem;
+}
+
+.productSecText {
+    text-align: center;
+}
+
+.productSecText h3 {
+    font-size: 3rem;
+    line-height: 3.4rem;
+    font-weight: 700;
+}
+
+.productSecText p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+.productSec .productDisplay{
+    margin: 1.9rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.productSec .productDisplay .productItem {
+    padding: .8rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productSec .productDisplay .productItem img {
+    width: 60%;
+}
+
+.productSec .productDisplay .productItem .itemText h3 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.productSec .productDisplay .productItem .itemText p {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+.productSec .productDisplay .productItem .itemText a {
+    font-size: 1.4rem;
+    border-radius: 2rem;
+}
+
+.productVideo {
+    padding: 5rem 3.2rem;
+    background-color: #F2F5FF;
+}
+
+.productVideo .videoText{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.productVideo .videoText h3{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.productVideo .videoText p{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.productVideo .videoCont{
+    margin-top: 3rem;
+    width: 100%;
+    height: 29rem;
+    border-radius: 1.4rem;
+}
+
+.productVideo .videoCont img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.productPlans {
+    padding: 3rem;
+}
+
+.productPlans .planText {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.productPlans .planText h3{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.productPlans .planText p{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.productPlans .planCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.productPlans .planCont .planCard {
+    width: 80%;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.productJoin {
+    margin: 10rem 3rem;
+    display: flex;
+    justify-content: center;
+    color : #fff;
+}
+
+.productJoin .joinCont {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    border-radius: 3rem;
+    background-color: #145fd9;
+}
+
+.productJoin .joinCont .joinImgCont {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.productJoin .joinCont .joinImgCont img {
+    width: 40%;
+}
+
+.productJoin .joinCont .joinText{
+    margin-top: 2.8rem;
+    text-align: center;
+}
+
+.productJoin .joinCont .joinText h3{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.productJoin .joinCont .joinText p{
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+}
+
+.productJoin .joinCont .joinText a{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+}
+
+
+@media screen and (min-width: 800px) {
+    .topHead {
+        flex-direction: row;
+        padding: 10rem 8rem;
+        gap: 5rem;
+    }
+
+    .topHead .topHeadImg {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        order: 2;
+    }
+
+    .topHead .topHeadText h2 {
+        font-size: 4.4rem;
+        line-height: 4.8rem;
+        padding-bottom: 20px;
+    }
+
+    .topHead .topHeadImg img {
+        width: 90%;
+    }
+
+    .topHead .topHeadText {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .productSec .productDisplay{
+        width: 60%;
+        margin: auto;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .productSecText {
+        width: 60%;
+        margin: auto;
+    }
+
+    .productSec .productDisplay .productItem {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .productSec .productDisplay .productItem .right {
+        order: 2;
+    }
+
+    .productSec .productDisplay .productItem img {
+        width: 40%;
+    }
+
+    .productSec .productDisplay .productItem .itemText h3 {
+        text-align: left;
+    }
+
+    .productPlans .planCont {
+        flex-direction: row;
+        align-items: center;
+        margin: 5rem 4rem;
+        gap: 5rem;
+    }
+
+    .productPlans .planCont .planCard {
+        
+        padding: 3rem;
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+    }
+
+    .productJoin .joinCont {
+        flex-direction: row;
+        padding: 8rem 6rem;
+    }
+
+    .productJoin .joinCont .joinImgCont {
+        width: 50%;
+        order: 2;
+    }
+
+    .productJoin .joinCont .joinText{
+        text-align: left;
+    }
+
+    .productPlans .planText h3{
+        font-size: 4rem;
+    }
+
+    .productPlans .planText p{
+        font-size: 2rem;
+    }
+
+    .productVideo .videoText h3{
+        font-size: 4rem;
+    }
+
+    .productVideo .videoText p{
+        font-size: 2rem;
+    }
+
+    .productSecText h3 {
+        font-size: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .productSecText p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+}

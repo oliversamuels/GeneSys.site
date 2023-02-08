@@ -1,0 +1,103 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HowItWorksPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid how">
+    <div class="howhead">
+        <div class="headVideo my-5">
+            <img src="~/assets/images/How/Frame 380.png" class="img-fluid" style="object-fit:contain;" alt=""/>
+        </div>
+        <h2 class="text-center p-0 m-0">How GeneSys Health Works</h2>
+        <p class="text-center p-0 m-0">GeneSys is tailored to meet your unique practice needs.</p>
+    </div>
+    <div class="container d-flex flex-column justify-content-center my-5">
+        <div class="row d-flex justify-content-between mb-4 ">
+            <div class="col-lg-5 col-md-7 second px-5">
+                <div class="my-4">
+                    <span><i class="bi fs-3 bi-1-circle-fill" style="color:#3C096C;"></i></span>
+                    <h4 class="fs-4 fw-bold p-0 m-0">Set up a simple profile</h4>
+                    <p class="fs-5 p-0 m-0" style="line-height:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="my-4">
+                    <span><i class="bi fs-3 bi-2-circle-fill" style="color:#3C096C;"></i></span>
+                    <h4 class="fs-4 fw-bold p-0 m-0">Choose a plan that best suits your practice</h4>
+                    <p class="fs-5 p-0 m-0" style="line-height:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                <div class="my-4">
+                    <span><i class="bi fs-3 bi-3-circle-fill" style="color:#3C096C;"></i></span>
+                    <h4 class="fs-4 fw-bold p-0 m-0">Custom-build your plan to match your pratice</h4>
+                    <p class="fs-5 p-0 m-0" style="line-height:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 mb-4 d-flex justify-content-center align-items-center">
+                <div class="howImgBox">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <img src="~/assets/images/How/Ellipse 53.png" class="" style="object-fit:contain;" alt=""/>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <img src="~/assets/images/Products/digital.png" class="" style="object-fit:contain;" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5 fw-bold btn-primary" style="padding:10px 30px;border-radius:25px; margin-bottom:30px;">Get Started</a>
+        </div>
+    </div>
+    <div class="statement my-5">
+        <div class="statcontainer m-auto">
+            <h2 class="text-center fs-1 fw-bold p-0 m-0">Your medical practice is our priority</h2>
+            <p class="text-center fs-4 p-0 m-0" style="line-height:20px;">
+                Join thousands of people using GeneSys Health to make their patients smile. Make your medical practice a fast and efficient with our easy to integrate EMR/ERP solutions
+            </p>
+        </div>
+    </div>
+    <div class="mb-5 pt-5">
+        <div class="testimonial shadow p-5">
+            <h3 class="text-center m-0 p-0 fs-3">TESTIMONIAL</h3>
+            <h2 class="text-center m-0 p-0 fw-bold fs-1" style="line-height:30px;">Our success stories</h2>
+            <div class="text-center m-auto mt-5 w-75">
+                <p class="text-center fs-4 p-0 m-0" style="line-height:20px;">
+                    We chose Genesys EMR after reviewing several systems. It has been our first EMR. 
+                    The service has always been exceptional. 
+                    The product only improved despite starting out head and shoulders above many other systems. 
+                    It is easy and intuitive."
+                </p>
+            </div>
+            <div>
+                <div class="d-flex justify-content-center my-4">
+                    <img src="~/assets/images/How/Ellipse 66.png" class="img-fluid" style="object-fit:contain;" width="50px" alt=""/>
+                </div>
+                <p class="text-center p-0 m-0 fs-4 fw-bold" style="line-height:20px;">Dr Bello</p>
+                <p class="text-center p-0 m-0 fs-5" style="line-height:20px;">Decreased Patient Waitime by 30%</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-5 container mb-5">
+        <div class="join p-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-7 col-md-9 m-5 second">
+                    <h3 class="mb-5">
+                        What are you waiting for? <br /> Join thousands of others today.
+                    </h3>
+                    <p class="mb-5">
+                        Make your patients smile and get your medical practice a fast and efficient EMR/HMIS with GeneSys today! We make running your medical practice easy for you.
+                    </p>
+                    <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5" style="background-color:#0ABFF8; color:#fff; border-radius:40px;padding:10px 20px;">
+                        MAKE THE SWITCH TODAY
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-7 d-flex justify-content-center align-items-center">
+                    <div>
+                        <img src="~/assets/images/About Us/fun-3d.png" class="img-fluid" alt="" width="150px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid contact">
+    <div class="container pt-5">
+        <div class="row pt-5 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center align-items-baseline pt-5">
+                <div class="mt-5">
+                    <h3 class="pb-3" style="font-size:32px;font-weight:700;line-height:55px;">
+                        We’d love to hear from you
+                    </h3>
+                    <div>
+                        <div class="d-flex justify-content-start align-items-center my-4">
+                            <div class="box">
+                                <i class="bi bi-telephone-fill fs-2 fw-bold text-primary"></i>
+                            </div>
+                            <p>
+                                0815 026 0388
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center my-4">
+                            <div class="box">
+                                <i class="bi bi-envelope-fill fs-2 fw-bold text-primary"></i>
+                            </div>
+                            <p>
+                                support@genesys-health
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center my-4">
+                            <div class="box">
+                                <i class="bi bi-geo-alt-fill fs-2 fw-bold text-primary"></i>
+                            </div>
+                            <p>
+                                 Plot 1187, Abimbola Awoniyi Close, Saka Tinubu St, Victoria Island 100101, Lagos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 px-5">
+                <div class="f-cont">
+                    <form>
+                        <div class="form-group mb-4">
+                            <label class="form-label fs-4 fw-bold m-0" for="name">Name</label>
+                            <input class="form-control border-primary fs-3 p-3 bg-transparent" type="text" id="name" required/>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label fs-4 fw-bold m-0" for="email">Email</label>
+                            <input class="form-control border-primary fs-3 p-3 bg-transparent" type="email" id="email" required/>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label fs-4 fw-bold m-0" for="phone">Phone Number</label>
+                            <input class="form-control border-primary fs-3 p-3 bg-transparent" type="text" id="phone"/>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label fs-4 fw-bold m-0" for="message">Message</label>
+                            <textarea class="form-control border-primary fs-3 p-3 bg-transparent" rows="4" id="message"></textarea>
+                        </div>
+                        <div class="form-group d-grid my-5">
+                            <button type="submit" class="btn btn-primary fs-4 fw-bold">SEND MESSAGE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.750758189218!2d3.419774314316627!3d6.42605987607233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf525694a04e5%3A0x7a24d29ea8d28512!2sGenesys%20Health%20Information%20Management%20System%20Limited!5e0!3m2!1sen!2sng!4v1666185193476!5m2!1sen!2sng" width="1200" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>

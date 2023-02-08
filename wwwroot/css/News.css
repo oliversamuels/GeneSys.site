@@ -1,0 +1,145 @@
+﻿.newshead {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.imgBx {
+    width: 824px;
+    height: 372px;
+    background: #E0E8FB;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBx .img {
+    height: 90%;
+    object-fit: contain;
+
+}
+
+.imgBxY {
+    position: absolute;
+    width: fit-content;
+    bottom:-70px;
+    left: -60px;
+}
+
+.news {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.news .div {
+    display : none;
+}
+
+.news .show {
+    display : block;
+}
+
+.newslet {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgBxII {
+    width: 50rem;
+    height: 35rem;
+    border: 1px dashed #000;
+    position: relative;
+}
+
+.newst {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #E0E8FB;
+    padding: 10px;
+    left: 45px;
+    top: 15px;
+}
+
+.newstinner {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.newstinner::-webkit-scrollbar {
+    width: 0;
+}
+
+.imgcont {
+    height: 100%;
+    min-width: 250px;
+}
+
+.imgcont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.head {
+    border: 1px solid #000;
+    width: 100%;
+    border-style: dashed;
+    border-left: none;
+    border-right: none;
+}
+
+.head li {
+    padding: 10px 55px;
+    cursor : pointer;
+}
+
+.head .active {
+    background-color : yellow;
+}
+
+.newsletter {
+    background-color: #FFF;
+    height: 80vh;
+    padding: 80px;
+}
+
+.title-date {
+    color: #9772FF;
+}
+
+@media (max-width: 991px) {
+    .head li {
+        padding: 5px 10px;
+        font-size: 1.2rem;
+    }
+
+    .newslet {
+        height: fit-content;
+        margin-bottom: 5rem;
+    }
+
+    .imgBxII {
+        width: 40rem;
+        height: 30rem;
+    }
+
+    .second {
+        order: 1;
+    }
+
+    .newsletter {
+        height: fit-content;
+    }
+}

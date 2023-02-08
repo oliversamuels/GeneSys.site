@@ -1,0 +1,232 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid">
+    <div class="aboutUs">
+        <div class="container-fluid p-0">
+            <div class="row p-0 aboutUsCont">
+                <div class="left px-5">
+                    <div>
+                        <h1 class="mb-3">
+                            Meet our team of <i>strategists, designers,</i> and world-class <i>problem solvers</i>
+                        </h1>
+                    </div>
+                    <div>
+                        <p>
+                            To be the company our customers want us to be, it takes an eclectic group 
+                            of passionate operators. Get to know the people leading the way at Genesys Health.
+                        </p>
+                    </div>
+                    <div class="position-absolute hide" style="top:40%; left:80%;">
+                        <div class="" style="transform: rotate(-55deg);">
+                            <img src="~/assets/images/News/Asset 1@3x 1.png" alt="" width="100px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="position-relative" style="width:350px;height:200px">
+                        <div class="position-absolute" style="top:0;left:0">
+                            <img src="~/assets/images/About Us/logo2.png" alt="" width="200px"/>
+                        </div>
+                        <div class="position-absolute" style="top:50px;left:80px">
+                            <img src="~/assets/images/About Us/logo1.png" alt="" width="200px"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="d-flex justify-content-center align-items-center text-center mt-4">
+            <h1>Gallery</h1>
+        </div>
+        <div class="d-flex galleryImg">
+            <div class="flex galCont">
+                <img src="~/assets/images/About Us/WhatsApp Image 2023-01-06 at 11.55 1.png" class="img-fluid" alt=""/>
+            </div>
+            <div class="flex-fill galCont">
+                <img src="~/assets/images/About Us//genesys 1.png" class="img-fluid" alt=""/>
+            </div>
+            <div class="flex-fill galCont">
+                <img src="~/assets/images/About Us/mew 1.png" class="img-fluid" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="design d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-10">
+                    <h2 class="fs-1">
+                        Designed to serve you the best
+                    </h2>
+                    <p class="fs-4">
+                        GeneSys Health information Systems Limited (GHIS) 
+                        is an e-Health company committed to mitigating the gaping issues 
+                        in the healthcare sector through innovative tech. 
+                        Established in 2018 as a pioneer Health Management 
+                        Information System (HMIS), we provide customised solutions—EMR 
+                        and Telemedicine (Gemeni)—to (public and private) hospitals 
+                        toward digitising patient- and hospital management workflow processes, 
+                        improving the quality of care and operations.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center align-items-center">
+                    <div style="width:500px; height:300px; border-radius:10px; background:#000; position:relative;">
+                        <img src="~/assets/images/About Us/pexels-mikhail-nilov-8872458 1.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"/>
+                        <div style="position:absolute;bottom:10px;left:15px;" class="d-flex justify-content-center align-items-center">
+                            <a href="">
+                                <img src="~/assets/images/About Us/Play Button.png" alt="" width="50px" height="50px" class="me-3" style=""/>
+                            </a>
+                            <div>
+                                <h3 class="p-0 m-0">Play this video</h3>
+                                <p class="fs-4 p-0 m-0">For a brief introduction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team py-5">
+        <div class="container mt-4">
+            <h3 style="font-size:38px;font-weight:700;">The people behind the scenes</h3>
+            <div class="d-flex flexpp mt-5">
+                <div class="mx-3 Frame">
+                    <div class="photoFrame shadow bg-body rounded">
+                        <img src="~/assets/images/About Us/Munachimso Ayo-Olagunju 1.png" class="img-fluid" alt=""/>
+                    </div>
+                    <div>
+                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
+                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
+                    </div>
+                </div>
+                <div class="mx-3 Frame">
+                    <div class="photoFrame shadow bg-body rounded">
+                        <img src="~/assets/images/About Us/Adeyinka Adenikinju 1.png" class="img-fluid" alt=""/>
+                    </div>
+                    <div>
+                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
+                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
+                    </div>
+                </div>
+                <div class="mx-3 Frame">
+                    <div class="photoFrame shadow rounded">
+                        <img src="~/assets/images/About Us/Fiyinfoluwa Sanwo 1.png" class="img-fluid" alt=""/>
+                    </div>
+                    <div>
+                        <p class="fw-bold fs-4 m-0 p-0 text-center">Fiyinfoluwa Sanwo</p>
+                        <p class="fs-5 text-center m-0 p-0">People & Operations Associate</p>
+                    </div>
+                </div>
+                <div class="mx-3 Frame">
+                    <div class="photoFrame shadow rounded">
+                        <img src="~/assets/images/About Us/Adedeji Adeniyi 1.png" class="img-fluid" alt=""/>
+                    </div>
+                    <div>
+                        <p class="fw-bold fs-4 m-0 p-0 text-center">Adedeji Adeniyi</p>
+                        <p class="fs-5 text-center m-0 p-0">People & Operations Associate</p>
+                    </div>
+                </div>
+                <div class="mx-3 Frame">
+                    <div class="photoFrame shadow bg-body rounded">
+                        <img src="~/assets/images/About Us/Munachimso Ayo-Olagunju 1.png" class="img-fluid" alt=""/>
+                    </div>
+                    <div>
+                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
+                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vision">
+        <div class="circle top-50 start-50 translate-middle shadow-lg"></div>
+        <div class="visionText">
+            <h2>VISION</h2>
+            <p>
+                To be the leading provider of simplistic and affordable health tech. solutions to public and private health systems in Africa.
+            </p>
+        </div>
+    </div>
+    <div class="mission">
+        <div class="leftVecCon">
+            <img src="~/assets/images/About Us/leftVec.png" alt=""/>
+        </div>
+        <div class="missionText">
+            <h2>MISSION</h2>
+            <p>
+                Our mission is to digitise and optimise healthcare service delivery through unparalleled client-centric service and technology solutions.
+            </p>
+        </div>
+        <div class="rightVecCon">
+            <img src="~/assets/images/About Us/rightVec.png" alt=""/>
+        </div>
+    </div>
+    <div class="values">
+        <div class="row align-items-center justify-content-center mb-5">
+            <div class="col-lg-6">
+                <h2>
+                    Our Core Values That Define Us
+                </h2>
+                <p>
+                    Our values are summed up in one word: “IDEAL.”
+                </p>
+                <div class="d-flex flex-column ps-5">
+                    <div class="ms-5">
+                        <div class="d-flex justify-content-start align-items-center mb-3">
+                            <img src="~/assets/images/About Us/star.png"  style="width:20px;" alt=""/>
+                            <p class="p-0 m-0 ms-4">Integrity</p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-3">
+                            <img src="~/assets/images/About Us/star.png"  style="width:20px;" alt=""/>
+                            <p class="p-0 m-0 ms-4">Deligence</p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-3">
+                            <img src="~/assets/images/About Us/star.png"  style="width:20px;" alt=""/>
+                            <p class="p-0 m-0 ms-4">Empathy</p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-3">
+                            <img src="~/assets/images/About Us/star.png"  style="width:20px;" alt=""/>
+                            <p class="p-0 m-0 ms-4">Accountability</p>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-3">
+                            <img src="~/assets/images/About Us/star.png"  style="width:20px;" alt=""/>
+                            <p class="p-0 m-0 ms-4">Loyalty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-start align-items-center">
+                <img src="~/assets/images/About Us/leadership.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="p-5 container mb-5">
+        <div class="join p-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-7 col-md-9 m-5 second">
+                    <h3 class="mb-5">
+                        What are you waiting for? <br /> Join thousands of others today.
+                    </h3>
+                    <p class="mb-5">
+                        Make your patients smile and get your medical practice a fast and efficient EMR/HMIS with GeneSys today! We make running your medical practice easy for you.
+                    </p>
+                    <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5" style="background-color:#0ABFF8; color:#fff; border-radius:40px;padding:10px 20px;">
+                        MAKE THE SWITCH TODAY
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-7 d-flex justify-content-center align-items-center">
+                    <div>
+                        <img src="~/assets/images/About Us/fun-3d.png" class="img-fluid" alt="" width="150px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

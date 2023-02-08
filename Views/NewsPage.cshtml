@@ -1,0 +1,252 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+}
+
+<div class="container-fluid p-0">
+    <div class="newshead">
+        <div class="container px-5">
+            <div>
+                <h2 class="text-center">Catch up with the news</h2>
+                <div class="container px-5">
+                    <p class="text-center">
+                        Psst!!! Hey there. You. Yes, YOU. Stop scrolling and catch up on all the latest health tech stories and news with our GeneSys Health Tech Insider newsletter.
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt" style="margin:50px 0;">
+                <div class="imgBx">
+                    <img class="img"src="~/assets/images/News/Asset 2@3x 1.png" alt="" />
+                    <div class="imgBxY hide">
+                        <img src="~/assets/images/News/Asset 1@3x 1.png" alt="" width="80px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="head">
+            <ul class="nav justify-content-center">
+                <li class="nav-item active" data-id="all">
+                    ALL
+                </li>
+                <li class="nav-item" data-id="product-update">
+                    PRODUCT UPDATES
+                </li>
+                <li class="nav-item" data-id="case-study">
+                    CASE STUDIES
+                </li>
+                <li class="nav-item" data-id="newsletter">
+                    NEWSLETTER
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container news">
+        @*All Items*@
+        <div id="all" class="m-0 p-0 div show">
+            <div class="row newslet">
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                    <div class="imgBxII">
+                        <div class="newst">
+                            <div class="newstinner">
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter24.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter25.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                    <div class="w-75">
+                        <div>
+                            <p class="fs-4 title-date">NEWSLETTER- JULY 01, 2022 </p>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
+                        </div>
+                        <div>
+                            <p class="fs-4">8mins average read time</p>
+                        </div>
+                        <div>
+                            <a class="fs-2" href="">View Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row newslet">
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                    <div class="imgBxII">
+                        <div class="newst">
+                            <div class="newstinner">
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Magazine Cover (3) 1.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q32.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q313.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q316.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                    <div class="w-75">
+                        <div>
+                            <p class="fs-4 title-date">NEWSLETTER- OCTOBER 01, 2022 </p>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold fs-1">Health Tech Insider - Second Edition</h3>
+                        </div>
+                        <div>
+                            <p class="fs-4">8mins average read time</p>
+                        </div>
+                        <div>
+                            <a class="fs-2" href="">View Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*Product Update*@
+        <div id="product-update" class="m-0 p-0 div">
+            <div class="newslet">
+                @*If Empty*@
+                <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
+            </div>
+        </div>
+        @*Case Study*@
+        <div id="case-study" class="m-0 p-0 div">
+            <div class="newslet">
+                @*If Empty*@
+                <h3 class="text-center">No Case Study Update yet<br/>Check back later</h3>
+            </div>
+        </div>
+        @*Case Study*@
+        <div id="newsletter" class="m-0 p-0 div">
+            <div class="row newslet">
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                    <div class="imgBxII">
+                        <div class="newst">
+                            <div class="newstinner">
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter24.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Newsletter25.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                    <div class="w-75">
+                        <div>
+                            <p class="fs-4 title-date">NEWSLETTER- JULY 01, 2022 </p>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
+                        </div>
+                        <div>
+                            <p class="fs-4">8mins average read time</p>
+                        </div>
+                        <div>
+                            <a class="fs-2" href="">View Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row newslet">
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                    <div class="imgBxII">
+                        <div class="newst">
+                            <div class="newstinner">
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Magazine Cover (3) 1.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q32.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q313.png" alt=""/>
+                                </div>
+                                <div class="imgcont">
+                                    <img src="~/assets/images/News/Health Tech Newsletter Q316.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                    <div class="w-75">
+                        <div>
+                            <p class="fs-4 title-date">NEWSLETTER- OCTOBER 01, 2022 </p>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold fs-1">Health Tech Insider - Second Edition</h3>
+                        </div>
+                        <div>
+                            <p class="fs-4">8mins average read time</p>
+                        </div>
+                        <div>
+                            <a class="fs-2" href="">View Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container newsletter">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-md-10 second">
+                <h3 class="sbns">Want updates straight to your inbox?</h3>
+                <p class="fs-5 mb-5">
+                    We know you barely have time for all the hustle and bustle of everyday life, but you still want to stay on top of your health trends, 
+                    news and the buzz of healthcare. Our GeneSys Health Tech Insider newsletter is loaded with the best of content across the intersection 
+                    of health and tech. 
+                    We urge you to kick back, chill and relax, while you read.
+                </p>
+                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate" target="_blank" nonvalidate>
+                    <div class="row gap-2 form-group">
+                        <div class="col-7 p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required/>
+                        </div>
+                        <div class="col-4 d-grid p-0 form-group">
+                            <button type="submit" name="subscribe" class="fw-bold fs-5" style="border-radius:0 5px 5px 0; background: #005AC0; border:1px solid transparent; color:white;">Unwind</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <img src="~/assets/images/ffv 1.png" width="420px" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")
