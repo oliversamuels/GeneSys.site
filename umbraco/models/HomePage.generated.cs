@@ -63,7 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("infoPackage")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel InfoPackage => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetInfoPackage(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel InfoPackage => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetInfoPackage(this, _publishedValueFallback);
 
 		///<summary>
 		/// Info SubHeading: Info section subheading text

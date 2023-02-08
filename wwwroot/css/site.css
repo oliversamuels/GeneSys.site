@@ -265,7 +265,7 @@ h2 {
     font-weight: 600;
     font-size: 5.4rem;
     line-height: 6.5rem;
-    padding-bottom: 10px;
+    padding-bottom: 11px;
 }
 
 .fcarde {
@@ -281,30 +281,11 @@ h2 {
     transition: background-color 0.5s;
 }
 
-.carde > .bi-dropbox {
+.carde .fa {
     color: blue;
     font-weight: 600;
     font-size: 50px;
-}
-
-.icon {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
     margin: 10px 0;
-    background-size: cover;
-}
-
-.icon-h {
-    background-image: url(../assets/images/h-blue.svg);
-}
-
-.icon-clo {
-    background-image: url(../assets/images/cloud-blue.svg);
-}
-
-.icon-cli {
-    background-image: url(../assets/images/clinic-blue.svg);
 }
 
 .carde > div > h3 {
@@ -318,7 +299,7 @@ h2 {
     line-height: 14px;
 }
 
-.carde > div > button {
+.carde > div > a {
     font-weight: 600;
     font-size: 13px;
 }
@@ -331,36 +312,21 @@ h2 {
     -moz-box-shadow: 0px 0px 33px 2px rgba(57,69,189,0.75);
 }
 
-.carde:hover > .icon-h {
-    background-image: url(../assets/images/h-white.svg);
-
-}
-
-.carde:hover > .icon-clo {
-    background-image: url(../assets/images/cloud-white.svg);
-
-}
-
-.carde:hover > .icon-cli {
-    background-image: url(../assets/images/clinic-white.svg);
-
-}
-
-.carde:hover > .bi-dropbox {
-    color:white;
-
-}
-
 .carde:hover > div {
     color : #fff;
 }
 
-.carde:hover > div > button {
+.carde:hover  .fa {
+    color:white;
+
+}
+
+.carde:hover > div > a {
     background-color : green;
     border: 0px solid;
 }
 
-.carde:hover > div > button:hover {
+.carde:hover > div > a:hover {
     background-color : green;
     border: 0px solid;
 }
@@ -565,12 +531,13 @@ h2 {
 }
 
 .questionText hr{
-    border: 1px dashed;
+    border: 1px dashed blue;
     opacity: 0.2;
 }
 
-.questionText h1{
-    font-size: 3rem;
+.questionText p{
+    font-size: 1.6rem;
+    text-align: justify;
     padding: 0;
     margin: 0;
 }
