@@ -3,6 +3,32 @@
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
     var newsletters = Model.Value<BlockGridModel>("news");
+    List<BlockGridItem> product_update = new List<BlockGridItem>();
+    List<BlockGridItem> news_letter = new List<BlockGridItem>();
+    List<BlockGridItem> case_study = new List<BlockGridItem>();
+    
+    @if(newsletters != null)
+    {
+        @foreach(var newsletter in newsletters)
+        {
+            if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
+            {
+                product_update.Add(newsletter);
+            } 
+            else if(newsletter.Content.Value<string>("newsCategory") == "Newsletters")
+            {
+                news_letter.Add(newsletter);
+            }
+            else if(newsletter.Content.Value<string>("newsCategory") == "Case Studies")
+            {
+                case_study.Add(newsletter);
+            }
+        }
+    }
+
+    Console.WriteLine(product_update.Any());
+    Console.WriteLine(news_letter.Count());
+    Console.WriteLine(case_study.Count());
 }
 
 <div class="container-fluid p-0">
@@ -107,96 +133,94 @@
         </div>
         @*Product Update*@
         <div id="product-update" class="m-0 p-0 div">
-            <div class="newslet">
-                @*If Empty*@
-                <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
-            </div>
+            @if(product_update.Any())
+            {
+                <h1>We have Something</h1>
+            }
+            else
+            {
+                <div class="newslet">
+                    @*If Empty*@
+                    <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
+                </div>
+            }
         </div>
         @*Case Study*@
         <div id="case-study" class="m-0 p-0 div">
-            <div class="newslet">
-                @*If Empty*@
-                <h3 class="text-center">No Case Study Update yet<br/>Check back later</h3>
-            </div>
+            @if(case_study.Any())
+            {
+                <h1>We have Something</h1>
+            }
+            else
+            {
+                <div class="newslet">
+                    <h3 class="text-center">No Case Study Update yet<br/>Check back later</h3>
+                </div>
+            }
         </div>
-        @*Case Study*@
+        @*News Letter*@
         <div id="newsletter" class="m-0 p-0 div">
-            <div class="row newslet">
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                    <div class="imgBxII">
-                        <div class="newst">
-                            <div class="newstinner">
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
+            @if(news_letter.Any())
+            {
+                foreach (var item in news_letter)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter24.png" alt=""/>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter25.png" alt=""/>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                }
+            }
+            else
+            {
+                <div class="newslet">
+                    <h3 class="text-center">No Newsletter yet<br/>Check back later</h3>
                 </div>
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                    <div class="w-75">
-                        <div>
-                            <p class="fs-4 title-date">NEWSLETTER- JULY 01, 2022 </p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                        </div>
-                        <div>
-                            <p class="fs-4">8mins average read time</p>
-                        </div>
-                        <div>
-                            <a class="fs-2" href="">View Live Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row newslet">
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                    <div class="imgBxII">
-                        <div class="newst">
-                            <div class="newstinner">
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Magazine Cover (3) 1.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q32.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q313.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q316.png" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                    <div class="w-75">
-                        <div>
-                            <p class="fs-4 title-date">NEWSLETTER- OCTOBER 01, 2022 </p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-1">Health Tech Insider - Second Edition</h3>
-                        </div>
-                        <div>
-                            <p class="fs-4">8mins average read time</p>
-                        </div>
-                        <div>
-                            <a class="fs-2" href="">View Live Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 
