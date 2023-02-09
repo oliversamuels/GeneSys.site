@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Packages</summary>
-	[PublishedModel("packages")]
-	public partial class Packages : PublishedElementModel
+	/// <summary>Plans</summary>
+	[PublishedModel("plans")]
+	public partial class Plans : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		public new const string ModelTypeAlias = "packages";
+		public new const string ModelTypeAlias = "plans";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Packages, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Plans, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Packages(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public Plans(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,35 +50,50 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Package Desc: Package Description
+		/// Plan Benefits: List of Plan Benefits
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("packageDesc")]
-		public virtual string PackageDesc => this.Value<string>(_publishedValueFallback, "packageDesc");
+		[ImplementPropertyType("planBenefits")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> PlanBenefits => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "planBenefits");
 
 		///<summary>
-		/// Package Link: Package Content Url
+		/// Plan Cost: Plan Monthly Cost
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("packageLink")]
-		public virtual global::Umbraco.Cms.Core.Models.Link PackageLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "packageLink");
+		[ImplementPropertyType("planCost")]
+		public virtual int PlanCost => this.Value<int>(_publishedValueFallback, "planCost");
 
 		///<summary>
-		/// Package SVG: Package Icon (Fontawesome class name. e.g fa fa-dropbox)
+		/// Plan Icon: Plan Image Icon
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("packageSVG")]
-		public virtual string PackageSvg => this.Value<string>(_publishedValueFallback, "packageSVG");
+		[ImplementPropertyType("planIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PlanIcon => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "planIcon");
 
 		///<summary>
-		/// Package Title: Package name
+		/// Plan Link: Link to Plan Content Page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("packageTitle")]
-		public virtual string PackageTitle => this.Value<string>(_publishedValueFallback, "packageTitle");
+		[ImplementPropertyType("planLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link PlanLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "planLink");
+
+		///<summary>
+		/// Plan Name: Name of the plan
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planName")]
+		public virtual string PlanName => this.Value<string>(_publishedValueFallback, "planName");
+
+		///<summary>
+		/// Plan Type: Type of the plan (e.g. EMR)
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planType")]
+		public virtual string PlanType => this.Value<string>(_publishedValueFallback, "planType");
 	}
 }

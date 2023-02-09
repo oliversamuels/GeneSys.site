@@ -104,5 +104,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainSubHeading")]
 		public virtual string MainSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetMainSubHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// Plan Heading: Plan Section Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planHeading")]
+		public virtual string PlanHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// Plan Items: Available plans
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planItems")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanItems(this, _publishedValueFallback);
+
+		///<summary>
+		/// Plan Subheading: Plan Section Subheading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planSubheading")]
+		public virtual string PlanSubheading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanSubheading(this, _publishedValueFallback);
 	}
 }

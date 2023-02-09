@@ -7,6 +7,7 @@
 	Layout = "Master";
 	ViewData["Title"] = Model.Title;
     var items = Model.Value<BlockGridModel>("InfoPackage");
+    var planItems = Model.Value<BlockGridModel>("PlanItems");
 }
 
 <div class="container-fluid intro position-relative px-5 pt-5">
@@ -202,7 +203,53 @@
         </div>
     </div>
     <div class="row card-container px-5 pt-5">
-       <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+        @if (planItems != null && planItems.Any())
+        {
+            @foreach(var plan in planItems)
+            {
+                var content = plan.Content;
+                var name = content.Value<string>("planName");
+                var type = content.Value<string>("planType");
+                var icon = content.Value<MediaWithCrops>("planIcon");
+                var link = content.Value<Link>("planLink");
+                var cost = content.Value<int>("planCost");
+                var benefits = content.Value<IEnumerable<string>>("planBenefits");
+                    
+                if (link != null)
+                {
+                    <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <img class="sm me-2" src="@icon?.MediaUrl()" alt=""/>
+                            <h3 class="m-0">@name <span class="title">(@type)</span></h3>
+                        </div>
+                        <div class="mt-3">
+                            <p><span class="cost">&#8358;@cost</span><span class="month">/month</span></p>
+                        </div>
+                        <div class="">
+                            <p>What will you get</p>
+                        </div>
+                        <div class="mt-0">
+                            @if (benefits != null)
+                            {
+                                @foreach (var benefit in benefits)
+                                {
+                                    <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+                                        <i class="bi bi-check me-3"></i>
+                                        <div class="w-75">
+                                            <p class="m-0 pt-2 details pb-2">@benefit</p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            <div class="text-center pe-3">
+                                <a href="@link.Url" class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+       @* <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
           <div class="d-flex justify-content-start align-items-center">
               <img class="sm me-2" src="/assets/images/cross.png" alt=""/>
               <h3 class="m-0">LITE <span class="title">(EMR)</span></h3>
@@ -306,7 +353,7 @@
                 <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
               </div>
             </div>
-        </div>
+        </div> *@
     </div>
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-6 col-md-8">

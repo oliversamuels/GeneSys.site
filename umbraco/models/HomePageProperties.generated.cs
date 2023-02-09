@@ -51,6 +51,21 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string MainSubHeading { get; }
+
+		/// <summary>Plan Heading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string PlanHeading { get; }
+
+		/// <summary>Plan Items</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems { get; }
+
+		/// <summary>Plan Subheading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string PlanSubheading { get; }
 	}
 
 	/// <summary>Home Page Properties</summary>
@@ -161,5 +176,44 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetMainSubHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mainSubHeading");
+
+		///<summary>
+		/// Plan Heading: Plan Section Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planHeading")]
+		public virtual string PlanHeading => GetPlanHeading(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Plan Heading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetPlanHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "planHeading");
+
+		///<summary>
+		/// Plan Items: Available plans
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planItems")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => GetPlanItems(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Plan Items</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetPlanItems(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "planItems");
+
+		///<summary>
+		/// Plan Subheading: Plan Section Subheading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("planSubheading")]
+		public virtual string PlanSubheading => GetPlanSubheading(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Plan Subheading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetPlanSubheading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "planSubheading");
 	}
 }
