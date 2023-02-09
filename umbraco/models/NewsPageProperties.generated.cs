@@ -32,10 +32,10 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage { get; }
 
-		/// <summary>Newsletters</summary>
+		/// <summary>News</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Newsletters { get; }
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel News { get; }
 
 		/// <summary>SubHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -101,17 +101,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetMainImage(INewsPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "mainImage");
 
 		///<summary>
-		/// Newsletters
+		/// News
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("newsletters")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Newsletters => GetNewsletters(this, _publishedValueFallback);
+		[ImplementPropertyType("news")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel News => GetNews(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Newsletters</summary>
+		/// <summary>Static getter for News</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetNewsletters(INewsPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "newsletters");
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetNews(INewsPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "news");
 
 		///<summary>
 		/// SubHeading: Newsletter introduction section subheading text

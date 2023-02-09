@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Newsletter Item</summary>
-	[PublishedModel("newsletterItem")]
-	public partial class NewsletterItem : PublishedElementModel
+	/// <summary>News Item</summary>
+	[PublishedModel("newsItem")]
+	public partial class NewsItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		public new const string ModelTypeAlias = "newsletterItem";
+		public new const string ModelTypeAlias = "newsItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<NewsletterItem, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<NewsItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public NewsletterItem(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public NewsItem(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,42 +50,50 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Newsletter: Block of newsletters
+		/// News: Block of newsletters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("newsletter")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Newsletter => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "newsletter");
+		[ImplementPropertyType("news")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel News => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "news");
 
 		///<summary>
-		/// NewsletterDate: Date of the Newsletter
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[ImplementPropertyType("newsletterDate")]
-		public virtual global::System.DateTime NewsletterDate => this.Value<global::System.DateTime>(_publishedValueFallback, "newsletterDate");
-
-		///<summary>
-		/// NewsletterLink: Link of Newsletter
+		/// NewsCategory: Category of the news (e.g. Newsletter)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("newsletterLink")]
-		public virtual global::Umbraco.Cms.Core.Models.Link NewsletterLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "newsletterLink");
+		[ImplementPropertyType("newsCategory")]
+		public virtual string NewsCategory => this.Value<string>(_publishedValueFallback, "newsCategory");
 
 		///<summary>
-		/// NewsletterSummary: Time of Total Read
+		/// NewsDate: Date of the Newsletter
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[ImplementPropertyType("newsDate")]
+		public virtual global::System.DateTime NewsDate => this.Value<global::System.DateTime>(_publishedValueFallback, "newsDate");
+
+		///<summary>
+		/// NewsLink: Link of Newsletter
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("newsletterSummary")]
-		public virtual string NewsletterSummary => this.Value<string>(_publishedValueFallback, "newsletterSummary");
+		[ImplementPropertyType("newsLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link NewsLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "newsLink");
 
 		///<summary>
-		/// NewsletterTitle: Section Title
+		/// NewsSummary: Time of Total Read
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("newsletterTitle")]
-		public virtual string NewsletterTitle => this.Value<string>(_publishedValueFallback, "newsletterTitle");
+		[ImplementPropertyType("newsSummary")]
+		public virtual string NewsSummary => this.Value<string>(_publishedValueFallback, "newsSummary");
+
+		///<summary>
+		/// NewsTitle: Section Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newsTitle")]
+		public virtual string NewsTitle => this.Value<string>(_publishedValueFallback, "newsTitle");
 	}
 }

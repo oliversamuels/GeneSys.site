@@ -2,7 +2,7 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-    var newsletters = Model.Value<BlockGridModel>("newsletters");
+    var newsletters = Model.Value<BlockGridModel>("news");
 }
 
 <div class="container-fluid p-0">
@@ -54,11 +54,12 @@
                 @foreach (var newsletter in newsletters)
                 {
                     var content = newsletter.Content;
-                    var date = content.Value<DateTime>("newsletterDate");
-                    var link = content.Value<Link>("newsletterLink");
-                    var summary = content.Value<string>("newsletterSummary");
-                    var title = content.Value<string>("newsletterTitle");
-                    var news = content.Value<BlockGridModel>("newsletter");
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
                     
                     <div class="row newslet">
                         <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
@@ -70,8 +71,8 @@
                                             @foreach (var item in news)
                                             {
                                                 var newsItem = item.Content;
-                                                var newsLink = content.Value<Link>("bookLink");
-                                                var newsImage = content.Value<MediaWithCrops>("bookImage");
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
 
                                                 <div class="imgcont">
                                                     <a href="@newsLink?.Url">
@@ -87,7 +88,7 @@
                         <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
                             <div class="w-75">
                                 <div>
-                                    <p class="fs-4 title-date">NEWSLETTER- @date.ToLongDateString() </p>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
                                 </div>
                                 <div>
                                     <h3 class="fw-bold fs-1">@title</h3>
