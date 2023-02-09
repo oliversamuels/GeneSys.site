@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IHeaderProperties, IHomePageProperties
+	public partial class HomePage : PublishedContentModel, IHeaderProperties, IHomePageProperties, IPlanProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -106,27 +106,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MainSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetMainSubHeading(this, _publishedValueFallback);
 
 		///<summary>
-		/// Plan Heading: Plan Section Heading
+		/// Plan Heading: Heading of the plan section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("planHeading")]
-		public virtual string PlanHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanHeading(this, _publishedValueFallback);
+		public virtual string PlanHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanHeading(this, _publishedValueFallback);
 
 		///<summary>
-		/// Plan Items: Available plans
+		/// Plan Items: Plan Object
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("planItems")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanItems(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanItems(this, _publishedValueFallback);
 
 		///<summary>
-		/// Plan Subheading: Plan Section Subheading
+		/// Plan SubHeading: Subheading of the plan section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planSubheading")]
-		public virtual string PlanSubheading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetPlanSubheading(this, _publishedValueFallback);
+		[ImplementPropertyType("planSubHeading")]
+		public virtual string PlanSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanSubHeading(this, _publishedValueFallback);
 	}
 }

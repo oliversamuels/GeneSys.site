@@ -1,24 +1,24 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsPage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits UmbracoViewPage<ContentModels.NewsPage>
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+    var newsletters = Model.Value<BlockGridModel>("newsletters");
 }
 
 <div class="container-fluid p-0">
     <div class="newshead">
         <div class="container px-5">
             <div>
-                <h2 class="text-center">Catch up with the news</h2>
+                <h2 class="text-center">@Model.Heading</h2>
                 <div class="container px-5">
                     <p class="text-center">
-                        Psst!!! Hey there. You. Yes, YOU. Stop scrolling and catch up on all the latest health tech stories and news with our GeneSys Health Tech Insider newsletter.
+                        @Model.SubHeading
                     </p>
                 </div>
             </div>
             <div class="d-flex justify-content-center mt" style="margin:50px 0;">
                 <div class="imgBx">
-                    <img class="img"src="~/assets/images/News/Asset 2@3x 1.png" alt="" />
+                    <img class="img"src="@Model?.MainImage?.Url()" alt="" />
                     <div class="imgBxY hide">
                         <img src="~/assets/images/News/Asset 1@3x 1.png" alt="" width="80px"/>
                     </div>
@@ -49,82 +49,60 @@
     <div class="container news">
         @*All Items*@
         <div id="all" class="m-0 p-0 div show">
-            <div class="row newslet">
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                    <div class="imgBxII">
-                        <div class="newst">
-                            <div class="newstinner">
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
+            @if(newsletters != null)
+            {
+                @foreach (var newsletter in newsletters)
+                {
+                    var content = newsletter.Content;
+                    var date = content.Value<DateTime>("newsletterDate");
+                    var link = content.Value<Link>("newsletterLink");
+                    var summary = content.Value<string>("newsletterSummary");
+                    var title = content.Value<string>("newsletterTitle");
+                    var news = content.Value<BlockGridModel>("newsletter");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var item in news)
+                                            {
+                                                var newsItem = item.Content;
+                                                var newsLink = content.Value<Link>("bookLink");
+                                                var newsImage = content.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">NEWSLETTER- @date.ToLongDateString() </p>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter24.png" alt=""/>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
                                 </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Newsletter25.png" alt=""/>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                    <div class="w-75">
-                        <div>
-                            <p class="fs-4 title-date">NEWSLETTER- JULY 01, 2022 </p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                        </div>
-                        <div>
-                            <p class="fs-4">8mins average read time</p>
-                        </div>
-                        <div>
-                            <a class="fs-2" href="">View Live Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row newslet">
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                    <div class="imgBxII">
-                        <div class="newst">
-                            <div class="newstinner">
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Magazine Cover (3) 1.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q32.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q313.png" alt=""/>
-                                </div>
-                                <div class="imgcont">
-                                    <img src="~/assets/images/News/Health Tech Newsletter Q316.png" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                    <div class="w-75">
-                        <div>
-                            <p class="fs-4 title-date">NEWSLETTER- OCTOBER 01, 2022 </p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-1">Health Tech Insider - Second Edition</h3>
-                        </div>
-                        <div>
-                            <p class="fs-4">8mins average read time</p>
-                        </div>
-                        <div>
-                            <a class="fs-2" href="">View Live Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
         @*Product Update*@
         <div id="product-update" class="m-0 p-0 div">

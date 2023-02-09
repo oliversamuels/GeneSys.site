@@ -1,8 +1,8 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutPage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits UmbracoViewPage<ContentModels.AboutPage>
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+    var personnels = Model.Value<BlockGridModel>("personnelList");
 }
 
 <div class="container-fluid">
@@ -12,13 +12,13 @@
                 <div class="left px-5">
                     <div>
                         <h1 class="mb-3">
-                            Meet our team of <i>strategists, designers,</i> and world-class <i>problem solvers</i>
+                            @* Meet our team of <i>strategists, designers,</i> and world-class <i>problem solvers</i> *@
+                            @Model.AboutIntroHeading
                         </h1>
                     </div>
                     <div>
                         <p>
-                            To be the company our customers want us to be, it takes an eclectic group 
-                            of passionate operators. Get to know the people leading the way at Genesys Health.
+                            @Model.AboutIntroSubHeading
                         </p>
                     </div>
                     <div class="position-absolute hide" style="top:40%; left:80%;">
@@ -42,18 +42,18 @@
     </div>
     <div class="gallery">
         <div class="d-flex justify-content-center align-items-center text-center mt-4">
-            <h1>Gallery</h1>
+            <h1>@Model.GalleryTitle</h1>
         </div>
         <div class="d-flex galleryImg">
-            <div class="flex galCont">
-                <img src="~/assets/images/About Us/WhatsApp Image 2023-01-06 at 11.55 1.png" class="img-fluid" alt=""/>
-            </div>
-            <div class="flex-fill galCont">
-                <img src="~/assets/images/About Us//genesys 1.png" class="img-fluid" alt=""/>
-            </div>
-            <div class="flex-fill galCont">
-                <img src="~/assets/images/About Us/mew 1.png" class="img-fluid" alt=""/>
-            </div>
+            @if(Model.GalleryImgs != null)
+            {
+                @foreach (var image in Model.GalleryImgs)
+                {
+                    <div class="flex galCont">
+                        <img src="@image.Url()" class="img-fluid" alt=""/>
+                    </div>
+                }
+            }
         </div>
     </div>
     <div class="design d-flex justify-content-center align-items-center">
@@ -61,24 +61,17 @@
             <div class="row">
                 <div class="col-lg-6 col-md-10">
                     <h2 class="fs-1">
-                        Designed to serve you the best
+                        @Model.VideoHeading
                     </h2>
                     <p class="fs-4">
-                        GeneSys Health information Systems Limited (GHIS) 
-                        is an e-Health company committed to mitigating the gaping issues 
-                        in the healthcare sector through innovative tech. 
-                        Established in 2018 as a pioneer Health Management 
-                        Information System (HMIS), we provide customised solutions—EMR 
-                        and Telemedicine (Gemeni)—to (public and private) hospitals 
-                        toward digitising patient- and hospital management workflow processes, 
-                        improving the quality of care and operations.
+                        @Model.VideoSummary
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-10 d-flex justify-content-center align-items-center">
                     <div style="width:500px; height:300px; border-radius:10px; background:#000; position:relative;">
-                        <img src="~/assets/images/About Us/pexels-mikhail-nilov-8872458 1.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"/>
+                        <img src="@Model?.VideoImg?.Url()" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"/>
                         <div style="position:absolute;bottom:10px;left:15px;" class="d-flex justify-content-center align-items-center">
-                            <a href="">
+                            <a href="@Model?.VideoLink?.Url">
                                 <img src="~/assets/images/About Us/Play Button.png" alt="" width="50px" height="50px" class="me-3" style=""/>
                             </a>
                             <div>
@@ -93,53 +86,29 @@
     </div>
     <div class="team py-5">
         <div class="container mt-4">
-            <h3 style="font-size:38px;font-weight:700;">The people behind the scenes</h3>
+            <h3 style="font-size:38px;font-weight:700;">@Model?.PersonnelSectionHeading</h3>
             <div class="d-flex flexpp mt-5">
-                <div class="mx-3 Frame">
-                    <div class="photoFrame shadow bg-body rounded">
-                        <img src="~/assets/images/About Us/Munachimso Ayo-Olagunju 1.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div>
-                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
-                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
-                    </div>
-                </div>
-                <div class="mx-3 Frame">
-                    <div class="photoFrame shadow bg-body rounded">
-                        <img src="~/assets/images/About Us/Adeyinka Adenikinju 1.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div>
-                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
-                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
-                    </div>
-                </div>
-                <div class="mx-3 Frame">
-                    <div class="photoFrame shadow rounded">
-                        <img src="~/assets/images/About Us/Fiyinfoluwa Sanwo 1.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div>
-                        <p class="fw-bold fs-4 m-0 p-0 text-center">Fiyinfoluwa Sanwo</p>
-                        <p class="fs-5 text-center m-0 p-0">People & Operations Associate</p>
-                    </div>
-                </div>
-                <div class="mx-3 Frame">
-                    <div class="photoFrame shadow rounded">
-                        <img src="~/assets/images/About Us/Adedeji Adeniyi 1.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div>
-                        <p class="fw-bold fs-4 m-0 p-0 text-center">Adedeji Adeniyi</p>
-                        <p class="fs-5 text-center m-0 p-0">People & Operations Associate</p>
-                    </div>
-                </div>
-                <div class="mx-3 Frame">
-                    <div class="photoFrame shadow bg-body rounded">
-                        <img src="~/assets/images/About Us/Munachimso Ayo-Olagunju 1.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div>
-                        <p class="fw-bold fs-4 m-0 p-0 text-center">Munachimso Ayo-Olagunju</p>
-                        <p class="fs-5 text-center m-0 p-0">Chief Executive Officer</p>
-                    </div>
-                </div>
+                @if (personnels != null)
+                {
+                    @foreach (var personnel in personnels)
+                    {
+                        var content = personnel.Content;
+                        var name = content.Value<string>("personnelName");
+                        var image = content.Value<MediaWithCrops>("personnelIMG");
+                        var designation = content.Value<string>("personnelDesignation");
+
+
+                        <div class="mx-3 Frame">
+                            <div class="photoFrame shadow bg-body rounded">
+                                <img src="@image?.MediaUrl()" class="img-fluid" alt=""/>
+                            </div>
+                            <div>
+                                <p class="fw-bold fs-4 m-0 p-0 text-center">@name</p>
+                                <p class="fs-5 text-center m-0 p-0">@designation</p>
+                            </div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>
@@ -148,7 +117,7 @@
         <div class="visionText">
             <h2>VISION</h2>
             <p>
-                To be the leading provider of simplistic and affordable health tech. solutions to public and private health systems in Africa.
+                @Model?.Vision
             </p>
         </div>
     </div>
@@ -159,7 +128,7 @@
         <div class="missionText">
             <h2>MISSION</h2>
             <p>
-                Our mission is to digitise and optimise healthcare service delivery through unparalleled client-centric service and technology solutions.
+                @Model?.Mission
             </p>
         </div>
         <div class="rightVecCon">

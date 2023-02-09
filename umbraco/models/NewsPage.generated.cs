@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>News Page</summary>
 	[PublishedModel("newsPage")]
-	public partial class NewsPage : PublishedContentModel, IHeaderProperties
+	public partial class NewsPage : PublishedContentModel, IHeaderProperties, INewsPageProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,5 +56,37 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderProperties.GetTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Heading: Newsletter introduction section heading text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("heading")]
+		public virtual string Heading => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// MainImage: Newsletter introduction section main image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetMainImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Newsletters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newsletters")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Newsletters => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetNewsletters(this, _publishedValueFallback);
+
+		///<summary>
+		/// SubHeading: Newsletter introduction section subheading text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subHeading")]
+		public virtual string SubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetSubHeading(this, _publishedValueFallback);
 	}
 }

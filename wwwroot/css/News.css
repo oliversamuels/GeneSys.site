@@ -117,6 +117,7 @@
 
 .title-date {
     color: #9772FF;
+    text-transform: uppercase;
 }
 
 @media (max-width: 991px) {

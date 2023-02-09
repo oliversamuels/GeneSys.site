@@ -1,8 +1,4 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@using Umbraco.Cms.Core.Models.Blocks;
-@using Umbraco.Cms.Core.Models;
+﻿@inherits UmbracoViewPage<ContentModels.HomePage>
 @{
 	Layout = "Master";
 	ViewData["Title"] = Model.Title;
@@ -78,41 +74,6 @@
             </div>
             <div class="col-lg-7 col-md-12 d-flex info-right justify-content-center align-items-center">
                 <div class="row fcarde d-flex justify-content-center align-items-center w-100 ms-2">
-                    @* <div class="col-5 carde mb-5">
-                        <span class="icon icon-h"></span>
-                        <div>
-                            <h3>Genesys HMIS</h3>
-                            <p>Geared towards large practices, Genesys Health Management Information System is an ERP like solution that automates processes across all functional areas and departments.</p>
-                            <button class="btn btn-primary">Get started</button>
-                        </div>
-                    </div>
-                    <div class="col-5 carde mb-5">
-                        <span class="icon icon-clo"></span>
-                        <div>
-                            <h3>Genesys Electronic Medical Records</h3>
-                            <p>Made for small to mid-scale practices that seek mid-level process automation across their functional areas. The EMR is best suited for practices that are already running disparate IT solutions.</p>
-                            <button class="btn btn-primary">Get started</button>
-                        </div>
-                    </div>
-                    <div class="col-5 carde mt-3">
-                        <span class="icon icon-cli"></span>
-                        <div>
-                            <h3>Clinical Specialized Packages</h3>
-                            <p> Made for small to mid-scale practices 
-                                that seek some level (mid-level) of process automation across their functional areas.
-                                It’s best suited for practices that are already running disparate IT solutions.
-                            </p>
-                            <button class="btn btn-primary">Get started</button>
-                        </div>
-                    </div>
-                    <div class="col-5 carde mt-3">
-                        <span class="bi bi-dropbox"></span>
-                        <div>
-                            <h3>Stand-alone Packages</h3>
-                            <p>Designed to meet the needs of independent healthcare categories that are part of the healthcare eco system but don’t quite fall under your routine hospital or clinic classification.</p>
-                            <button class="btn btn-primary">Get started</button>
-                        </div>
-                    </div> *@
 
                     @if (items != null && items.Any())
                     {
@@ -197,13 +158,14 @@
 
 <div class="container-fluid packages px-5 pt-4">
     <div class="row w-100 d-flex justify-content-center align-items-center">
-        <div class="text-center">
-            <h1 class="m-0 p-0">Flexible Plans For All Sizes</h1>
-            <p class="m-0 p-0">We have solutions made specifically to suit all your needs.</p>
-        </div>
+    <div class="text-center">
+    <div class="planText">
+        <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
+        <p class="m-0 p-0">@Model?.PlanSubHeading</p>
     </div>
+</div>
     <div class="row card-container px-5 pt-5">
-        @if (planItems != null && planItems.Any())
+        @if (planItems != null)
         {
             @foreach(var plan in planItems)
             {
@@ -249,111 +211,6 @@
                 }
             }
         }
-       @* <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
-          <div class="d-flex justify-content-start align-items-center">
-              <img class="sm me-2" src="/assets/images/cross.png" alt=""/>
-              <h3 class="m-0">LITE <span class="title">(EMR)</span></h3>
-          </div>
-          <div class="mt-3">
-            <p><span class="cost">&#8358;5000</span><span class="month">/month</span></p>
-          </div>
-          <div class="">
-            <p>What will you get</p>
-          </div>
-          <div class="mt-0">
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Available to all</p>
-              </div>
-            </div>
-              <div class="text-center pe-3">
-                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
-          <div class="d-flex justify-content-start align-items-center">
-              <img class="sm me-2" src="/assets/images/flower.png" alt=""/>
-              <h3 class="m-0">MIDI <span class="title">(EMR)</span></h3>
-          </div>
-          <div class="mt-3">
-            <p><span class="cost">&#8358;5200</span><span class="month">/month</span></p>
-          </div>
-          <div class="">
-            <p>What will you get</p>
-          </div>
-          <div class="mt-0">
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Available to all</p>
-              </div>
-            </div>
-              <div class="text-center pe-3">
-                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
-          <div class="d-flex justify-content-start align-items-center">
-              <img class="sm me-2" src="/assets/images/crown.png" alt=""/>
-              <h3 class="m-0">ERP <span class="title">(HMIS)</span></h3>
-          </div>
-          <div class="mt-3">
-            <p><span class="cost">&#8358;5500</span><span class="month">/month</span></p>
-          </div>
-          <div class="">
-            <p>What will you get</p>
-          </div>
-          <div class="mt-0">
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable patient management module</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Customizable manager template</p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
-              <i class="bi bi-check me-3"></i>
-              <div class="w-75">
-                <p class="m-0 pt-2 details pb-2">Available to all</p>
-              </div>
-            </div>
-              <div class="text-center pe-3">
-                <button class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</button>
-              </div>
-            </div>
-        </div> *@
     </div>
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-6 col-md-8">

@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>About Page</summary>
 	[PublishedModel("aboutPage")]
-	public partial class AboutPage : PublishedContentModel, IHeaderProperties
+	public partial class AboutPage : PublishedContentModel, IAboutPageProperties, IHeaderProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -48,6 +48,110 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// AboutIntroHeading: Main Header on the About Page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutIntroHeading")]
+		public virtual string AboutIntroHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetAboutIntroHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// AboutIntroIMG: Main Images
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutIntroIMG")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> AboutIntroImg => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetAboutIntroImg(this, _publishedValueFallback);
+
+		///<summary>
+		/// AboutIntroSubHeading: The Sub Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("aboutIntroSubHeading")]
+		public virtual string AboutIntroSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetAboutIntroSubHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// GalleryIMGs: Images
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("galleryIMGs")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> GalleryImgs => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetGalleryImgs(this, _publishedValueFallback);
+
+		///<summary>
+		/// GalleryTitle: Heading for the Gallery section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("galleryTitle")]
+		public virtual string GalleryTitle => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetGalleryTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Mission: Company's Mission
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mission")]
+		public virtual string Mission => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetMission(this, _publishedValueFallback);
+
+		///<summary>
+		/// PersonnelList: List of available personnels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("personnelList")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PersonnelList => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetPersonnelList(this, _publishedValueFallback);
+
+		///<summary>
+		/// PersonnelSectionHeading: Section Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("personnelSectionHeading")]
+		public virtual string PersonnelSectionHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetPersonnelSectionHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// VideoHeading: Writeup heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("videoHeading")]
+		public virtual string VideoHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetVideoHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// VideoIMG: Video container default image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("videoIMG")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops VideoImg => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetVideoImg(this, _publishedValueFallback);
+
+		///<summary>
+		/// VideoLink: YouTube Link to the brief Introduction
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("videoLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link VideoLink => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetVideoLink(this, _publishedValueFallback);
+
+		///<summary>
+		/// VideoSummary: Summary about GeneSys
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("videoSummary")]
+		public virtual string VideoSummary => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetVideoSummary(this, _publishedValueFallback);
+
+		///<summary>
+		/// Vision: Company's Vision
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("vision")]
+		public virtual string Vision => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetVision(this, _publishedValueFallback);
 
 		///<summary>
 		/// Title: Enter a title for this page

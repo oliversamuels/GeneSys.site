@@ -18,49 +18,44 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "homePageProperties"
-	/// <summary>Home Page Properties</summary>
-	public partial interface IHomePageProperties : IPublishedElement
+	// Mixin Content Type with alias "productPageProperties"
+	/// <summary>Product Page Properties</summary>
+	public partial interface IProductPageProperties : IPublishedElement
 	{
-		/// <summary>Info Package</summary>
+		/// <summary>Product Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel InfoPackage { get; }
+		string ProductHeading { get; }
 
-		/// <summary>Info SubHeading</summary>
+		/// <summary>ProductMainHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string InfoSubHeading { get; }
+		string ProductMainHeading { get; }
 
-		/// <summary>Info Title</summary>
+		/// <summary>ProductMainImage</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string InfoTitle { get; }
+		global::Umbraco.Cms.Core.Models.MediaWithCrops ProductMainImage { get; }
 
-		/// <summary>Main Heading</summary>
+		/// <summary>Products</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string MainHeading { get; }
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products { get; }
 
-		/// <summary>Main Image</summary>
+		/// <summary>Product SubHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage { get; }
-
-		/// <summary>Main SubHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string MainSubHeading { get; }
+		string ProductSubHeading { get; }
 	}
 
-	/// <summary>Home Page Properties</summary>
-	[PublishedModel("homePageProperties")]
-	public partial class HomePageProperties : PublishedElementModel, IHomePageProperties
+	/// <summary>Product Page Properties</summary>
+	[PublishedModel("productPageProperties")]
+	public partial class ProductPageProperties : PublishedElementModel, IProductPageProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		public new const string ModelTypeAlias = "homePageProperties";
+		public new const string ModelTypeAlias = "productPageProperties";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -69,14 +64,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<HomePageProperties, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ProductPageProperties, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public HomePageProperties(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public ProductPageProperties(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -85,81 +80,68 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Info Package
+		/// Product Heading: Main Heading for the product section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoPackage")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel InfoPackage => GetInfoPackage(this, _publishedValueFallback);
+		[ImplementPropertyType("productHeading")]
+		public virtual string ProductHeading => GetProductHeading(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Info Package</summary>
+		/// <summary>Static getter for Product Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetInfoPackage(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "infoPackage");
+		public static string GetProductHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productHeading");
 
 		///<summary>
-		/// Info SubHeading: Info section subheading text
+		/// ProductMainHeading: Title or Section heading for the Product Intro Page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoSubHeading")]
-		public virtual string InfoSubHeading => GetInfoSubHeading(this, _publishedValueFallback);
+		[ImplementPropertyType("productMainHeading")]
+		public virtual string ProductMainHeading => GetProductMainHeading(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Info SubHeading</summary>
+		/// <summary>Static getter for ProductMainHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetInfoSubHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "infoSubHeading");
+		public static string GetProductMainHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productMainHeading");
 
 		///<summary>
-		/// Info Title: Info  section heading text
+		/// ProductMainImage: Product Info section main image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoTitle")]
-		public virtual string InfoTitle => GetInfoTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("productMainImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ProductMainImage => GetProductMainImage(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Info Title</summary>
+		/// <summary>Static getter for ProductMainImage</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetInfoTitle(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "infoTitle");
+		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetProductMainImage(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "productMainImage");
 
 		///<summary>
-		/// Main Heading: Intro Section main heading text
+		/// Products: Products/Package Object
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainHeading")]
-		public virtual string MainHeading => GetMainHeading(this, _publishedValueFallback);
+		[ImplementPropertyType("products")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products => GetProducts(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Main Heading</summary>
+		/// <summary>Static getter for Products</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetMainHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mainHeading");
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetProducts(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "products");
 
 		///<summary>
-		/// Main Image: Home page main banner
+		/// Product SubHeading: Subheading for the product section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => GetMainImage(this, _publishedValueFallback);
+		[ImplementPropertyType("productSubHeading")]
+		public virtual string ProductSubHeading => GetProductSubHeading(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Main Image</summary>
+		/// <summary>Static getter for Product SubHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetMainImage(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "mainImage");
-
-		///<summary>
-		/// Main SubHeading: Intro section subheading text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainSubHeading")]
-		public virtual string MainSubHeading => GetMainSubHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Main SubHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetMainSubHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mainSubHeading");
+		public static string GetProductSubHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productSubHeading");
 	}
 }
