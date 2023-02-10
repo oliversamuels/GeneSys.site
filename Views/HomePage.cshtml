@@ -4,6 +4,24 @@
 	ViewData["Title"] = Model.Title;
     var items = Model.Value<BlockGridModel>("InfoPackage");
     var planItems = Model.Value<BlockGridModel>("PlanItems");
+    var questions = Model.Value<BlockGridModel>("questions");
+    List<BlockGridItem> listOfQuestion = new List<BlockGridItem>();
+    List<BlockGridItem> listOfRandomQuestions = new List<BlockGridItem>();
+    @* Array.ForEach<BlockGridModel>(questions, question => listOfQuestion.Add(question)); *@
+    if(questions != null)
+    {
+        foreach(var question in questions)
+        {
+            listOfQuestion.Add(question);
+        }
+    }
+
+    static List<BlockGridItem> GetRandomElements<BlockGridItem>(IEnumerable<BlockGridItem> list, int elementCount)
+    {
+        return list.OrderBy(x => Guid.NewGuid()).Take(elementCount).ToList();
+    }
+
+    listOfRandomQuestions = GetRandomElements(listOfQuestion, 5);
 }
 
 <div class="container-fluid intro position-relative px-5 pt-5">
@@ -220,83 +238,31 @@
         </div>
         <div class="col-lg-6 col-md-8 mb-4">
             <div class="row">
-                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
-                    <div class="questionTitle">
-                        <p class="m-0 p-0 fs-4 fw-bold">What is Genesys Health EMR?</p>
-                        <button class="question-btn">
-                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
-                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
-                        </button>
-                    </div>
-                    <div class="questionText">
-                        <hr>
-                        <p>
-                            Genesys Health EMR is a cloud-based electronic medical record (EMR) platform that helps healthcare providers store and manage their patient data. It provides tools which allow clinicians to quickly and accurately provide care to patients and streamline administrative processes. The software includes features such as patient scheduling, vitals charting, billing, doctor’s consultation, and reporting, and offers secure access to data from any device.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
-                    <div class="questionTitle">
-                        <p class="m-0 p-0 fs-4 fw-bold">How does Genesys EMR work?</p>
-                        <button class="question-btn">
-                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
-                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
-                        </button>
-                    </div>
-                    <div class="questionText">
-                        <hr>
-                        <p>
-                            Genesys Health EMR is a cloud-based platform that is intuitive and provides healthcare providers with an easy-to-use interface for managing patient data. This system can be accessed from any device, making it easy for providers to access and update patient information wherever they are. The system allows providers to store patient information, including medical history, vitals, prescriptions, laboratory and radiology investigation results and billing information.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
-                    <div class="questionTitle">
-                        <p class="m-0 p-0 fs-4 fw-bold">What features does Genesys Health EMR offer? </p>
-                        <button class="question-btn">
-                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
-                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
-                        </button>
-                    </div>
-                    <div class="questionText">
-                        <hr>
-                        <p>
-                            Genesys Health EMR has a range of capabilities, including the ability to create patient schedules, chart medical information, prescriptions, process billing, and generate reports. It also allows users to securely access and store patient data from any device, such as tablets, smartphones, and computers.
+                @if(listOfRandomQuestions != null)
+                {
+                    @foreach (var question in listOfRandomQuestions)
+                    {
+                        var content = question.Content;
+                        var ques = content.Value<string>("question");
+                        var answer = content.Value<string>("answer");
 
-                            Other features of the web application include Insurance Management, Virtual Account Management, Ante-Natal Care Management, Active Queue, Patient data release request, e-Pharmacy, Patient Record Merging, e-Radiology, e-Inventory, Retail Pharmacy, Retail Radiology, Appointment reminders,  Retail Laboratory, and Surgery.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
-                    <div class="questionTitle">
-                        <p class="m-0 p-0 fs-4 fw-bold">How secure is Genesys Health EMR?</p>
-                        <button class="question-btn">
-                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
-                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
-                        </button>
-                    </div>
-                    <div class="questionText">
-                        <hr>
-                        <p>
-                            Genesys Health EMR is a secure electronic medical records system that utilizes encryption and two step security levels of approvals to protect patient data in complaint with HIPAA regulations. It also has advanced features such as access control, audit trails, and data backup and restore capabilities to ensure the utmost security and reliability of patient information.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
-                    <div class="questionTitle">
-                        <p class="m-0 p-0 fs-4 fw-bold">What type of training is available for Genesys Health EMR?</p>
-                        <button class="question-btn">
-                            <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
-                            <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
-                        </button>
-                    </div>
-                    <div class="questionText">
-                        <hr>
-                        <p>
-                            Genesys Health EMR offers a variety of learning opportunities, such as online user guides, video tutorials and on-site training and consulting services, to help users become familiar with the software. 
-                        </p>
-                    </div>
-                </div>
+                        <div class="col-12 question bg-light mb-3 ps-4 pe-5 py-4">
+                            <div class="questionTitle">
+                                <p class="m-0 p-0 fs-4 fw-bold">@ques</p>
+                                <button class="question-btn">
+                                    <span class="icon-right"><i class="bi fs-2 fw-bold bi-arrow-right-circle"></i></span>
+                                    <span class="icon-down"><i class="bi fs-2 fw-bold bi-arrow-down-circle"></i></span>
+                                </button>
+                            </div>
+                            <div class="questionText">
+                                <hr>
+                                <p>
+                                    @answer
+                                </p>
+                            </div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>

@@ -520,6 +520,7 @@ h2 {
     background-color: transparent;
     padding: 0;
     color: blue;
+    outline: none;
 }
 
 .questionText {

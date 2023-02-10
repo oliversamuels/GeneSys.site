@@ -22,6 +22,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 	/// <summary>Home Page Properties</summary>
 	public partial interface IHomePageProperties : IPublishedElement
 	{
+		/// <summary>faqHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string FaqHeading { get; }
+
 		/// <summary>Info Package</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -51,6 +56,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string MainSubHeading { get; }
+
+		/// <summary>Questions</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Questions { get; }
 	}
 
 	/// <summary>Home Page Properties</summary>
@@ -83,6 +93,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// faqHeading: Section Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("faqHeading")]
+		public virtual string FaqHeading => GetFaqHeading(this, _publishedValueFallback);
+
+		/// <summary>Static getter for faqHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetFaqHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "faqHeading");
 
 		///<summary>
 		/// Info Package
@@ -161,5 +184,18 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetMainSubHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mainSubHeading");
+
+		///<summary>
+		/// Questions: Block of Questions and Answers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("questions")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Questions => GetQuestions(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Questions</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetQuestions(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "questions");
 	}
 }
