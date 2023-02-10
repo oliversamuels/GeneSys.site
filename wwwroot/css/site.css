@@ -355,7 +355,7 @@ h2 {
     line-height: 18px;
 }
 
-.bi-1-circle-fill,
+.bi-1-square-fill,
 .bi-2-circle-fill,
 .bi-3-circle-fill {
     font-weight: 500;
@@ -387,6 +387,11 @@ h2 {
     font-weight: 300;
     font-size: 16px;
     line-height: 18px;
+}
+
+.planText h1{
+    font-size: 4rem;
+    line-height: 4.8rem;
 }
 
 .card {
@@ -655,6 +660,15 @@ h2 {
 
     .info-right {
         order: 1;
+    }
+
+    .planText h1{
+        font-size: 3rem;
+        line-height: 3.4rem;
+    }
+
+    .planText p{
+        font-size: 1.6rem;
     }
 
     .carde {

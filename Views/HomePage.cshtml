@@ -5,6 +5,9 @@
     var items = Model.Value<BlockGridModel>("InfoPackage");
     var planItems = Model.Value<BlockGridModel>("PlanItems");
     var questions = Model.Value<BlockGridModel>("questions");
+    var testimonials = Model.Value<BlockGridModel>("testimonials");
+
+    
     List<BlockGridItem> listOfQuestion = new List<BlockGridItem>();
     List<BlockGridItem> listOfRandomQuestions = new List<BlockGridItem>();
     @* Array.ForEach<BlockGridModel>(questions, question => listOfQuestion.Add(question)); *@
@@ -134,7 +137,7 @@
             <div class="row">
                 <div class="col-2">
                     <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div class="bi bi-2-circle-fill"></div>
+                        <div class="bi bi-1-square-fill"></div>
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
@@ -176,12 +179,11 @@
 
 <div class="container-fluid packages px-5 pt-4">
     <div class="row w-100 d-flex justify-content-center align-items-center">
-    <div class="text-center">
-    <div class="planText">
-        <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
-        <p class="m-0 p-0">@Model?.PlanSubHeading</p>
+        <div class="planText text-center my-4">
+            <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
+            <p class="m-0 p-0">@Model?.PlanSubHeading</p>
+        </div>
     </div>
-</div>
     <div class="row card-container px-5 pt-5">
         @if (planItems != null)
         {
@@ -233,7 +235,7 @@
     <div class="row mt-5 d-flex justify-content-center">
         <div class="col-lg-6 col-md-8">
             <h3 class="ms-4 mb-4 hsss">
-                Most commonly asked questions
+                @Model?.FaqHeading
             </h3>
         </div>
         <div class="col-lg-6 col-md-8 mb-4">
@@ -256,9 +258,7 @@
                             </div>
                             <div class="questionText">
                                 <hr>
-                                <p>
-                                    @answer
-                                </p>
+                                <p>@answer</p>
                             </div>
                         </div>
                     }
@@ -273,41 +273,33 @@
 <div class="container-fluid testimony px-5 pt-5">
     <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
         <div class="mb-5">
-            <h1 class="m-0 p-0">Dont just take our word for it</h1>
-            <p class="m-0 p-0">Here is what the community is saying about us</p>
+            <h1 class="m-0 p-0">@Model?.TestimonialHeading</h1>
+            <p class="m-0 p-0">@Model?.TestimonialSubHeading</p>
         </div>
     </div>
     <div class="row d-flex justify-content-center align-items-center testi-cap mt-5 mb-5">
-        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
-            <div class="position-absolute top-0 start-50 translate-middle">
-                <img src="/assets/images/Avatar.png" alt="" width="70px" />
-            </div>
-            <div class="mt-5">
-                <p class="fs-4">We chose Genesys EMR after reviewing several systems. It has been our first EMR. The service has always been exceptional. The product only improved despite starting out head and shoulders above many other systems. It is easy and intuitive."</p>
-                <p class="m-0 p-0">DR BELLO</p>
-                <p class="p-0 m-0 fs-5">Doctor</p>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
-            <div class="position-absolute top-0 start-50 translate-middle">
-                <img src="/assets/images/Avatar (1).png" alt="" width="70px" />
-            </div>
-            <div class="mt-5">
-                <p class="fs-4">Our transition was eased by the assistance of Genesys EMR. The software is quick and efficient, yet as complete."</p>
-                <p class="m-0 p-0">DR SAM</p>
-                <p class="p-0 m-0 fs-5">Doctor</p>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
-            <div class="position-absolute top-0 start-50 translate-middle">
-                <img src="/assets/images/Avatar (2).png" alt="" width="70px" />
-            </div>
-            <div class="mt-5">
-                <p class="fs-4">We chose Genesys EMR after reviewing several systems. It has been our first EMR. The service has always been exceptional. The product only improved despite starting out head and shoulders above many other systems. It is easy and intuitive.""</p>
-                <p class="m-0 p-0">DR BELLO</p>
-                <p class="p-0 m-0 fs-5">Doctor</p>
-            </div>
-        </div>
+        @if(testimonials != null)
+        {
+            @foreach (var testimony in testimonials)
+            {
+                var content = testimony.Content;
+                var image = content.Value<MediaWithCrops>("clientPicture");
+                var statement = content.Value<string>("testimony");
+                var name = content.Value<string>("clientName");
+                var designation = content.Value<string>("clientDesignation");
+
+                <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <img src="@image?.MediaUrl()" alt="" width="70px" />
+                    </div>
+                    <div class="mt-5">
+                        <p class="fs-4">@statement</p>
+                        <p class="m-0 p-0">@name</p>
+                        <p class="p-0 m-0 fs-5">@designation</p>
+                    </div>
+                </div>
+            }
+        }
     </div>
 </div>
 

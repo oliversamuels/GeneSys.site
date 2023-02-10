@@ -61,6 +61,21 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Questions { get; }
+
+		/// <summary>TestimonialHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string TestimonialHeading { get; }
+
+		/// <summary>Testimonials</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials { get; }
+
+		/// <summary>TestimonialSubHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string TestimonialSubHeading { get; }
 	}
 
 	/// <summary>Home Page Properties</summary>
@@ -197,5 +212,44 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetQuestions(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "questions");
+
+		///<summary>
+		/// TestimonialHeading: Testimonial Section Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonialHeading")]
+		public virtual string TestimonialHeading => GetTestimonialHeading(this, _publishedValueFallback);
+
+		/// <summary>Static getter for TestimonialHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetTestimonialHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "testimonialHeading");
+
+		///<summary>
+		/// Testimonials: List of testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonials")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => GetTestimonials(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Testimonials</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetTestimonials(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "testimonials");
+
+		///<summary>
+		/// TestimonialSubHeading: Testimonial Section SubHeading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonialSubHeading")]
+		public virtual string TestimonialSubHeading => GetTestimonialSubHeading(this, _publishedValueFallback);
+
+		/// <summary>Static getter for TestimonialSubHeading</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetTestimonialSubHeading(IHomePageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "testimonialSubHeading");
 	}
 }

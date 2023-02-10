@@ -7,8 +7,17 @@
     List<BlockGridItem> news_letter = new List<BlockGridItem>();
     List<BlockGridItem> case_study = new List<BlockGridItem>();
     
-    @if(newsletters != null)
+    @*Random List of all News (3)*@
+    List<BlockGridItem> listOfNews = new List<BlockGridItem>();
+    List<BlockGridItem> listOfRandomNews = new List<BlockGridItem>();
+
+    if(newsletters != null)
     {
+        foreach(var newsletter in newsletters)
+        {
+            listOfNews.Add(newsletter);
+        }
+
         @foreach(var newsletter in newsletters)
         {
             if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
@@ -25,6 +34,14 @@
             }
         }
     }
+
+    static List<BlockGridItem> GetRandomElements<BlockGridItem>(IEnumerable<BlockGridItem> list, int elementCount)
+    {
+        return list.OrderBy(x => Guid.NewGuid()).Take(elementCount).ToList();
+    }
+
+    listOfRandomNews = GetRandomElements(listOfNews, 2);
+    @*End of Random List*@
 }
 
 <div class="container-fluid p-0">
@@ -71,11 +88,11 @@
     <div class="container news">
         @*All Items*@
         <div id="all" class="m-0 p-0 div show">
-            @if(newsletters != null)
+            @if(listOfRandomNews.Any())
             {
-                @foreach (var newsletter in newsletters)
+                @foreach (var newsitem in listOfRandomNews)
                 {
-                    var content = newsletter.Content;
+                    var content = newsitem.Content;
                     var date = content.Value<DateTime>("newsDate");
                     var link = content.Value<Link>("newsLink");
                     var summary = content.Value<string>("newsSummary");
@@ -131,7 +148,58 @@
         <div id="product-update" class="m-0 p-0 div">
             @if(product_update.Any())
             {
-                <h1>We have Something</h1>
+                foreach (var item in product_update)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             }
             else
             {
@@ -145,7 +213,58 @@
         <div id="case-study" class="m-0 p-0 div">
             @if(case_study.Any())
             {
-                <h1>We have Something</h1>
+                foreach (var item in case_study)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             }
             else
             {

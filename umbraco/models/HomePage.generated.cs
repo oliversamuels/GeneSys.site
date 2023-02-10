@@ -122,6 +122,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Questions => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetQuestions(this, _publishedValueFallback);
 
 		///<summary>
+		/// TestimonialHeading: Testimonial Section Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonialHeading")]
+		public virtual string TestimonialHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonialHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// Testimonials: List of testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonials")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonials(this, _publishedValueFallback);
+
+		///<summary>
+		/// TestimonialSubHeading: Testimonial Section SubHeading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonialSubHeading")]
+		public virtual string TestimonialSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonialSubHeading(this, _publishedValueFallback);
+
+		///<summary>
 		/// Plan Heading: Heading of the plan section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
