@@ -1,0 +1,24 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactViewModel>;
+
+@using (Html.BeginUmbracoForm("PostMail", "Contact"))
+{
+    <div class="form-group mb-4">
+        <label class="form-label fs-4 fw-bold m-0" for="name">Name</label>
+        @Html.TextBoxFor(m => Model.Name, new { @class = "form-control border-primary fs-3 p-3 bg-transparent" })
+    </div>
+    <div class="form-group mb-4">
+        <label class="form-label fs-4 fw-bold m-0" for="email">Email</label>
+        @Html.TextBoxFor(m => Model.Email, new { @class = "form-control border-primary fs-3 p-3 bg-transparent" })
+    </div>
+    <div class="form-group mb-4">
+        <label class="form-label fs-4 fw-bold m-0" for="phone">Phone Number</label>
+        @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control border-primary fs-3 p-3 bg-transparent" })
+    </div>
+    <div class="form-group mb-4">
+        <label class="form-label fs-4 fw-bold m-0" for="message">Message</label>
+        @Html.TextAreaFor(m => Model.Message, new { @class = "form-control border-primary fs-3 p-3 bg-transparent" })
+    </div>
+    <div class="form-group d-grid my-5">
+        <button type="submit" class="btn btn-primary fs-4 fw-bold">SEND MESSAGE</button>
+    </div>
+}

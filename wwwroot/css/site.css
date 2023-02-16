@@ -566,6 +566,16 @@ h2 {
         width: 100vw;
     }
 
+    .navbar-nav {
+        background-color :#F2F5FF;
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .navbar-nav .nav-item{
+        color: #fff;
+    }
+
     .IntroRow {
         justify-content: center;
         align-items: center;
