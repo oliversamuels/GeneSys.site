@@ -3,6 +3,7 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+    DemoViewModel Demo = new DemoViewModel();
 }
 
 <div class="container-fluid demo">
@@ -11,7 +12,7 @@
             <div>
                 <h1 style="margin-left:55px;font-size:30px;">Request a demo</h1>
                 <div class="demoform">
-                    <form class="row g-3 justify-content-center">
+                    @* <form class="row g-3 justify-content-center">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">First Name</label>
                             <input type="text" class="form-control" placeholder="Enter First Name">
@@ -42,7 +43,8 @@
                         <div class="col-10 mb-3">
                             <button type="submit" class="btn btn-primary w-100">SEND MESSAGE</button>
                         </div>
-                    </form>
+                    </form> *@
+                    @await Html.PartialAsync("~/Views/Partials/_Demo.cshtml", Demo)
                 </div>
             </div>
         </div>

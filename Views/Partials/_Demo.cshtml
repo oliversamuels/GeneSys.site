@@ -1,0 +1,61 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<DemoViewModel>;
+
+@{
+    var status = "";
+
+    if(TempData.ContainsKey("Info"))
+    {
+        status = TempData["Info"] as string;
+    }
+}
+
+@using (Html.BeginUmbracoForm("PostMail", "Demo", new {@class = "row g-3 justify-content-center"}))
+{
+    if(status == "Sent")
+    {
+        <div class="alert alert-success d-flex alert-dismissible fade show" role="alert">
+            <p class="fs-5 p-0 m-0">Your request has been recieved. We would get back to you shortly.</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    if(status == "Failed")
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <p class="fs-5 p-0 m-0">Something went wrong, we couldnt deliver your request.</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label" for="name">First Name</label>
+            @Html.TextBoxFor(m => Model.FName, new { @class = "form-control", @placeholder = "Enter First Name"})
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label" for="name">Last Name</label>
+            @Html.TextBoxFor(m => Model.LName, new { @class = "form-control", @placeholder = "Enter Last Name"})
+        </div>
+    </div>
+    <div class="col-12 mb-3">
+        <label class="form-label" for="name">Company Email</label>
+        @Html.TextBoxFor(m => Model.CompanyEmail, new { @class = "form-control", @placeholder = "Enter Company Email"})
+    </div>
+    <div class="col-12 mb-3">
+        <label class="form-label" for="name">Company Name</label>
+        @Html.TextBoxFor(m => Model.CompanyName, new { @class = "form-control", @placeholder = "Enter Company Name"})
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label" for="name">Phone Number</label>
+            @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @placeholder = "Enter Phone Number"})
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label" for="name">Country</label>
+            @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @placeholder = "Enter Country"})
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10 mb-3">
+            <button type="submit" class="btn btn-primary w-100 fs-4">SEND MESSAGE</button>
+        </div>
+    </div>
+}
