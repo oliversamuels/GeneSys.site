@@ -9,7 +9,7 @@
     }
 }
 
-@using (Html.BeginUmbracoForm("PostMail", "Demo", new {@class = "row g-3 justify-content-center"}))
+@using (Html.BeginUmbracoForm("DemoMail", "Mail", new {@class = "row g-3 justify-content-center"}))
 {
     if(status == "Sent")
     {
@@ -29,28 +29,34 @@
         <div class="col-md-6 mb-3">
             <label class="form-label" for="name">First Name</label>
             @Html.TextBoxFor(m => Model.FName, new { @class = "form-control", @placeholder = "Enter First Name"})
+            @Html.ValidationMessageFor(m => Model.FName)
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="name">Last Name</label>
             @Html.TextBoxFor(m => Model.LName, new { @class = "form-control", @placeholder = "Enter Last Name"})
+            @Html.ValidationMessageFor(m => Model.LName)
         </div>
     </div>
     <div class="col-12 mb-3">
         <label class="form-label" for="name">Company Email</label>
         @Html.TextBoxFor(m => Model.CompanyEmail, new { @class = "form-control", @placeholder = "Enter Company Email"})
+        @Html.ValidationMessageFor(m => Model.CompanyEmail)
     </div>
     <div class="col-12 mb-3">
         <label class="form-label" for="name">Company Name</label>
         @Html.TextBoxFor(m => Model.CompanyName, new { @class = "form-control", @placeholder = "Enter Company Name"})
+        @Html.ValidationMessageFor(m => Model.CompanyName)
     </div>
     <div class="row">
         <div class="col-md-6 mb-3">
             <label class="form-label" for="name">Phone Number</label>
             @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @placeholder = "Enter Phone Number"})
+            @Html.ValidationMessageFor(m => Model.Phone)
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="name">Country</label>
             @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @placeholder = "Enter Country"})
+            @Html.ValidationMessageFor(m => Model.Country)
         </div>
     </div>
     <div class="row justify-content-center">

@@ -2,11 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 public class ContactViewModel
 {
-    [Required]
+    [Required(ErrorMessage="Please enter your name"),MaxLength(50)]
+    [DataType(DataType.Text)]
     public string? Name { get; set; }
-    [Required]
+    [Required][RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Your Email is not valid.")]
     public string? Email { get; set; }
+    [DataType(DataType.PhoneNumber)]
     public string? Phone { get; set; }
-    [Required]
-    public string? Message { get; set; }
+    [Required][DataType(DataType.MultilineText)]
+    public string? Message { get; set; } 
 }

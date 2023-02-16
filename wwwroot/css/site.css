@@ -560,6 +560,11 @@ h2 {
     display: none;
 }
 
+.field-validation-error {
+    color: red;
+    font-size: 1.4rem;
+}
+
 @media (max-width: 991px) {
     body {
         overflow-x: hidden;
