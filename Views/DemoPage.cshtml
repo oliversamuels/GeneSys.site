@@ -10,7 +10,7 @@
     <div class="row h-100 m-0 p-0">
         <div class="col-lg-9 col-md-12 p-0">
             <div>
-                <h1 style="margin-left:55px;font-size:30px;">Request a demo</h1>
+                <h1 style="margin-left:55px;font-size:30px;" class="demoText">Talk to an expert</h1>
                 <div class="demoform">
                     @await Html.PartialAsync("~/Views/Partials/_Demo.cshtml", Demo)
                 </div>
@@ -24,9 +24,9 @@
                     <div style="width:70%;height:50%">
                         <p class="fs-4">I WOULD LIKE TO…</p>
                         <ul>
-                            <li class="fs-5 spt"><span class="span spd"></span>Talk to an expert</li>
-                            <li class="fs-5 spt"><span class="span"></span>Request a demo</li>
-                            <li class="fs-5 spt"><span class="span"></span>Get technical support</li>
+                            <li class="fs-5 spt" data-id="expert"><span class="span spd"></span>Talk to an expert</li>
+                            <li class="fs-5 spt" data-id="demo"><span class="span"></span>Request a demo</li>
+                            <li class="fs-5 spt" data-id="support"><span class="span"></span>Get technical support</li>
                         </ul>
                     </div>
                 </div>

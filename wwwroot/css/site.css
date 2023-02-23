@@ -1,12 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html {
   font-size: 10px;
 }
 
 * {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
 
@@ -565,6 +565,22 @@ h2 {
     font-size: 1.4rem;
 }
 
+.contactText {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding-top: 5rem;
+}
+
+.contactText h2 {
+    font-size: 3rem;
+    line-height: 3.2rem;
+}
+
+.alpha {
+    padding: 1rem 2.5rem;
+}
+
 @media (max-width: 991px) {
     body {
         overflow-x: hidden;
@@ -598,6 +614,7 @@ h2 {
         text-align: center;
         font-size: 16px;
         width: 100%;
+        padding: 1rem;
     }
 
     .alpha > h1 {

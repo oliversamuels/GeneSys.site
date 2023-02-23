@@ -34,6 +34,10 @@
     margin-right: 1rem;
 }
 
+.demo .sign ul li{
+    cursor: pointer;
+}
+
 .demoform {
     width: 70%;
     height: fit-content;

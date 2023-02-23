@@ -29,3 +29,22 @@ questions.forEach((question) => {
         question.classList.toggle("showText");
     })
 })
+
+/* Demo Script */
+
+const list = document.querySelectorAll(".spt");
+const demoText = document.querySelector(".demoText");
+
+list.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        const id = item.dataset.id;
+        const span = e.target.querySelector(".span");
+        const activeSpan = document.querySelector(".spd");
+
+        activeSpan.classList.remove("spd");
+        span.classList.add("spd");
+        if (id === "expert") demoText.textContent = "Talk to an expert";
+        if (id === "demo") demoText.textContent = "Request a demo";
+        if (id === "support") demoText.textContent = "Technical Support";
+    })
+})
