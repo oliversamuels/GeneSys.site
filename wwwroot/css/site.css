@@ -3,6 +3,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -581,6 +582,52 @@ h2 {
     padding: 1rem 2.5rem;
 }
 
+.privacy h1{
+    padding: 4rem 0;
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+.privacy h3{
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.privacy h4{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.privacy p{
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+.privacy a{
+    font-size: 1.4rem;
+    padding: .5rem;
+    color: #000;
+}
+
+.privacy li {
+    font-size: 1.4rem;
+    padding-left: 8px;
+}
+
+.privacy .bTop{
+    bottom: 50px; 
+    right: 50px;
+    position: fixed;
+    display: none;
+}
+
+.privacy .show{
+    display: block;
+}
+
+
 @media (max-width: 991px) {
     body {
         overflow-x: hidden;
@@ -750,6 +797,11 @@ h2 {
     .newsletter-home {
         height: fit-content;
         padding: 40px;
+    }
+
+    .privacy .content {
+        order: 1;
+        padding-top: 4rem;
     }
 }
 

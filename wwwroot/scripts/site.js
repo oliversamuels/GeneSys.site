@@ -1,4 +1,6 @@
-﻿/*News Script*/
+﻿window.onscroll = () => {scrollButton()};
+
+/*News Script*/
 let items = document.querySelectorAll(".nav-item");
 items.forEach(item => {
     item.addEventListener("click", () => {
@@ -48,3 +50,28 @@ list.forEach((item) => {
         if (id === "support") demoText.textContent = "Technical Support";
     })
 })
+
+/* Policy Script */
+
+const aLinks = document.querySelectorAll(".privacy a");
+const topButton = document.querySelector(".bTop");
+
+aLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const id = e.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        let position = element.offsetTop;
+        window.scrollTo({
+            left:0,
+            top:position - 10,
+        })
+    })
+})
+
+scrollButton = () => {
+    if(document.documentElement.scrollTop > 700)
+        topButton.classList.add("show");
+    else
+        topButton.classList.remove("show");
+}
