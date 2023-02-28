@@ -5,8 +5,62 @@
     height : fit-content;
 }
 
+.aboutHead {
+    border-bottom: 2px dashed black;
+}
+
 .aboutUsCont {
     height: 600px;
+}
+
+.aboutText {
+    text-align: center;
+}
+
+.aboutText h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #000;
+    margin-top: 6rem;
+}
+
+.aboutImgMainCont {
+    display: flex;
+    height: 40rem;
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.aboutImgMainCont .one {
+ width: 60%;
+}
+
+.aboutImgMainCont .two {
+    width: 40%;
+}
+
+.aboutImgCont {
+    margin: 0 2rem;
+}
+
+.aboutImgCont img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+.whoWeAre {
+    margin: 6rem 2rem;
+}
+
+.whoWeAre h3{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.whoWeAre p{
+    font-size: 1.8rem;
 }
 
 .aboutUsCont .left {
@@ -65,17 +119,14 @@
 }
 
 .flexpp {
-    height: 350px;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.flexpp::-webkit-scrollbar{
-    width:0;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .Frame {
-    min-width: 270px;
+    width: 35rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,19 +157,131 @@
     width: 100%;
     height: 400px;
     color: #fff;
-    background-color: #145fd9;
+    background-color: #5236FF;
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.join h3 {
-    font-size: 2.8rem;
+.joinText {
+    width: 40%;
+    text-align: center;
+}
+
+.joinText h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+ }
+
+ .joinText h2 {
+    font-size: 3rem;
     font-weight: 700;
+    line-height: 3.5rem;
+    margin-bottom: 5rem;
+ }
+
+ .joinText a {
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    border-radius: 3rem;
+    color: black;
+    background: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+ }
+
+ .joinText span {
+    color: #72FFBB;
  }
 
 .gallery {
     width: 100%;
-    background-color: #F2F4FE;
-    padding  : 3rem 0;
+    background-color: #FFF;
+    padding  : 1rem 0;
+    border-bottom: 2px dashed black;
+}
+
+.milestone {
+    margin: 4rem 0;
+    border-bottom: 2px dashed black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.milestone h3{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.milestone .board {
+    width: 60%;
+    margin: 10rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.itemRow {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.itemRow .first {
+    justify-content: flex-end;
+}
+
+.itemRow .first .date {
+    order: 2;
+}
+
+.milestone .board .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #0ABFF8;
+    margin: 0 2rem;
+}
+
+.milestone .board .itemRow .row {
+    flex-direction: row;
+}
+
+.milestone .board .row .date p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.milestone .board .text{
+    height: 30px;
+    border: 1px solid transparent;
+    box-shadow: 0 3px 5px 3px #888888;
+}
+
+.challenge {
+    margin: 4rem 0;
+    border-bottom: 2px dashed black;
+    padding: 2rem 5rem;
+}
+
+.challenge h3 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.challenge p {
+    font-size: 1.6rem;
 }
 
 .design {
@@ -128,9 +291,9 @@
 }
 
 .team {
-    height: 500px;
+    height: fit-content;
     width: 100%;
-    background-color: #F2F4FE;
+    background-color: #FFF;
 }
 
 .values {
@@ -165,7 +328,7 @@
 .vision {
     width: 100%;
     margin: 0;
-    margin-top: 10rem;
+    margin-top: 5rem;
     background-color: #F2F4FE;
     padding: 4rem 2rem 6rem 2rem;
     position: relative;
@@ -213,6 +376,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    border-bottom: 2px dashed black;
 }
 
 .mission .missionText {
@@ -232,6 +396,68 @@
 .mission .missionText p{
     font-weight: 700;
     line-height: 3rem;
+}
+
+.valueText {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.valueText h2{
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 200;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.valueText h3{
+    font-weight: 700;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.valueText p{
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+}
+
+.valuesCard {
+    height: 18rem;
+    width: 45rem;
+    padding: 2rem;
+    background-color: #F9F9F9;
+    border-radius: 2rem;
+    margin: 1rem;
+}
+
+.valuesCard .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: center;
+}
+
+.valuesCard .img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.valuesCard .img img{
+    width: 8rem;
+}
+
+.valuesCard h3{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.valuesCard p{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 0;
 }
 
 .leftVecCon, .rightVecCon {
@@ -344,5 +570,23 @@
 
     .leftVecCon img, .rightVecCon img{
         width: 15rem;
+    }
+
+    .milestone .board {
+        width: 100%;
+        padding: 2rem 4rem;
+        margin: 5rem 0;
+    }
+
+    .joinText {
+        width: 90%;
+    }
+
+    .aboutImgMainCont .one {
+        width: 90%;
+    }
+    
+    .aboutImgMainCont .two {
+        display: none;
     }
 }

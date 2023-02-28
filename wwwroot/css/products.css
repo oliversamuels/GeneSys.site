@@ -1,15 +1,18 @@
 .topHead {
     display: flex;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    background-color: #F2F4FE;
+    height: 48rem;
+    background: rgb(10,121,248);
+    background: linear-gradient(245deg, rgba(10,121,248,1) 0%, rgba(125,125,168,1) 26%, rgba(10,121,248,1) 52%, rgba(125,125,168,1) 75%, rgba(10,121,248,1) 100%);
+    position: relative;
     padding: 3.12rem;
 }
 
 .topHead .topHeadImg {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 90%;
 }
 
@@ -18,23 +21,85 @@
     object-fit: fill;
 }
 
+.topHead .topHeadImg h3 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.topHead .topHeadImg p {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.topHead .topHeadImg span {
+    color: #0A79F8;
+}
+
 .topHead .topHeadText {
     margin-top: 2.4rem;
     text-align: center;
+    color: #fff;
 }
 
 .topHead .topHeadText h2 {
-    font-size: 3.4rem;
-    line-height: 3.8rem;
+    font-size: 3.2rem;
+    line-height: 3.4rem;
     padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.topHead .topHeadText p {
+    font-size: 1.4rem;
 }
 
 .topHead .topHeadText a {
     font-size: 1.8rem;
 }
 
+.module {
+    margin-top: 20rem;
+    padding: 1rem 3rem;
+}
+
+.module h3 {
+    font-size: 3rem;
+    line-height: 3.4rem;
+    font-weight: 700;
+    margin: 3rem 0;
+}
+
+.module .moduleItem {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.module .active {
+    background-color: #0A79F8;
+    border-radius: 2rem;
+    color: white;
+}
+
+.module .mBtn {
+    text-decoration: none;
+    color: white;
+    padding: 1.2rem 3rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    background-color: black;
+}
+
 .productSec {
     padding:  3rem 1.87rem;
+    background-color:  #F2F5FF;
+    margin: 3rem 0;
+}
+
+.home {
+    padding:  3rem 1.87rem;
+    background-color:  #FFF;
+    margin: 7rem 0;
 }
 
 .productSecText {
@@ -55,6 +120,8 @@
 .productSec .productDisplay{
     margin: 1.9rem 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -63,6 +130,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.productSec .productDisplay .productCard {
+    padding: .8rem 1.4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    padding: 2rem;
+    margin: 1.4rem 0;
+    cursor: pointer;
+}
+
+.productSec .productDisplay .productCard img {
+    width: 80px;
+}
+
+.productSec .productDisplay .productCard h3 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 1.6rem 0;
+    text-align: center;
+}
+
+.productSec .productDisplay .productCard p {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-align: center;
 }
 
 .productSec .productDisplay .productItem img {
@@ -83,6 +179,56 @@
 .productSec .productDisplay .productItem .itemText a {
     font-size: 1.4rem;
     border-radius: 2rem;
+}
+
+.features {
+    padding: 3rem;
+}
+
+.features h3 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features .featureItem {
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.features .featureItemDetails{
+    margin: 3rem 0;
+    padding: 2rem 0;
+    align-items: center;
+    width: 80%;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+.features .featureItemDetails img{
+    width: 70px;
+    margin-right: 2.5rem;
+}
+
+.features .featureItemDetails h4{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.features .featureItemDetails p{
+    font-size: 1.6rem;
+    line-height: 1.7rem;
+}
+
+.features .active {
+    background-color: #0A79F8;
+    color: #fff;
+    width: fit-content;
+    border-radius: .4rem;
 }
 
 .productVideo {
@@ -119,7 +265,9 @@
 }
 
 .productPlans {
+    margin: 5rem 0;
     padding: 3rem;
+    background-color: #F2F5FF;
 }
 
 .productPlans .planText {
@@ -201,25 +349,57 @@
     font-weight: 300;
 }
 
+.support {
+    margin: 3rem 0;
+}
+
+.support .container {
+    background-color: #2460FB;
+    padding: 4rem 2rem;
+    border-radius: 1.4rem;
+    color: #fff;
+}
+
+.support .container .tag{
+    background-color: #F59E0B;
+    border-radius: 3rem;
+    width: fit-content;
+    padding: 1px 8px;
+    margin-bottom: 2rem;
+}
+
+.support .container .tag p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.support .container p{
+    line-height: 1.4rem;
+}
+
+.testimony-pd {
+    background-color: #fff;
+}
 
 @media screen and (min-width: 800px) {
     .topHead {
-        flex-direction: row;
-        padding: 10rem 8rem;
-        gap: 5rem;
+        height: 76vh;
+        padding: 8rem 8rem;
+        display: flex;
+        justify-content: center;
     }
 
     .topHead .topHeadImg {
         display: flex;
         align-items: center;
-        width: 60%;
-        order: 2;
+        width: 50%;
     }
 
     .topHead .topHeadText h2 {
         font-size: 4.4rem;
         line-height: 4.8rem;
-        padding-bottom: 20px;
+        padding: 0;
     }
 
     .topHead .topHeadImg img {
@@ -228,14 +408,31 @@
 
     .topHead .topHeadText {
         margin-top: 0;
-        text-align: left;
+        text-align: center;
+    }
+
+    .module {
+        margin-top: 42vh;
+        padding: 1rem 6rem;
+    }
+
+    .features {
+        padding: 1rem 6rem;
+    }
+
+    .module a{
+        font-size: 1.6rem;
     }
 
     .productSec .productDisplay{
-        width: 60%;
         margin: auto;
         margin-top: 3rem;
         margin-bottom: 3rem;
+        flex-direction: row;
+    }
+
+    .productSec .productDisplay .active {
+        transform: scale(1.06);
     }
 
     .productSecText {
@@ -247,6 +444,11 @@
         flex-direction: row;
         align-items: center;
         gap: 5rem;
+    }
+
+    .productSec .productDisplay .productCard {
+        margin: 1rem 3rem;
+        width: 30rem;
     }
 
     .productSec .productDisplay .productItem .right {

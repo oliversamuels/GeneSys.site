@@ -7,14 +7,61 @@
 }
 
 <section class="topHead">
-    <div class="topHeadImg">
+    <div class="topHeadImg position-absolute top-100 start-50 translate-middle">
         <img src="@Model?.ProductMainImage?.Url()" alt="Digital">
+        <div class="d-flex align-items-center justify-content-evenly w-100 mt-4">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>100<span>K</span></h3>
+                <p>Client satisfaction</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>24<span>h</span></h3>
+                <p>Expert Support Team</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>208<span>+</span></h3>
+                <p>Client worldwide</p>
+            </div>
+        </div>
     </div>
     <div class="topHeadText">
         <h2>
             @Model?.ProductMainHeading
         </h2>
+        <p>
+            Streamline Your Healthcare Operations with Our Advanced EMR/HMIS Solution
+        </p>
         <a href="/demo" class="btn btn-primary">Request Demo</a>
+    </div>
+</section>
+<section class="module">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 second">
+            <h3>Our module</h3>
+            <p>
+                Curabitur egestas consequat lorem, vel fermentum augue porta id. Aliquam lobortis magna neque, gravida consequat velit venenatis at.
+            </p>
+            <div class="d-flex flex-wrap mb-5">
+                <div class="moduleItem">Patient Management</div>
+                <div class="moduleItem">Nurse workbench</div>
+                <div class="moduleItem active">Inpatient Suite</div>
+                <div class="moduleItem">Laboratory</div>
+                <div class="moduleItem">Pharmacy</div>
+                <div class="moduleItem active">Billing/Finance</div>
+                <div class="moduleItem">Manager Dashboardt</div>
+                <div class="moduleItem active">Inventory/Store</div>
+                <div class="moduleItem">Radiology</div>
+                <div class="moduleItem">Queue Managemen</div>
+                <div class="moduleItem active">Doctor workbench</div>
+                <div class="moduleItem active">+Others</div>
+            </div>
+            <a class="mBtn" href="#">View all features</a>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="assets/images/Products/illustration.png" alt="Dig" width="400px">
+            </div>
+        </div>
     </div>
 </section>
 <section class="productSec">
@@ -26,56 +73,57 @@
         </p>
     </div>
     <div class="productDisplay">
-        @if (products != null && products.Any())
-        {
-            int x  = 0;
-            @foreach(var product in products)
-            {
-                var content = product.Content;
-                var title = content.Value<string>("packageTitle");
-                var desc = content.Value<string>("packageDesc");
-                var img = content.Value<MediaWithCrops>("packageIMG");
-                var link = content.Value<Link>("packageLink");
-
-                if (link != null)
-                {
-                    <div class="productItem">
-                        @if((x % 2) != 0)
-                        {
-                            <img src="@img?.MediaUrl()" class="right" alt="">
-                        }else
-                        {
-                            <img src="@img?.MediaUrl()" alt="">
-                        }
-                        <div class="itemText">
-                            <h3>@title</h3>
-                            <p>
-                                @desc
-                            </p>
-                            <a href="@link.Url" class="btn btn-primary">Learn more</a>
-                        </div>
-                    </div>
-                }
-                x++;
-            }
-        }
     </div>
 </section>
-<section class="productVideo">
-    <div class="videoText">
-        <h3>Perfect solution for businesses of all size</h3>
-        <p>
-            Big or Small, start-up or scale-up, our state-of-the-art solution integrates with the latest technologies to provide you with real-time access to patient data, ensuring quick and accurate diagnoses. 
-        </p>
+<section class="features" id="feature">
+    <div class="row">
+        <div class="col">
+            <h3>Features</h3>
+            <ul class="fList">
+            </ul>
+        </div>
+        <div class="col-lg-8 col-md-12 featureItemDetailsCnt">
+            <h3 id="title">Genesys MIDI</h3>
+            <div class="DetailsCnt"></div>
+        </div>
     </div>
-    <div class="videoCont">
-        <img src="~/assets/images/Products/video.png" alt="">
+    @* <div class="my-4 bTop active">
+        <a href="#feature" class="p-0 m-0" style="text-decoration: none;">Back to top <i class="bi bi-arrow-up"></i></a>
+    </div> *@
+</section>
+<section class="support">
+    <div class="container">
+        <div class="row d-flex justify-content-between px-5">
+            <div class="col-lg-5 col-md-8">
+                <div class="tag"> <p>Support</p></div>
+                <h3 class="sbns mb-3">Hey There!</h3>
+                <p class="fs-5">
+                    Just Incase you didnt find what you were looking for, You can send us a message for a more customizable package for your practice. We are always happy to assist.
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-8 d-flex align-items-center">
+                <form class="mt-5 validate w-100">
+                    <div class="form-group position-relative">
+                        <div class="p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Send Message" required style="border-radius: 30px;"/>
+                        </div>
+                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
+                            <button type="submit" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;">
+                                <i class="bi bi-send fs-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
 <section class="productPlans">
     <div class="planText">
         <h3>@Model?.PlanHeading</h3>
-        <p>@Model?.PlanSubHeading</p>
+        <div class="m-auto w-50">
+            <p>@Model?.PlanSubHeading</p>
+        </div>
     </div>
     <div class="planCont">
          @if (planItems != null)
@@ -124,6 +172,52 @@
                 }
             }
         }
+    </div>
+</section>
+<section class="testimony-pd px-5 pt-5">
+    <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
+        <div class="mb-5">
+            <h1 class="m-0 p-0">Dont just take our word for it</h1>
+            <p class="m-0 p-0">Here is what the community is saying about us</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center testi-cap mt-5 mb-5">
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="assets/images/Avatar.png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">
+                    Our transition was eased by the assistance of Genesys EMR. The software is quick and efficient, yet as complete."
+                </p>
+                <p class="m-0 p-0">DR SAM</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="assets/images/Avatar.png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">
+                    Our transition was eased by the assistance of Genesys EMR. The software is quick and efficient, yet as complete."
+                </p>
+                <p class="m-0 p-0">DR SAM</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+            <div class="position-absolute top-0 start-50 translate-middle">
+                <img src="assets/images/Avatar.png" alt="" width="70px" />
+            </div>
+            <div class="mt-5">
+                <p class="fs-4">
+                    Our transition was eased by the assistance of Genesys EMR. The software is quick and efficient, yet as complete."
+                </p>
+                <p class="m-0 p-0">DR SAM</p>
+                <p class="p-0 m-0 fs-5">Doctor</p>
+            </div>
+        </div>
     </div>
 </section>
 <section class="productJoin">

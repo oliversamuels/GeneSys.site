@@ -81,46 +81,16 @@
 </div>
 
 
-<div class="container-fluid info px-5 pt-5">
-    <div class="h-100">
-        <div class="row h-100">
-            <div class="col-lg-5 col-md-7 d-flex info-left justify-content-center align-items-center h-100">
-                <div>
-                    <h2>@Model?.InfoTitle</h2>
-                    <p>@Model?.InfoSubHeading</p>
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-12 d-flex info-right justify-content-center align-items-center">
-                <div class="row fcarde d-flex justify-content-center align-items-center w-100 ms-2">
-
-                    @if (items != null && items.Any())
-                    {
-                        @foreach(var item in items)
-                        {
-                            var content = item.Content;
-                            var title = content.Value<string>("packageTitle");
-                            var desc = content.Value<string>("packageDesc");
-                            var svg = content.Value<string>("packageSVG");
-                            var link = content.Value<Link>("packageLink");
-                            if (link != null)
-                            {
-                                <div class="col-5 carde mt-3">
-                                    <span class="@svg"></span>
-                                    <div>
-                                        <h3>@title</h3>
-                                        <p>@desc</p>
-                                        <a href="@link.Url" class="btn btn-primary">Get started</a>
-                                    </div>
-                                </div>
-                            }
-                        }
-                    }
-                </div>
-            </div>
-        </div>
+<section class="productSec home">
+    <div class="productSecText">
+        <h3>Our <span class="text-primary">products</span></h3>
+        <p>
+            Our product offers a comprehensive and user-friendly platform that streamlines hospital operations, reduces manual errors, and improves patient workflow. 
+        </p>
     </div>
-</div>
-
+    <div class="productDisplay">
+    </div>
+</section>
 
 <div class="container-fluid trophy px-5 pt-5">
     <div class="row w-100 d-flex justify-content-center align-items-center">
@@ -330,25 +300,27 @@
 
 <div class="container-fluid newsletter-home">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-lg-6 col-md-8 second">
-                <h3 class="sbns">Subscribe to our newsletter</h3>
+        <div class="row d-flex justify-content-between px-5">
+            <div class="col-lg-5 col-md-8">
+                <div class="tag"> <p>Subscribe to Our Newsletter</p></div>
+                <h3 class="sbns mb-3">For Latest News & Updates</h3>
                 <p class="fs-5">
                     Stay Informed and Get Exclusive Access to the Latest Industry Insights and Innovations for Your Hospital.
                 </p>
-                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate" target="_blank" nonvalidate>
-                    <div class="row gap-2 form-group">
-                        <div class="col-7 p-0 form-group">
-                            <input type="email" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required/>
+            </div>
+            <div class="col-lg-5 col-md-8 d-flex align-items-center">
+                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate w-100" target="_blank" nonvalidate>
+                    <div class="form-group position-relative">
+                        <div class="p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required style="border-radius: 30px;"/>
                         </div>
-                        <div class="col-4 d-grid p-0 form-group">
-                            <button type="submit" name="subscribe" class="fw-bold fs-5" style="border-radius:0 5px 5px 0; background: #005AC0; border:1px solid transparent; color:white;">Unwind</button>
+                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
+                            <button type="submit" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;">
+                                <i class="bi bi-send fs-1"></i>
+                            </button>
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="col-lg-6 col-md-8">
-                <img src="/assets/images/ffv 1.png" width="420px" alt="" />
             </div>
         </div>
     </div>

@@ -108,10 +108,35 @@ ul > li {
 }
 
 .newsletter-home {
-    background-color: #F2F5FF;
+    background-color: #FFF;
     height: 80vh;
     scroll-snap-align: start;
     padding: 80px;
+    color: #FFF;
+}
+
+.newsletter-home .container {
+    background-color: #2460FB;
+    padding: 4rem 2rem;
+    border-radius: 1.4rem;
+}
+
+.newsletter-home .container .tag{
+    background-color: #F59E0B;
+    border-radius: 3rem;
+    width: fit-content;
+    padding: 1px 8px;
+    margin-bottom: 2rem;
+}
+
+.newsletter-home .container .tag p{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.newsletter-home .container p{
+    line-height: 1.4rem;
 }
 
 .contact {
@@ -601,7 +626,7 @@ h2 {
 }
 
 .privacy p{
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: justify;
 }
 
