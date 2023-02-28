@@ -1,6 +1,50 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.CareerPage>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits UmbracoViewPage<ContentModels.CareerPage>
 @{
-	Layout = null;
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
 }
+
+<section class="career">
+	<div class="row">
+		<div class="col-lg-5 col-md-8">
+			<div class="careerText">
+				<h3>
+					We are always looking for <span>talents</span> to create <span>magic</span>  with.
+				</h3>
+			</div>
+		</div>
+		<div class="col-lg-7 col-md-12">
+			<h1>Career</h1>
+			<div class="careerCont">
+				<div class="careerCard">
+					<h2>Web Designer & Developer</h2>
+					<p>Lagos, NG |  <span>Full Time</span></p>
+					<a href="">Apply Now</a>
+				</div>
+				<div class="careerCard">
+					<h2>Product Development manager</h2>
+					<p>Lagos, NG |  <span>Full Time</span></p>
+					<a href="">Apply Now</a>
+				</div>
+				<div class="careerCard">
+					<h2>Web Designer & Developer</h2>
+					<p>Lagos, NG |  <span>Full Time</span></p>
+					<a href="">Apply Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="p-5 container mb-5">
+        <div class="join p-5">
+            <div class="joinText">
+                <h3>Can't find the position you are looking for?</h3>
+                <p>
+					Don't worry, get in touch with us anyways, we are always looking for great team members to join us.
+				</p>
+                <a href="/career">Send email to: People@genesys-health.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

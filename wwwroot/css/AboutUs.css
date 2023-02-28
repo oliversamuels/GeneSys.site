@@ -197,6 +197,11 @@
     color: #72FFBB;
  }
 
+ .joinText p {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+ }
+
 .gallery {
     width: 100%;
     background-color: #FFF;
@@ -476,6 +481,69 @@
     width: 40rem;
 }
 
+.career {
+    padding: 5rem 3rem;
+}
+
+.career .careerText{
+    padding: 10rem 6rem;
+}
+
+.career .careerText h3{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.career .careerText span{
+    color: blue;
+}
+
+.career h1{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+}
+
+.career .careerCard {
+    width: 90%;
+    border: .5px solid gray;
+    border-radius: 2rem;
+    padding: 4rem 3rem;
+    height: fit-content;
+    margin: 2rem 0;
+}
+
+.career .careerCard h2{
+    font-size: 3rem;
+    line-height: 3rem;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.career .careerCard p{
+    font-size: 1.6rem;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.career .careerCard a{
+    text-decoration: none;
+    padding: 2rem 3rem;
+    color: #000;
+    font-size: 1.2rem;
+    border-radius: 3rem;
+    border: .5px solid rgb(196, 194, 194);
+}
+
+.career .careerCard a:hover{
+    color: #fff;
+    background-color: #242331;
+}
+
+.career .careerCard span{
+    color: blue;
+}
+
 @media (max-width: 991px) {
     .hide {
         display : none;
@@ -588,5 +656,24 @@
     
     .aboutImgMainCont .two {
         display: none;
+    }
+
+    .career .careerText, h1{
+        text-align: center;
+    }
+
+    .career .careerCont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .career .joinText a {
+        font-size: 1rem;
+     }
+
+     .career {
+        padding: 0 3rem;
     }
 }
