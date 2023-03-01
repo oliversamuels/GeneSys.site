@@ -250,6 +250,15 @@ window.addEventListener("DOMContentLoaded", function (){
     const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
     let moduleINumber = 1;
 
+    let list = Object.keys(modules[moduleINumber].feature);
+    let displayModuleList = list.map(function (item){
+        if (item === list[0])
+            return `<li class="featureItem active" data-name="${item}">${item}</li>`;
+        return `<li class="featureItem" data-name="${item}">${item}</li>`;
+    }).join("");
+
+    fList.innerHTML = displayModuleList;
+
     productCard.forEach((item) => {
         item.addEventListener("click", () => {
             const activeCard = document.querySelector(".productDisplay .active");
@@ -268,17 +277,17 @@ window.addEventListener("DOMContentLoaded", function (){
             })
     
             moduleTitle.textContent = `${title}`;
+
+            /* let list = Object.keys(modules[moduleINumber].feature);
+            let displayNewModuleList = list.map(function (item){
+                if (item === list[0])
+                    return `<li class="featureItem active" data-name="${item}">${item}</li>`;
+                return `<li class="featureItem" data-name="${item}">${item}</li>`;
+            }).join("");
+        
+            fList.innerHTML = displayNewModuleList; */
         })
     })
-
-    let list = Object.keys(modules[moduleINumber].feature);
-    let displayModuleList = list.map(function (item){
-        if (item === list[0])
-            return `<li class="featureItem active" data-name="${item}">${item}</li>`;
-        return `<li class="featureItem" data-name="${item}">${item}</li>`;
-    }).join("");
-
-    fList.innerHTML = displayModuleList;
 
     let details = modules[moduleINumber].feature["Patient Management"];
     let displayModuleDetails = details.map(function (item){

@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Career Page</summary>
-	[PublishedModel("careerPage")]
-	public partial class CareerPage : PublishedContentModel, ICareerPageProperties, IHeaderProperties
+	/// <summary>Job Opening</summary>
+	[PublishedModel("jobOpening")]
+	public partial class JobOpening : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		public new const string ModelTypeAlias = "careerPage";
+		public new const string ModelTypeAlias = "jobOpening";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<CareerPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<JobOpening, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public CareerPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public JobOpening(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,35 +50,35 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Header: Main Header
+		/// Job Link: Job Application Link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("header")]
-		public virtual string Header => global::Umbraco.Cms.Web.Common.PublishedModels.CareerPageProperties.GetHeader(this, _publishedValueFallback);
+		[ImplementPropertyType("jobLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link JobLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "jobLink");
 
 		///<summary>
-		/// Job Openings: Block of Job Openings
+		/// Job Title: Job Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("jobOpenings")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel JobOpenings => global::Umbraco.Cms.Web.Common.PublishedModels.CareerPageProperties.GetJobOpenings(this, _publishedValueFallback);
+		[ImplementPropertyType("jobTitle")]
+		public virtual string JobTitle => this.Value<string>(_publishedValueFallback, "jobTitle");
 
 		///<summary>
-		/// Sub Heading: Sub Heading
+		/// Job Type: Job Opening Type (e.g. Full Time)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("subHeading")]
-		public virtual string SubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.CareerPageProperties.GetSubHeading(this, _publishedValueFallback);
+		[ImplementPropertyType("jobType")]
+		public virtual string JobType => this.Value<string>(_publishedValueFallback, "jobType");
 
 		///<summary>
-		/// Title: Enter a title for this page
+		/// Location: Job Location
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderProperties.GetTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("location")]
+		public virtual string Location => this.Value<string>(_publishedValueFallback, "location");
 	}
 }

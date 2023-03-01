@@ -9,15 +9,15 @@
     <section class="aboutHead">
         <div class="container">
             <div class="aboutText">
-                <h1>About GeneSys</h1>
-                <p>Your favourite HMIS/EMR plug in Nigeria/Africa</p>
+                <h1>@Model?.AboutHead</h1>
+                <p>@Model?.AboutSubHead</p>
             </div>
             <div class="aboutImgMainCont">
                 <div class="aboutImgCont one">
-                    <img src="~/assets/images/About Us/genesys 1.png" alt="">
+                    <img src="@Model?.FirstImg?.Url()" alt="">
                 </div>
                 <div class="aboutImgCont two">
-                    <img src="~/assets/images/About Us/genesys 4.png" alt="">
+                    <img src="@Model?.SecondImg?.Url()" alt="">
                 </div>
             </div>
             <div class="row whoWeAre">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <p>
-                        GeneSys Health information Systems Limited (GHIS) is an e-Health company committed to mitigating the gaping issues in the healthcare sector through innovative tech. Established in 2018 as a pioneer Health Management Information System (HMIS), we provide customized solutions—EMR and Telemedicine (Gemeni)—to (public and private) hospitals toward digitizing patient- and hospital management workflow processes, improving the quality of care and operations.
+                        @Model?.WhoWeAre
                     </p>
                 </div>
             </div>
@@ -38,13 +38,12 @@
                 <div class="left px-5">
                     <div>
                         <h1 class="mb-3">
-                            @* Meet our team of <i>strategists, designers,</i> and world-class <i>problem solvers</i> *@
-                            @Model.AboutIntroHeading
+                            @Model?.AboutIntroHeading
                         </h1>
                     </div>
                     <div>
                         <p>
-                            @Model.AboutIntroSubHeading
+                            @Model?.AboutIntroSubHeading
                         </p>
                     </div>
                     <div class="position-absolute hide" style="top:40%; left:80%;">
@@ -68,10 +67,10 @@
     </div>
     <div class="gallery">
         <div class="d-flex justify-content-center align-items-center text-center mt-4">
-            <h1>@Model.GalleryTitle</h1>
+            <h1>@Model?.GalleryTitle</h1>
         </div>
         <div class="d-flex galleryImg">
-            @if(Model.GalleryImgs != null)
+            @if(Model?.GalleryImgs != null)
             {
                 @foreach (var image in Model.GalleryImgs)
                 {
@@ -83,7 +82,7 @@
         </div>
     </div>
     <section class="milestone">
-        <h3>Our Milestones</h3>
+        <h3>@Model?.MilestoneTitle</h3>
         <div class="board">
             <div class="itemRow">
                 <div class="col-5"></div>
@@ -235,13 +234,13 @@
     <section class="challenge">
         <div class="row">
             <div class="col-lg-4 col-md-8">
-                <h3>The Challenge</h3>
+                <h3>@Model?.ChallengeHeader</h3>
             </div>
             <div class="col-lg-8 col-md-12">
                 <p>
                     The Nigerian healthcare industry is greatly fraught with the availability of data of any sort, credible or otherwise and studies shows it’s top amongst the sectors in the country with stiff resistance to Information Technology. Seeing as we are not virgin to this sector, we’ve been able to initially identify pain-points and challenges faced by the healthcare industry which are present up till date, often leading to the death of the business beyond the first generation due to inefficiencies in management amongst many others. <br><br>
 
-                    Some other challenges include: Record management and fragmentation, Availability of reliable data for informed decision making. Financial misappropriation, Time Management, Management of cost centers, Procurement Management, Health Maintenance Organizations’ Management, Quality of care Management. <br><br>
+                    Some other challenges include: Record management and fragmentation, Availability of reliable data for informed decision making. Financial misappropriation, Time Management, Management of cost centers, Procurement Management, Health Maintenance Organizations’ Management, Quality of care Management.<br><br>
 
                     Just to mention a few. The answer to these problems, is the introduction of Information Technology into the sector. With the advent of technology in this sector, they stand to gain the benefits experienced by similar professional sectors where IT has thrived, greatly impacting those sectors such as; engineering, banking & finance, regulatory & audit to mention a few. <br><br>
 
@@ -254,7 +253,9 @@
     </section>
     <div class="team py-5">
         <div class="container mt-4">
-            <h3 style="font-size:38px;font-weight:700; text-align:center; margin:2rem 0;">Our Eccentric Team</h3>
+            <h3 style="font-size:38px;font-weight:700; text-align:center; margin:2rem 0;">
+                @Model?.PersonnelSectionHeading
+            </h3>
             <div class="d-flex flexpp mt-5">
                 @if (personnels != null)
                 {

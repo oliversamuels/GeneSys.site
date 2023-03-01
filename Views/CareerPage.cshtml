@@ -2,6 +2,7 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+	var jobOpenings = Model.Value<BlockGridModel>("JobOpenings");
 }
 
 <section class="career">
@@ -9,28 +10,39 @@
 		<div class="col-lg-5 col-md-8">
 			<div class="careerText">
 				<h3>
-					We are always looking for <span>talents</span> to create <span>magic</span>  with.
+					@Model.SubHeading
 				</h3>
 			</div>
 		</div>
 		<div class="col-lg-7 col-md-12">
-			<h1>Career</h1>
+			<h1>@Model.Header</h1>
 			<div class="careerCont">
-				<div class="careerCard">
-					<h2>Web Designer & Developer</h2>
-					<p>Lagos, NG |  <span>Full Time</span></p>
-					<a href="">Apply Now</a>
-				</div>
-				<div class="careerCard">
-					<h2>Product Development manager</h2>
-					<p>Lagos, NG |  <span>Full Time</span></p>
-					<a href="">Apply Now</a>
-				</div>
-				<div class="careerCard">
-					<h2>Web Designer & Developer</h2>
-					<p>Lagos, NG |  <span>Full Time</span></p>
-					<a href="">Apply Now</a>
-				</div>
+				@if(jobOpenings != null)
+				{
+					@if(jobOpenings.Any())
+					{
+						@foreach (var item in jobOpenings)
+						{
+							var content = item.Content;
+							var title = content.Value<string>("jobTitle");
+							var location = content.Value<string>("location");
+							var type = content.Value<string>("jobType");
+							var link = content.Value<Link>("jobLink");
+
+							if (link != null)
+							{
+								<div class="careerCard">
+									<h2>@title</h2>
+									<p>@location | <span>@type</span></p>
+									<a href="@link.Url">Apply Now</a>
+								</div>
+							}
+						}
+					} else
+					{
+						<h2>No Job Opening at the Moment. Kindly check back later.</h2>
+					}
+				}
 			</div>
 		</div>
 	</div>
