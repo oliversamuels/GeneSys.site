@@ -2,7 +2,7 @@
 @{
 	Layout = "Master";
 	ViewData["Title"] = Model.Title;
-    var items = Model.Value<BlockGridModel>("InfoPackage");
+    var package = Model.Value<BlockGridModel>("InfoPackage");
     var planItems = Model.Value<BlockGridModel>("PlanItems");
     var questions = Model.Value<BlockGridModel>("questions");
     var testimonials = Model.Value<BlockGridModel>("testimonials");
@@ -29,7 +29,7 @@
 
 <div class="container-fluid intro position-relative px-5 pt-5">
     <div class='IntroRow'>
-        <div class="col-lg-6 col-md-9 col-sm-11 alpha">
+        <div class="col-lg-6 col-md-9 col-sm-12 alpha">
           <h1>@Model.MainHeading</h1>
           <p>@Model.MainSubHeading</p>
           <div class="btn-gg">
@@ -83,12 +83,42 @@
 
 <section class="productSec home">
     <div class="productSecText">
-        <h3>Our <span class="text-primary">products</span></h3>
+        <h3>@Model?.InfoTitle</h3>
         <p>
-            Our product offers a comprehensive and user-friendly platform that streamlines hospital operations, reduces manual errors, and improves patient workflow. 
+            @Model?.InfoSubHeading
         </p>
     </div>
     <div class="productDisplay">
+        @if(package != null)
+        {
+            @foreach (var item in package)
+            {
+                var content = item.Content;
+                var name = content.Value<string>("packageTitle");
+                var img = content.Value<MediaWithCrops>("packageIMG");
+                var desc = content.Value<string>("packageDesc");
+                
+                @if (item == package[1])
+                {
+                    <div class="productCard active rounded shadow bg-body">
+                        <img src="@img?.MediaUrl()" alt="">
+                        <h3>@name</h3>
+                        <p>
+                            @desc
+                        </p>
+                    </div>
+                } else
+                {
+                    <div class="productCard active rounded shadow bg-body">
+                        <img src="@img?.MediaUrl()" alt="">
+                        <h3>@name</h3>
+                        <p>
+                            @desc
+                        </p>
+                    </div>
+                }
+            }
+        }
     </div>
 </section>
 
