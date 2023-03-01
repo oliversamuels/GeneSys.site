@@ -87,13 +87,13 @@ const modules = [
             "Patient Management" : [
                 "Registration","Appointment Scheduling/Mgt"
             ],
-            "Nurse workbench" : [
+            "Nurse Workbench" : [
                 "Patient Triaging","Nursing Services","Immunization","Antenatal & delivery suite"
             ],
             "Inpatient Suite" : [
                 "General Menu","Labour Menu","New Born","Antenatal Menu","Nursing Initial Assessment","Finalize"
             ],
-            "Doctor workbench" : [
+            "Doctor Workbench" : [
                 "GP Templates (i.e system review, physical assessments, gynecology history, family & social history)","Obstetric & Gynecology","Newborn examination template","CPOE"
             ],
             "Billing/Finance" : [
@@ -127,13 +127,13 @@ const modules = [
             "Patient Management" : [
                 "Registration","Appointment Scheduling/Mgt"
             ],
-            "Nurse workbench" : [
+            "Nurse Workbench" : [
                 "Patient Triaging","Nursing Services","Immunization","Antenatal & delivery suite"
             ],
             "Inpatient Suite" : [
                 "General Menu","Labour Menu","New Born","Antenatal Menu","Nursing Initial Assessment","Finalize","Surgery"
             ],
-            "Doctor workbench" : [
+            "Doctor Workbench" : [
                 "GP Templates (i.e system review, physical assessments, gynecology history, family & social history)","Dental template","EENT template","Ophthalmology examination template","Optometry examination template","Dermatology Template","Obstetric & Gynecology","Newborn examination template","Mental examination template","Physiotherapy Examination template","Theatre booking & Surgery","CPOE"
             ],
             "Billing/Finance" : [
@@ -173,13 +173,13 @@ const modules = [
             "Patient Management" : [
                 "Registration","Appointment Scheduling/Mgt"
             ],
-            "Nurse workbench" : [
+            "Nurse Workbench" : [
                 "Patient Triaging","Nursing Services","Immunization","Antenatal & delivery suite"
             ],
             "Inpatient Suite" : [
                 "General Menu","Labour Menu","New Born","Antenatal Menu","Nursing Initial Assessment","Finalize","Accident & Emergency (A&E)","Intensive Care Unit (ICU)","Surgery"
             ],
-            "Doctor workbench" : [
+            "Doctor Workbench" : [
                 "GP Templates (i.e system review, physical assessments, gynecology history, family & social history)","Dental template","Neruo spinal template","EENT template","Ophthalmology examination template","Optometry examination template","Dermatology Template","Obstetric & Gynecology","Newborn examination template","Mental examination template","Audiology examination template","Physiotherapy Examination template","Theatre booking & Surgery","ICU","CPOE"
             ],
             "Billing/Finance" : [
@@ -218,8 +218,10 @@ const fList = document.querySelector(".fList");
 const DetailsCnt = document.querySelector(".DetailsCnt");
 let number = 0;
 
+let moduleINumber = 1;
+
 window.addEventListener("DOMContentLoaded", function (){
-    let displayModule = modules.map(function (item){
+    /* let displayModule = modules.map(function (item){
         if (item === modules[1])
         {
             return `
@@ -241,55 +243,21 @@ window.addEventListener("DOMContentLoaded", function (){
                 </p>
             </div>
         `;
-    });
+    }).join("");
     
-    displayModule = displayModule.join("");
-    productDisplay.innerHTML = displayModule;
+    productDisplay.innerHTML = displayModule; */
 
-    const productCard = document.querySelectorAll(".productCard");
-    const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
-    let moduleINumber = 1;
 
-    let list = Object.keys(modules[moduleINumber].feature);
+    /* let list = Object.keys(modules[moduleINumber].feature);
     let displayModuleList = list.map(function (item){
         if (item === list[0])
             return `<li class="featureItem active" data-name="${item}">${item}</li>`;
         return `<li class="featureItem" data-name="${item}">${item}</li>`;
     }).join("");
 
-    fList.innerHTML = displayModuleList;
+    fList.innerHTML = displayModuleList; */
 
-    productCard.forEach((item) => {
-        item.addEventListener("click", () => {
-            const activeCard = document.querySelector(".productDisplay .active");
-            const id = item.dataset.id;
-            const title = item.dataset.title;
-            moduleINumber = item.dataset.item;
-            console.log(moduleINumber);
-            activeCard.classList.remove("active");
-            item.classList.add("active");
-    
-            const element = document.getElementById(id);
-            let position = element.offsetTop;
-            window.scrollTo({
-                left:0,
-                top:position,
-            })
-    
-            moduleTitle.textContent = `${title}`;
-
-            /* let list = Object.keys(modules[moduleINumber].feature);
-            let displayNewModuleList = list.map(function (item){
-                if (item === list[0])
-                    return `<li class="featureItem active" data-name="${item}">${item}</li>`;
-                return `<li class="featureItem" data-name="${item}">${item}</li>`;
-            }).join("");
-        
-            fList.innerHTML = displayNewModuleList; */
-        })
-    })
-
-    let details = modules[moduleINumber].feature["Patient Management"];
+    /* let details = modules[moduleINumber].feature["Patient Management"];
     let displayModuleDetails = details.map(function (item){
         return `
         <div class="featureItemDetails">
@@ -304,45 +272,76 @@ window.addEventListener("DOMContentLoaded", function (){
         `;
     }).join("");
 
-    DetailsCnt.innerHTML = displayModuleDetails;
+    DetailsCnt.innerHTML = displayModuleDetails */;
+});
 
-    const featureItem = document.querySelectorAll(".featureItem");
+const productCard = document.querySelectorAll(".productCard");
+const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
+let featureItem = document.querySelectorAll(".featureItem");
 
-    featureItem.forEach((item) => {
-        item.addEventListener("click", ()=>{
-            const activeFeature = document.querySelector(".features .active");
-            const element = document.getElementById("title");
-            const name = item.dataset.name;
+productCard.forEach((item) => {
+    item.addEventListener("click", () => {
+        const activeCard = document.querySelector(".productDisplay .active");
+        const id = item.dataset.id;
+        const title = item.dataset.title;
+        moduleINumber = item.dataset.item;
+        activeCard.classList.remove("active");
+        item.classList.add("active");
 
-            let details = modules[moduleINumber].feature[name];
-            let displayModuleDetails = details.map(function (item){
-                return `
-                <div class="featureItemDetails">
-                    <img src="assets/images/Products/up.png" alt="">
-                    <div>
-                        <h4>${item}</h4>
-                        <p>
-                            Curabitur egestas consequat lorem, vel fermentum augue porta id. Aliquam lobortis magna neque, gravida consequat velit venenatis at.
-                        </p>
-                    </div>
-                </div>
-                `;
-            }).join("");
+        const element = document.getElementById(id);
+        let position = element.offsetTop;
+        window.scrollTo({
+            left:0,
+            top:position,
+        })
 
-            DetailsCnt.innerHTML = displayModuleDetails;
+        moduleTitle.textContent = `${title}`;
 
-            activeFeature.classList.remove("active");
-            item.classList.add("active");
+        let list = Object.keys(modules[moduleINumber].feature);
+        let displayNewModuleList = list.map(function (item){
+            if (item === list[0])
+                return `<li class="featureItem active" data-name="${item}">${item}</li>`;
+            return `<li class="featureItem" data-name="${item}">${item}</li>`;
+        }).join("");
     
-            let position = element.offsetTop;
-            window.scrollTo({
-                left:0,
-                top:position,
-            })
+        //fList.innerHTML = displayNewModuleList;
+    });
+});
+
+featureItem.forEach((item) => {
+    item.addEventListener("click", ()=>{
+        let activeFeature = document.querySelector(".features .active");
+        let element = document.getElementById("title");
+        let name = item.dataset.name;
+        console.log(name);
+
+        let details = modules[moduleINumber].feature[name];
+        let displayModuleDetails = details.map(function (item){
+            return `
+            <div class="featureItemDetails">
+                <img src="assets/images/Products/up.png" alt="">
+                <div>
+                    <h4>${item}</h4>
+                    <p>
+                        Curabitur egestas consequat lorem, vel fermentum augue porta id. Aliquam lobortis magna neque, gravida consequat velit venenatis at.
+                    </p>
+                </div>
+            </div>
+            `;
+        }).join("");
+
+        DetailsCnt.innerHTML = displayModuleDetails;
+
+        activeFeature.classList.remove("active");
+        item.classList.add("active");
+
+        let position = element.offsetTop;
+        window.scrollTo({
+            left:0,
+            top:position,
         })
     })
-
-});
+})
 
 
 const moduleItem = document.querySelectorAll(".moduleItem");

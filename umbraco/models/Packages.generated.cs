@@ -58,6 +58,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PackageDesc => this.Value<string>(_publishedValueFallback, "packageDesc");
 
 		///<summary>
+		/// PackageFeatures
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("packageFeatures")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PackageFeatures => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "packageFeatures");
+
+		///<summary>
 		/// PackageIMG: Image - Mandatory for product page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
