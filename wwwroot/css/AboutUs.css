@@ -122,6 +122,7 @@
     height: fit-content;
     flex-wrap: wrap;
     justify-content: center;
+    width: 80%;
 }
 
 .Frame {
