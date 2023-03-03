@@ -1,1 +1,3 @@
 ## GeneSys.site
+
+### .Net7
