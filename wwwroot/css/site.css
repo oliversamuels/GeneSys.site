@@ -60,6 +60,10 @@ ul > li {
     padding: 0 10px;
 }
 
+.activeLink {
+    color: #2460FB;
+}
+
 .section {
     width: 100%;
     height: fit-content;
@@ -652,10 +656,24 @@ h2 {
     display: block;
 }
 
+.copyright {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.extra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 
-@media (max-width: 991px) {
+
+@media screen and (max-width: 991px) {
     body {
         overflow-x: hidden;
         width: 100vw;
@@ -790,11 +808,11 @@ h2 {
         padding: 30px;
     }
 
-    .footer{
-        display : none;
+    .hide {
+        display: none;
     }
 
-    .hide {
+    .extra {
         display: none;
     }
 
