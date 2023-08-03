@@ -1,6 +1,0 @@
-Failed to build models.
-The process cannot access the file 'C:\Users\Ayobami\Documents\Dev\GeneSys.site\GeneSys.site\umbraco\models\PlanProperties.generated.cs' because it is being used by another process.
-
-   at System.IO.FileSystem.DeleteFile(String fullPath)
-   at Umbraco.Cms.Infrastructure.ModelsBuilder.Building.ModelsGenerator.GenerateModels()
-   at Umbraco.Cms.Web.BackOffice.ModelsBuilder.ModelsBuilderDashboardController.BuildModels()
