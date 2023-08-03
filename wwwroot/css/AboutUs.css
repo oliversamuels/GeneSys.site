@@ -5,53 +5,79 @@
     height : fit-content;
 }
 
-.aboutHead {
-    border-bottom: 2px dashed black;
-}
-
 .aboutUsCont {
     height: 600px;
 }
 
 .aboutText {
     text-align: center;
+    margin: 6rem 0;
 }
 
 .aboutText h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #000;
-    margin-top: 6rem;
+    margin: 0;
+    padding: 0;
 }
 
-.aboutImgMainCont {
-    display: flex;
-    height: 40rem;
+.aboutText p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000;
+}
+
+.carousel {
     width: 100%;
-    margin: 4rem 0;
+    height: 50rem;
 }
 
-.aboutImgMainCont .one {
- width: 60%;
+.carousel-inner, .carousel-item{
+    width: 100%;
+    height: 100%;
 }
 
-.aboutImgMainCont .two {
-    width: 40%;
-}
-
-.aboutImgCont {
-    margin: 0 2rem;
-}
-
-.aboutImgCont img{
+.carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 3rem;
+}
+
+.carousel-indicators {
+    margin-bottom: -5rem;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-indicators [data-bs-target]{
+    margin-bottom: -3rem;
+    width: 6px;
+    height: 6px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #888888;
+    opacity: 1;
+}
+
+/* .indicator {
+    width: 6px;
+    height: 6px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #888888;
+    cursor: pointer;
+} */
+
+.carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    background-color: #0b5ed7;
 }
 
 .whoWeAre {
-    margin: 6rem 2rem;
+    margin: 6rem 0;
+    padding: 2rem 8rem;
 }
 
 .whoWeAre h3{
@@ -61,6 +87,7 @@
 
 .whoWeAre p{
     font-size: 1.8rem;
+    line-height: 3rem;
 }
 
 .aboutUsCont .left {
@@ -118,15 +145,25 @@
     border-image: linear-gradient(to bottom, blue, lightblue) 1;
 }
 
+.flexpp-cont {
+    width: 100%;
+}
+
 .flexpp {
-    height: fit-content;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 80%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.flexpp::-webkit-scrollbar {
+    width: 0;
 }
 
 .Frame {
-    width: 35rem;
+    min-width: 24rem;
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;
@@ -143,23 +180,38 @@
 }
 
 .photoFrame {
-    width: 98%;
-    max-height: 250px;
-    margin-bottom: 20px;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
 }
 
 .photoFrame > img {
     width : 100%;
     height : 100%;
-    object-fit:contain;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.personnel-desg {
+    color: #0b5ed7;
+    text-align: center;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.personnel-desc {
+    font-size: 11px;
+    margin-top: 2rem;
+    line-height: 120%;
+    text-align: center;
 }
 
 .join {
     width: 100%;
     height: 400px;
     color: #fff;
-    background-color: #5236FF;
-    border-radius: 40px;
+    background-color: #0b5ed7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,12 +259,10 @@
     width: 100%;
     background-color: #FFF;
     padding  : 1rem 0;
-    border-bottom: 2px dashed black;
 }
 
 .milestone {
     margin: 4rem 0;
-    border-bottom: 2px dashed black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,18 +326,21 @@
 }
 
 .challenge {
-    margin: 4rem 0;
-    border-bottom: 2px dashed black;
-    padding: 2rem 5rem;
+    margin: 6rem 0 0 0;
+    padding: 6rem 8rem;
+    background-color: #F2F5FF;
+    position: relative;
+    overflow: hidden;
 }
 
 .challenge h3 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
 }
 
 .challenge p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 3rem;
 }
 
 .design {
@@ -313,44 +366,62 @@
     width : 50rem;
 }
 
+.galleryImg {
+    margin-top: 3rem;
+}
+
 .galCont {
-    height: 600px;
+    height: 45rem;
+    width: 25rem;
     padding: 0;
+    margin: 1.5rem;
     -webkit-transition: all .3s ease-in;
     -moz-transition: all .3s ease-in;
     -o-transition: all .3s ease-in;
     transition: all .3s ease-in;
 }
 
-.galCont img{
+.galImg{
     height : 100%;
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover;
 }
 
 .galCont:hover {
-    transform : scale(1.05)
+    transform : scale(1.15)
 }
 
 .vision {
     width: 100%;
     margin: 0;
-    margin-top: 5rem;
+    margin-top: -1rem;
     background-color: #F2F4FE;
-    padding: 4rem 2rem 6rem 2rem;
+    padding: 10rem 2rem 6rem 2rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.vision .circle {
+.circle {
     position: absolute;
-    width: 18rem;
-    height: 18rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     background-color: #F2F4FE;
+    box-shadow: 0 0px 35px 15px #a6bbe0;
     z-index: 1;
     opacity: 0.3;
+    bottom: 2rem;
+}
+
+.cir1 {
+    top: -2.5rem;
+    left: -8rem;
+}
+
+.cir2 {
+    right: -8rem;
 }
 
 .vision .visionText {
@@ -375,14 +446,12 @@
 .mission {
     width: 100%;
     margin: 0;
-    margin-top: 5rem;
-    background-color: #FFF;
-    padding: 4rem 2rem 6rem 2rem;
+    background-color: #F2F4FE;
+    padding: 8rem 2rem 6rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-bottom: 2px dashed black;
 }
 
 .mission .missionText {
@@ -676,5 +745,28 @@
 
      .career {
         padding: 0 3rem;
+    }
+
+    .whoWeAre {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .challenge {
+        padding: 3rem;
+        text-align: center;
+    }
+
+    .valuesCard {
+        height: fit-content;
+        width: 45rem;
+        padding: 1.5rem;
+    }
+
+    .valuesCard .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
     }
 }

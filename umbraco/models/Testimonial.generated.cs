@@ -50,12 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// ClientDesignation: Profession of the Client
+		/// ClientHospital: Profession of the Client
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("clientDesignation")]
-		public virtual string ClientDesignation => this.Value<string>(_publishedValueFallback, "clientDesignation");
+		[ImplementPropertyType("clientHospital")]
+		public virtual string ClientHospital => this.Value<string>(_publishedValueFallback, "clientHospital");
 
 		///<summary>
 		/// ClientName: Client Full Name

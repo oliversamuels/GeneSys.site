@@ -5,38 +5,172 @@
     var personnels = Model.Value<BlockGridModel>("personnelList");
 }
 
-<div class="container-fluid">
+<div class="container-fluid p-0 m-0">
     <section class="aboutHead">
-        <div class="container">
-            <div class="aboutText">
-                <h1>@Model?.AboutHead</h1>
-                <p>@Model?.AboutSubHead</p>
+        <div class="aboutText">
+            <h1>@Model?.AboutHead</h1>
+            <p>@Model?.AboutSubHead</p>
+        </div>
+        <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="aboutImgMainCont">
-                <div class="aboutImgCont one">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-id="0">
                     <img src="@Model?.FirstImg?.Url()" alt="">
                 </div>
-                <div class="aboutImgCont two">
+                <div class="carousel-item" data-id="1">
                     <img src="@Model?.SecondImg?.Url()" alt="">
                 </div>
-            </div>
-            <div class="row whoWeAre">
-                <div class="col-lg-4 col-md-8">
-                    <h3>Who we are?</h3>
-                    <h3>Genesys Health vs GeneSys</h3>
-                </div>
-                <div class="col-lg-8 col-md-12">
-                    <p>
-                        @Model?.WhoWeAre
-                    </p>
+                <div class="carousel-item" data-id="2">
+                    <img src="@Model?.FirstImg?.Url()" alt="">
                 </div>
             </div>
         </div>
     </section>
+    <section class="row whoWeAre">
+        <div class="col-lg-8 col-md-12">
+            <h3>Who we are?</h3>
+            <h3 class="mb-5">Genesys Health vs GeneSys</h3>
+            <div class="mt-5">
+                <p>
+                    @Model?.WhoWeAre
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-8">
+            <div class="d-flex justify-content-center">
+                <img src="@Model?.WhoWeAreImg?.Url()" alt="" width="250px">
+            </div>
+        </div>
+    </section>
+    <section class="challenge">
+        <div class="row">
+            <div class="circle cir1"></div>
+            <div class="col-lg-4 col-md-8">
+                <div class="d-flex justify-content-center">
+                    <img src="@Model?.ChallengeImg?.Url()" alt="" width="200px">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <h3 class="my-5">@Model?.ChallengeHeader</h3>
+                <p>
+                    @Model?.ChallengeContent
+                </p>
+            </div>
+            <div class="circle cir2"></div>
+        </div>
+    </section>
+    <div class="vision">
+        <div class="circle"></div>
+        <div class="visionText">
+            <h2>VISION</h2>
+            <p>
+                @Model?.Vision
+            </p>
+        </div>
+    </div>
+    <div class="mission">
+        <div class="circle cir1"></div>
+        <div class="leftVecCon">
+            <img src="~/assets/images/About Us/leftVec.png" alt=""/>
+        </div>
+        <div class="missionText">
+            <h2>MISSION</h2>
+            <p>
+                @Model?.Mission
+            </p>
+        </div>
+        <div class="rightVecCon">
+            <img src="~/assets/images/About Us/rightVec.png" alt=""/>
+        </div>
+        <div class="circle cir2"></div>
+    </div>
+    <div class="gallery">
+        <div class="d-flex justify-content-center galleryImg">
+            @if(Model?.GalleryImgs != null)
+            {
+                @foreach (var image in Model.GalleryImgs)
+                {
+                    <div class="galCont">
+                        <img src="@image.Url()" class="galImg" alt=""/>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="values">
+        <div class="valueText">
+            <h2>CORE VALUES</h2>
+            <h3>Our Core Values That Define Us</h3>
+            <p>Our values are summed up in one word: “IDEAL.”</p>
+        </div>
+        <div>
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <div class="row valuesCard">
+                    <div class="img col-md-3 col-sm-6">
+                        <img src="~/assets/images/About Us/integrity.png" alt="">
+                    </div>
+                    <div class="text col-md-9 col-sm-11">
+                        <h3>Integrity</h3>
+                        <p>
+                            In all we do, we do it with integrity! This is our core - internally and externally.
+                        </p>
+                    </div>
+                </div>
+                <div class="row valuesCard">
+                    <div class="img col-md-3 col-sm-6">
+                        <img src="~/assets/images/About Us/deligence.png" alt="">
+                    </div>
+                    <div class="text col-md-9 col-sm-11">
+                        <h3>Diligence</h3>
+                        <p>
+                            We understand the challenges and recognize that we must work hard and smart to surmount them.
+                        </p>
+                    </div>
+                </div>
+                <div class="row valuesCard">
+                    <div class="img col-md-3 col-sm-6">
+                        <img src="~/assets/images/About Us/empathy.png" alt="">
+                    </div>
+                    <div class="text col-md-9 col-sm-11">
+                        <h3>Empathy</h3>
+                        <p>
+                            Our relationships - internally and externally are organically built around empathy. Our understanding of this value distinguishes our approach to client service delivery.
+                        </p>
+                    </div>
+                </div>
+                <div class="row valuesCard">
+                    <div class="img col-md-3 col-sm-6">
+                        <img src="~/assets/images/About Us/accountability.png" alt="">
+                    </div>
+                    <div class="text col-md-9 col-sm-11">
+                        <h3>Accountability</h3>
+                        <p>
+                            Our word is our bond! We take responsibility for our actions and communicate clearly.
+                        </p>
+                    </div>
+                </div>
+                <div class="row valuesCard">
+                    <div class="img col-md-3 col-sm-6">
+                        <img src="~/assets/images/About Us/loyalty.png" alt="">
+                    </div>
+                    <div class="text col-md-9 col-sm-11">
+                        <h3>Loyalty</h3>
+                        <p>
+                            We value our client relationships and we will go the extra mile to ensure everyone is satisfied.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="aboutUs">
-        <div class="container-fluid p-0">
+        <div class="container-fluid px-5">
             <div class="row p-0 aboutUsCont">
-                <div class="left px-5">
+                <div class="left px-md-5 px-sm-1">
                     <div>
                         <h1 class="mb-3">
                             @Model?.AboutIntroHeading
@@ -66,47 +200,8 @@
             </div>
         </div>
     </div>
-    <div class="gallery">
-        <div class="d-flex justify-content-center align-items-center text-center mt-4">
-            <h1>@Model?.GalleryTitle</h1>
-        </div>
-        <div class="d-flex galleryImg">
-            @if(Model?.GalleryImgs != null)
-            {
-                @foreach (var image in Model.GalleryImgs)
-                {
-                    <div class="flex galCont">
-                        <img src="@image.Url()" class="img-fluid" alt=""/>
-                    </div>
-                }
-            }
-        </div>
-    </div>
-    <section class="challenge">
-        <div class="row">
-            <div class="col-lg-4 col-md-8">
-                <h3>@Model?.ChallengeHeader</h3>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <p>
-                    The Nigerian healthcare industry is greatly fraught with the availability of data of any sort, credible or otherwise and studies shows it’s top amongst the sectors in the country with stiff resistance to Information Technology. Seeing as we are not virgin to this sector, we’ve been able to initially identify pain-points and challenges faced by the healthcare industry which are present up till date, often leading to the death of the business beyond the first generation due to inefficiencies in management amongst many others. <br><br>
-
-                    Some other challenges include: Record management and fragmentation, Availability of reliable data for informed decision making. Financial misappropriation, Time Management, Management of cost centers, Procurement Management, Health Maintenance Organizations’ Management, Quality of care Management.<br><br>
-
-                    Just to mention a few. The answer to these problems, is the introduction of Information Technology into the sector. With the advent of technology in this sector, they stand to gain the benefits experienced by similar professional sectors where IT has thrived, greatly impacting those sectors such as; engineering, banking & finance, regulatory & audit to mention a few. <br><br>
-
-                    Hence, our initial voyage into healthcare IT, which led to the rise of Genesys Health Information Systems Limited. Genesys Health Information Systems Limited is a joint venture Limited Liability Company established in December 2017, which has up until the time of its incorporation, existed as a product of the stables of its parent entities.<br><br>
-
-                    With the successes and growth of the product, GeneSys and solidification of alliances between parent companies, this joint venture start-up was birthed as an end-product of concrete relations between Vatebra Technology Limited and Realms Healthcare Services Consulting Limited to better position ourselves as an organization to solve the problems identified from earlier and achieve our vision.
-                </p>
-            </div>
-        </div>
-    </section>
-    <div class="team py-5">
-        <div class="container d-flex justify-content-center flex-column align-items-center mt-4">
-            <h3 style="font-size:38px;font-weight:700; text-align:center; margin:2rem 0;">
-                @Model?.PersonnelSectionHeading
-            </h3>
+    <div class="team">
+        <div class="container flexpp-cont d-flex justify-content-center flex-column align-items-center">
             <div class="d-flex flexpp mt-5">
                 @if (personnels != null)
                 {
@@ -118,13 +213,35 @@
                         var designation = content.Value<string>("personnelDesignation");
 
 
-                        <div class="mx-3 Frame">
-                            <div class="photoFrame shadow bg-body rounded">
+                        <div class="mx-5 Frame shadow bg-body rounded p-4">
+                            <div class="photoFrame">
                                 <img src="@image?.MediaUrl()" class="img-fluid" alt=""/>
                             </div>
                             <div>
                                 <p class="fw-bold fs-4 m-0 p-0 text-center">@name</p>
-                                <p class="fs-5 text-center m-0 p-0">@designation</p>
+                                <p class="personnel-desg">@designation</p>
+                                <div class="d-flex justify-content-center mt-4" style="color:#000;">
+                                    <div class="mx-2">
+                                        <a href="">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mx-2">
+                                        <a href="">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mx-2">
+                                        <a href="">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="mx-2">
+                                        <a href="">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     }
@@ -132,96 +249,135 @@
             </div>
         </div>
     </div>
-    <div class="vision">
-        <div class="circle top-50 start-50 translate-middle shadow-lg"></div>
-        <div class="visionText">
-            <h2>VISION</h2>
-            <p>
-                @Model?.Vision
-            </p>
-        </div>
-    </div>
-    <div class="mission">
-        <div class="leftVecCon">
-            <img src="~/assets/images/About Us/leftVec.png" alt=""/>
-        </div>
-        <div class="missionText">
-            <h2>MISSION</h2>
-            <p>
-                @Model?.Mission
-            </p>
-        </div>
-        <div class="rightVecCon">
-            <img src="~/assets/images/About Us/rightVec.png" alt=""/>
-        </div>
-    </div>
-    <div class="values">
-        <div class="valueText">
-            <h2>CORE VALUES</h2>
-            <h3>Our Core Values That Define Us</h3>
-            <p>Our values are summed up in one word: “IDEAL.”</p>
-        </div>
-        <div>
-            <div class="d-flex justify-content-center align-items-center flex-wrap">
-                <div class="row valuesCard">
-                    <div class="img col-3">
-                        <img src="~/assets/images/About Us/integrity.png" alt="">
-                    </div>
-                    <div class="text col-9">
-                        <h3>Integrity</h3>
-                        <p>
-                            In all we do, we do it with integrity! This is our core - internally and externally.
-                        </p>
+    @* <section class="pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row valuesCard">
-                    <div class="img col-3">
-                        <img src="~/assets/images/About Us/deligence.png" alt="">
-                    </div>
-                    <div class="text col-9">
-                        <h3>Diligence</h3>
-                        <p>
-                            We understand the challenges and recognize that we must work hard and smart to surmount them.
-                        </p>
-                    </div>
-                </div>
-                <div class="row valuesCard">
-                    <div class="img col-3">
-                        <img src="~/assets/images/About Us/empathy.png" alt="">
-                    </div>
-                    <div class="text col-9">
-                        <h3>Empathy</h3>
-                        <p>
-                            Our relationships - internally and externally are organically built around empathy. Our understanding of this value distinguishes our approach to client service delivery.
-                        </p>
-                    </div>
-                </div>
-                <div class="row valuesCard">
-                    <div class="img col-3">
-                        <img src="~/assets/images/About Us/accountability.png" alt="">
-                    </div>
-                    <div class="text col-9">
-                        <h3>Accountability</h3>
-                        <p>
-                            Our word is our bond! We take responsibility for our actions and communicate clearly.
-                        </p>
-                    </div>
-                </div>
-                <div class="row valuesCard">
-                    <div class="img col-3">
-                        <img src="~/assets/images/About Us/loyalty.png" alt="">
-                    </div>
-                    <div class="text col-9">
-                        <h3>Loyalty</h3>
-                        <p>
-                            We value our client relationships and we will go the extra mile to ensure everyone is satisfied.
-                        </p>
-                    </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <a class="mx-3" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <i class="bi bi-chevron-left fs-2 fw-bold"></i>
+                    </a>
+                    <a class="mx-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="bi bi-chevron-right fs-2 fw-bold"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="p-5 container mb-5">
+    </section> *@
+    <div class="p-0 container-fluid mb-5">
         <div class="join p-5">
             <div class="joinText">
                 <h3>Check out our career page</h3>

@@ -133,15 +133,20 @@
 }
 
 .productSec .productDisplay .productCard {
-    padding: .8rem 1.4rem;
+    padding: .2rem 1.4rem;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     width: 60%;
     padding: 2rem;
     margin: 1.4rem 0;
-    cursor: pointer;
+    height: 35rem;
+    position: relative;
+}
+
+.productCard .rdm{
+    position: absolute;
+    bottom: 2rem;
 }
 
 .productSec .productDisplay .productCard img {
@@ -447,9 +452,9 @@
         flex-direction: row;
     }
 
-    .productSec .productDisplay .active {
+/*     .productSec .productDisplay .active {
         transform: scale(1.06);
-    }
+    } */
 
     .productSecText {
         width: 60%;

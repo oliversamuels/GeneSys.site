@@ -6,6 +6,7 @@
     var planItems = Model.Value<BlockGridModel>("PlanItems");
     var questions = Model.Value<BlockGridModel>("questions");
     var testimonials = Model.Value<BlockGridModel>("testimonials");
+    var mainImage = Model.Value<IEnumerable<MediaWithCrops>>("MainImage");
 
     
     List<BlockGridItem> listOfQuestion = new List<BlockGridItem>();
@@ -34,7 +35,7 @@
           <p>@Model.MainSubHeading</p>
           <div class="btn-gg">
             <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn started btn-primary mb-5">Get Started</a>
-            <a class="btn more btn-secondary mx-3 mb-5">Learn More</a>
+            <a class="btn more mx-3 mb-5">Learn More</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-9 d-flex justify-content-center align-items-center beta">
@@ -42,8 +43,22 @@
             <div class="position-absolute one">
               <img src="/assets/images/safety.png" alt=""/>
             </div>
+            <div class="inner-img-container">
             @* <img class="" src="/assets/images/portrait.png" alt=""/> *@
-            <img class="" src="@Model?.MainImage?.Url()" alt=""/>
+            @if (mainImage != null)
+            {
+                @foreach (var item in mainImage)
+                {
+                    if (item == mainImage.First())
+                    {
+                        <img class="mainImage activeMainImage" src="@item.MediaUrl()" alt=""/>
+                    } else 
+                    {
+                        <img class="mainImage" src="@item.MediaUrl()" alt=""/>
+                    }
+                }
+            }
+            </div>
             <div class="position-absolute two">
               <img src="/assets/images/Frame.png" alt=""/>
             </div>
@@ -67,19 +82,15 @@
                     <img src="/assets/images/reddington.png" alt=""/>
                 </div>
                 <div class="frame rounded-4">
-                    <img src="/assets/images/lagoon.png" alt=""/>
+                    <img src="/assets/images/kaaf.png" alt=""/>
                 </div>
                 <div class="frame rounded-4">
-                    <img src="/assets/images/eko hospital.png" alt=""/>
-                </div>
-                <div class="frame rounded-4">
-                    <img src="/assets/images/eurcare.png" alt=""/>
+                    <img src="/assets/images/subol.png" alt=""/>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <section class="productSec home">
     <div class="productSecText">
@@ -98,27 +109,24 @@
                 var img = content.Value<MediaWithCrops>("packageIMG");
                 var desc = content.Value<string>("packageDesc");
                 
-                @if (item == package[1])
-                {
-                    <div class="productCard active rounded shadow bg-body">
-                        <img src="@img?.MediaUrl()" alt="">
-                        <h3>@name</h3>
-                        <p>
-                            @desc
-                        </p>
+                <div class="productCard rounded shadow bg-body">
+                    <img src="@img?.MediaUrl()" alt="">
+                    <h3>@name</h3>
+                    <p>
+                        @desc
+                    </p>
+                    <div class="rdm">
+                        <a href="" class="btn btn-primary py-2 px-3">Read More</a>
                     </div>
-                } else
-                {
-                    <div class="productCard active rounded shadow bg-body">
-                        <img src="@img?.MediaUrl()" alt="">
-                        <h3>@name</h3>
-                        <p>
-                            @desc
-                        </p>
-                    </div>
-                }
+                </div>
             }
         }
+    </div>
+    <div class="container d-flex justify-content-end mb-5">
+        <a href="" class="sell-all">See All</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="" class="btn btn-primary compare">Compare our products</a>
     </div>
 </section>
 
@@ -175,12 +183,11 @@
     </div>
 </div>
 
-
 <div class="container-fluid packages px-5 pt-4">
     <div class="row w-100 d-flex justify-content-center align-items-center">
-        <div class="planText text-center my-4">
+        <div class="planText text-center">
             <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
-            <div class="m-auto w-50">
+            <div class="m-auto" style="width: 70%;">
                 <p class="m-0 p-0 fs-3">@Model?.PlanSubHeading</p>
             </div>
         </div>
@@ -200,7 +207,7 @@
                     
                 if (link != null)
                 {
-                    <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 rounded card pt-3">
+                    <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 card pt-3">
                         <div class="d-flex justify-content-start align-items-center">
                             <img class="sm me-2" src="@icon?.MediaUrl()" alt=""/>
                             <h3 class="m-0">@name <span class="title">(@type)</span></h3>
@@ -234,12 +241,7 @@
         }
     </div>
     <div class="row mt-5 d-flex justify-content-center">
-        <div class="col-lg-6 col-md-8">
-            <h3 class="ms-4 mb-4 hsss">
-                @Model?.FaqHeading
-            </h3>
-        </div>
-        <div class="col-lg-6 col-md-8 mb-4">
+        <div class="col-lg-6 col-md-8 mb-4 alp">
             <div class="row">
                 @if(listOfRandomQuestions != null)
                 {
@@ -266,41 +268,65 @@
                 }
             </div>
         </div>
+        <div class="col-lg-6 col-md-8 px-4 bet">
+            <h3 class="ms-4 mb-4 hsss">
+                @Model?.FaqHeading
+            </h3>
+            <div class="d-flex justify-content-center align-items-center">
+                <img class="" src="@Model?.FaqImage?.Url()" alt="" width="250px"/>
+            </div>
+        </div>
     </div>
 </div>
-
-
 
 <div class="container-fluid testimony px-5 pt-5">
     <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
         <div class="mb-5">
-            <h1 class="m-0 p-0">@Model?.TestimonialHeading</h1>
-            <p class="m-0 p-0">@Model?.TestimonialSubHeading</p>
+            <h2 class="m-0 p-0 text-center fs-1 fw-bold">@Model?.TestimonialHeading</h2>
         </div>
     </div>
-    <div class="row d-flex justify-content-center align-items-center testi-cap mt-5 mb-5">
-        @if(testimonials != null)
-        {
-            @foreach (var testimony in testimonials)
+    <div class="testi-cap-cont d-flex justify-content-center flex-column align-items-center">
+        <div class="testi-cap">
+            @if(testimonials != null)
             {
-                var content = testimony.Content;
-                var image = content.Value<MediaWithCrops>("clientPicture");
-                var statement = content.Value<string>("testimony");
-                var name = content.Value<string>("clientName");
-                var designation = content.Value<string>("clientDesignation");
+                @foreach (var testimony in testimonials)
+                {
+                    var content = testimony.Content;
+                    var image = content.Value<MediaWithCrops>("clientPicture");
+                    var statement = content.Value<string>("testimony");
+                    var name = content.Value<string>("clientName");
+                    var designation = content.Value<string>("clientDesignation");
 
-                <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
-                    <div class="position-absolute top-0 start-50 translate-middle">
-                        <img src="@image?.MediaUrl()" alt="" width="70px" />
+                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+                        <div class="position-absolute top-0 start-50 translate-middle testi-img">
+                            <img src="@image?.MediaUrl()" alt="" width="70px" />
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="m-0 p-0 text-primary fw-bold fs-4">@name</p>
+                            <p class="p-0 m-0 fs-5">@designation</p>
+                            <div><i class="bi bi-quote fs-1"></i></div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="fs-4">@statement</p>
+                        </div>
                     </div>
-                    <div class="mt-5">
-                        <p class="fs-4">@statement</p>
-                        <p class="m-0 p-0">@name</p>
-                        <p class="p-0 m-0 fs-5">@designation</p>
+
+                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+                        <div class="position-absolute top-0 start-50 translate-middle testi-img">
+                            <img src="@image?.MediaUrl()" alt="" width="70px" />
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="m-0 p-0 text-primary fw-bold fs-4">@name</p>
+                            <p class="p-0 m-0 fs-5">@designation</p>
+                            <div><i class="bi bi-quote fs-1"></i></div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="fs-4">@statement</p>
+                        </div>
                     </div>
-                </div>
+                }
             }
-        }
+        </div>
     </div>
 </div>
 
@@ -327,7 +353,6 @@
     </div>
 </div>
 
-
 <div class="container-fluid newsletter-home">
     <div class="container">
         <div class="row d-flex justify-content-between px-5">
@@ -338,8 +363,8 @@
                     Stay Informed and Get Exclusive Access to the Latest Industry Insights and Innovations for Your Hospital.
                 </p>
             </div>
-            <div class="col-lg-5 col-md-8 d-flex align-items-center">
-                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate w-100" target="_blank" nonvalidate>
+            <div class="col-lg-5 col-md-8 d-flex align-items-center ">
+                @* <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate w-100" target="_blank" nonvalidate>
                     <div class="form-group position-relative">
                         <div class="p-0 form-group">
                             <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required style="border-radius: 30px;"/>
@@ -350,7 +375,39 @@
                             </button>
                         </div>
                     </div>
+                </form> *@
+                <form action="https://a9675586.sibforms.com/serve/MUIFAKY2qRUT3U4w2PqFQ7NUjoX-yztcIqgBjtL8VgNN-u3nZE6RLaYlp92OB9MP0rvtvRH-8IY_C_jlejqYgIMY79W-U40uJjPD5lCz-BNpSl-kBIJ27OZnInk7zGtM8ILhkYGDhEeWhK4hzriz2svT6dAcWZJVJuRXyAKib5-hDTY8HbqAX46_n8JXNCPZX5tA_c-InoWsqntG" method="post" id="sib-form" class="mt-5 validate w-100" data-type="subscription">
+                    <div class="form-group position-relative">
+                        <div class="p-0 form-group">
+                            <input type="email" id="EMAIL" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required style="border-radius: 30px;"/>
+                        </div>
+                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
+                            <button type="submit trigger" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;" data-toggle="modal" data-target="#successModal">
+                                <i class="bi bi-send fs-1"></i>
+                            </button>
+                        </div>
+                    </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class='container subscribe-success'><button type="button" class="btn trigger" data-toggle="modal" data-target="#successModal"> MAIL REPORT </button>
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-none"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>
+                    <div class="modal-body p-0">
+                        <div class="crop"> <img src="https://i.imgur.com/Mdz5Nma.jpg" width="100%"> </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <h2>Woohoo</h2>
+                    <p class="text-center"><small class="text-muted">Thank you for your subscription. You'll be sent the next issue of our newspaper shortly </small></p>
+                    <div class="d-flex justify-content-center"> <button type="button" class="okay btn">ok</button>
+                        <p class="setting"><small><strong><u>Setting</u></strong></small></p>
+                        <p><strong></strong></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
