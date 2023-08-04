@@ -553,8 +553,8 @@ h2 {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    overflow-y: visible;
-    overflow-x: auto;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .testi-cap::-webkit-scrollbar {

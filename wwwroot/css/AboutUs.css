@@ -147,6 +147,7 @@
 
 .flexpp-cont {
     width: 100%;
+    position: relative;
 }
 
 .flexpp {
@@ -156,10 +157,29 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    scroll-behavior: smooth;
 }
 
 .flexpp::-webkit-scrollbar {
     width: 0;
+}
+
+.personnel-arrow {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0b5ed7;
+    cursor: pointer;
+    z-index: 3;
+    top: 45%;
+}
+
+.personnel-arrow-left{
+    left: -3rem;
+}
+
+.personnel-arrow-right{
+    right: -3rem;
 }
 
 .Frame {

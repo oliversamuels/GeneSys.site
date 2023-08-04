@@ -364,43 +364,35 @@ function nextSlide()
     slides[i].classList.add('activeMainImage');
 }
 
+const box = document.getElementById("testi-cap");
+
+/* function test() {
+    console.log((box.offsetWidth + 47));
+    console.log(box.scrollLeft);
+} */
+
+function testimonySlide() {
+    var move = document.querySelector(".testi-cap");
+    if ((box.offsetWidth + 47) - box.scrollLeft === 0)
+    {
+        while (box.scrollLeft > 0) {
+            move.scrollBy(-350, 0);
+        }
+    }
+    move.scrollBy(350, 0);
+}
+
 setInterval(nextSlide, 5000);
+setInterval(testimonySlide, 1000);
 
 //About
 
-var swiper = new Swiper(".slide-content", 
-{
-  slidesPerView: 4,
-  spaceBetween: 25,
-  loop: true,
-  centerSlide: 'true',
-  fade: 'true',
-  grabCursor: 'true',
-  pagination: 
-  {
-    el: ".swiper-pagination",
-    clickable: true,
-    dynamicBullets: true,
-  },
-  navigation: 
-  {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+function scrollL() {
+    var arrowLeft = document.querySelector(".flexpp");
+    arrowLeft.scrollBy(-350, 0);
+}
 
-  breakpoints:
-  {
-    0: 
-    {
-        slidesPerView: 1,
-    },
-    520: 
-    {
-        slidesPerView: 2,
-    },
-    950: 
-    {
-        slidesPerView: 4,
-    },
-  },
-});
+function scrollR() {
+    var arrowRight = document.querySelector(".flexpp");
+    arrowRight.scrollBy(350, 0)
+}
