@@ -93,11 +93,18 @@ ul > li {
 }
 
 .mainImage {
-    display: none;
+    transform: translate(50rem, 0);
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: .8s ease-in;
+    -moz-transition: .8s ease-in;
+    -o-transition: .8s ease-in;
+    transition: .8s ease-in;
 }
 
 .activeMainImage {
-    display: block;
+    transform: translate(0, 0);
+    opacity: 1;
 }
 
 .IntroRow {
@@ -247,6 +254,9 @@ p {
     width: 45rem;
     height: 45rem;
     border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
 }
 
 .inner-img-container > img{
@@ -257,6 +267,7 @@ p {
 
 .one {
     top: 0;
+    z-index: 3;
 }
 
 .one > img {
@@ -266,6 +277,7 @@ p {
 .two {
     bottom: 100px;
     left: -100px;
+    z-index: 3;
 }
 
 .two > img {
@@ -275,6 +287,7 @@ p {
 .three {
     bottom: 80px;
     right: -70px;
+    z-index: 3;
 }
 
 .three > img {
@@ -546,12 +559,14 @@ h2 {
 
 .testi-cap-cont {
     width: 100%;
+    padding: 0 5rem;
 }
 
 .testi-cap {
-    gap: 5%;
     width: 100%;
+    height : 420px;
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
     overflow: auto;
     scroll-behavior: smooth;
@@ -563,10 +578,37 @@ h2 {
 
 .testi {
     height : 320px;
-    background-color : #fff;
+    background-color : #0b5ed7;
     border : 1px solid transparent;
-    margin-bottom: 2rem;
+    border-radius: 5px;
+    margin: 2rem 3rem;
     min-width: 35rem;
+    position: relative;
+    z-index: 3;
+}
+
+.testi::before {
+    content: '';
+    display: block;
+    background: #FFF;
+    width: 35.2rem;
+    height: 322px;
+    position: absolute;
+    z-index: -3;
+    margin: -1.6rem;
+    margin-top: -3.1rem;
+}
+
+.testi:nth-child(1){
+    margin-left: 0;
+}
+
+.testi:nth-child(even)::before{
+    border-radius: 150px 5px 150px 5px;
+}
+
+.testi:nth-child(odd)::before{
+    border-radius: 5px 150px 5px 150px;
 }
 
 .testi-img {
@@ -732,14 +774,14 @@ h2 {
     align-items: center;
 }
 
-.subscribe-success {
+/* .subscribe-success {
     display: flex;
     justify-content: center;
     margin-top: 200px;
     background: transparent
 }
 
-.modal, .fade, .show{
+.modal, .fade{
     background-color: lightgray
 }
 
@@ -808,10 +850,16 @@ h2 {
 .setting{
     margin-left: 10px;
     padding-top: 5px
+} */
+
+
+@media (max-width: 1240px) {
+    .getst {
+        width: 70%;
+    }
 }
 
-
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     body {
         overflow-x: hidden;
         width: 100vw;
@@ -874,17 +922,24 @@ h2 {
         line-height: 1.6rem;
     }
 
-    .Beta {
+    .beta {
         justify-content: center;
         align-items: center;
+        height: 35rem;
+        width: 100%;
     }
 
     .img-container {
-        width: 30rem;
-        height: 30rem;
+        width: 50%;
+        height: 100%;
     }
     
-    .img-container > img {
+    .img-container > .inner-img-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .inner-img-container > img {
         width: 100%;
         height: 100%;
     }
@@ -1030,8 +1085,21 @@ h2 {
     }
 }
 
-@media (max-width: 1240px) {
-    .getst {
-        width: 70%;
+
+@media screen and (max-width: 576px){
+    .img-container {
+        width: 80%;
+        height: 100%;
+    }
+
+    .testi-cap {
+        height : 450px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .img-container {
+        width: 100%;
+        height: 100%;
     }
 }

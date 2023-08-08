@@ -36,14 +36,28 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupport">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="/products">Product</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold" href="/products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Product
+                            </a>
+                            <ul class="dropdown-menu text-center">
+                                <li class="py-1"><a class="dropdown-item" href="#">All Services</a></li>
+                                <li class="py-1"><a class="dropdown-item" href="#">House Renovation</a></li>
+                                <li class="py-1"><a class="dropdown-item" href="#">Carpenter Work</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="/about">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="/news">News</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold" href="/news" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            News
+                            </a>
+                            <ul class="dropdown-menu text-center">
+                                <li class="py-1"><a class="dropdown-item" href="/news/newsletter/">Newsletter</a></li>
+                                <li class="py-1"><a class="dropdown-item" href="/news/product-updates/">Product Updates</a></li>
+                                <li class="py-1"><a class="dropdown-item" href="/news/case-study/">Case Study</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="/how">How it Works</a>

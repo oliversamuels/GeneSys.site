@@ -1,0 +1,390 @@
+@inherits UmbracoViewPage<ContentModels.NewsPage>
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+    var newsletters = Model.Value<BlockGridModel>("news");
+    List<BlockGridItem> product_update = new List<BlockGridItem>();
+    List<BlockGridItem> news_letter = new List<BlockGridItem>();
+    List<BlockGridItem> case_study = new List<BlockGridItem>();
+    
+    @*Random List of all News (3)*@
+    List<BlockGridItem> listOfNews = new List<BlockGridItem>();
+    List<BlockGridItem> listOfRandomNews = new List<BlockGridItem>();
+
+    if(newsletters != null)
+    {
+        foreach(var newsletter in newsletters)
+        {
+            listOfNews.Add(newsletter);
+        }
+
+        @foreach(var newsletter in newsletters)
+        {
+            if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
+            {
+                product_update.Add(newsletter);
+            } 
+            else if(newsletter.Content.Value<string>("newsCategory") == "Newsletters")
+            {
+                news_letter.Add(newsletter);
+            }
+            else if(newsletter.Content.Value<string>("newsCategory") == "Case Studies")
+            {
+                case_study.Add(newsletter);
+            }
+        }
+    }
+
+    static List<BlockGridItem> GetRandomElements<BlockGridItem>(IEnumerable<BlockGridItem> list, int elementCount)
+    {
+        return list.OrderBy(x => Guid.NewGuid()).Take(elementCount).ToList();
+    }
+
+    listOfRandomNews = GetRandomElements(listOfNews, 2);
+    @*End of Random List*@
+}
+
+<div class="container-fluid p-0">
+    <div class="newshead">
+        <div class="container-fluid px-0">
+            <div>
+                <h2 class="text-center">@Model.Heading</h2>
+                <div class="container w-75 px-5">
+                    <p class="text-center fs-4">
+                        @Model.SubHeading
+                    </p>
+                </div>
+            </div>
+            <div class="newsSlider">
+                <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-id="0">
+                            <img src="@Model?.MainImage?.Url()" alt="">
+                        </div>
+                        <div class="carousel-item" data-id="1">
+                            <img src="@Model?.MainImage?.Url()" alt="">
+                        </div>
+                        <div class="carousel-item" data-id="2">
+                            <img src="@Model?.MainImage?.Url()" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* <div class="d-flex justify-content-center mt" style="margin:50px 0;">
+                <div class="imgBx">
+                    <img class="img" src="@Model?.MainImage?.Url()" alt="" />
+                    <div class="imgBxY hide">
+                        <img src="~/assets/images/News/Asset 1@3x 1.png" alt="" width="80px"/>
+                    </div>
+                </div>
+            </div> *@
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="head">
+            <ul class="nav justify-content-center">
+                <li class="nav-item active" data-id="all">
+                    ALL
+                </li>
+                <li class="nav-item" data-id="product-update">
+                    PRODUCT UPDATES
+                </li>
+                <li class="nav-item" data-id="case-study">
+                    CASE STUDIES
+                </li>
+                <li class="nav-item" data-id="newsletter">
+                    NEWSLETTER
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container news">
+        @*All Items*@
+        <div id="all" class="m-0 p-0 div show">
+            @if(listOfRandomNews.Any())
+            {
+                @foreach (var newsitem in listOfRandomNews)
+                {
+                    var content = newsitem.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var item in news)
+                                            {
+                                                var newsItem = item.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        @*Product Update*@
+        <div id="product-update" class="m-0 p-0 div">
+            @if(product_update.Any())
+            {
+                foreach (var item in product_update)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="newslet">
+                    @*If Empty*@
+                    <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
+                </div>
+            }
+        </div>
+        @*Case Study*@
+        <div id="case-study" class="m-0 p-0 div">
+            @if(case_study.Any())
+            {
+                foreach (var item in case_study)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="newslet">
+                    <h3 class="text-center">No Case Study Update yet<br/>Check back later</h3>
+                </div>
+            }
+        </div>
+        @*News Letter*@
+        <div id="newsletter" class="m-0 p-0 div">
+            @if(news_letter.Any())
+            {
+                foreach (var item in news_letter)
+                {
+                    var content = item.Content;
+                    var date = content.Value<DateTime>("newsDate");
+                    var link = content.Value<Link>("newsLink");
+                    var summary = content.Value<string>("newsSummary");
+                    var title = content.Value<string>("newsTitle");
+                    var news = content.Value<BlockGridModel>("news");
+                    var category = content.Value<string>("newsCategory");
+                    
+                    <div class="row newslet">
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                            <div class="imgBxII">
+                                <div class="newst">
+                                    <div class="newstinner">
+                                        @if(news != null)
+                                        {
+                                            @foreach (var comp in news)
+                                            {
+                                                var newsItem = comp.Content;
+                                                var newsLink = newsItem.Value<Link>("bookLink");
+                                                var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                                <div class="imgcont">
+                                                    <a href="@newsLink?.Url">
+                                                        <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                            <div class="w-75">
+                                <div>
+                                    <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold fs-1">@title</h3>
+                                </div>
+                                <div>
+                                    <p class="fs-4">@summary</p>
+                                </div>
+                                <div>
+                                    <a class="fs-2" href="@link?.Url">View Live Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="newslet">
+                    <h3 class="text-center">No Newsletter yet<br/>Check back later</h3>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="container newsletter">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-md-10 second">
+                <h3 class="sbns">Want updates straight to your inbox?</h3>
+                <p class="fs-5 mb-5">
+                    We know you barely have time for all the hustle and bustle of everyday life, but you still want to stay on top of your health trends, 
+                    news and the buzz of healthcare. Our GeneSys Health Tech Insider newsletter is loaded with the best of content across the intersection 
+                    of health and tech. 
+                    We urge you to kick back, chill and relax, while you read.
+                </p>
+                <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate" target="_blank" nonvalidate>
+                    <div class="row gap-2 form-group">
+                        <div class="col-7 p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Enter your e-mail address" required/>
+                        </div>
+                        <div class="col-4 d-grid p-0 form-group">
+                            <button type="submit" name="subscribe" class="fw-bold fs-5" style="border-radius:0 5px 5px 0; background: #005AC0; border:1px solid transparent; color:white;">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-8">
+                <img src="~/assets/images/ffv 1.png" width="420px" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

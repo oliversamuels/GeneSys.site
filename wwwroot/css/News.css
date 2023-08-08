@@ -4,9 +4,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 20px;
     padding-bottom: 50px;
 }
+
+.newsSlider {
+    width: 100%;
+    background-color: #F2F5FF;
+    height: 50rem;
+}
+
 
 .imgBx {
     width: 824px;
@@ -32,9 +39,25 @@
     left: -60px;
 }
 
-.news {
+.news, .caseStudy {
     margin-top: 100px;
     margin-bottom: 50px;
+    position: relative;
+}
+
+.seeAll {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 10rem;
+    font-size: 1.4rem;
+}
+
+.productUpdate {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 4rem 0;
+    background: #F2F5FF;
+    position: relative;
 }
 
 .news .div {
@@ -50,23 +73,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+    margin-bottom: 5rem;
 }
 
 .imgBxII {
     width: 50rem;
     height: 35rem;
-    border: 1px dashed #000;
-    position: relative;
 }
 
 .newst {
     width: 100%;
     height: 100%;
-    position: absolute;
     background: #E0E8FB;
     padding: 10px;
-    left: 45px;
-    top: 15px;
 }
 
 .newstinner {

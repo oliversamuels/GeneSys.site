@@ -295,33 +295,33 @@
                     var image = content.Value<MediaWithCrops>("clientPicture");
                     var statement = content.Value<string>("testimony");
                     var name = content.Value<string>("clientName");
-                    var designation = content.Value<string>("clientDesignation");
+                    var hospital = content.Value<string>("clientHospital");
 
-                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi shadow pt-5 px-4">
                         <div class="position-absolute top-0 start-50 translate-middle testi-img">
                             <img src="@image?.MediaUrl()" alt="" width="70px" />
                         </div>
                         <div class="text-center mt-4">
                             <p class="m-0 p-0 text-primary fw-bold fs-4">@name</p>
-                            <p class="p-0 m-0 fs-5">@designation</p>
+                            <p class="p-0 m-0 fs-5">@hospital</p>
                             <div><i class="bi bi-quote fs-1"></i></div>
                         </div>
-                        <div class="mt-4 text-center">
-                            <p class="fs-4">@statement</p>
+                        <div class="mt-2 text-center p-4">
+                            <p class="fs-4" style="line-height:110%;">@statement</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
+                    <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi shadow pt-5 px-4">
                         <div class="position-absolute top-0 start-50 translate-middle testi-img">
                             <img src="@image?.MediaUrl()" alt="" width="70px" />
                         </div>
                         <div class="text-center mt-4">
                             <p class="m-0 p-0 text-primary fw-bold fs-4">@name</p>
-                            <p class="p-0 m-0 fs-5">@designation</p>
+                            <p class="p-0 m-0 fs-5">@hospital</p>
                             <div><i class="bi bi-quote fs-1"></i></div>
                         </div>
-                        <div class="mt-4 text-center">
-                            <p class="fs-4">@statement</p>
+                        <div class="mt-2 text-center p-4">
+                            <p class="fs-4" style="line-height:110%;">@statement</p>
                         </div>
                     </div>
                 }
@@ -391,7 +391,7 @@
             </div>
         </div>
     </div>
-    <div class='container subscribe-success'><button type="button" class="btn trigger" data-toggle="modal" data-target="#successModal"> MAIL REPORT </button>
+    @* <div class='container subscribe-success'><button type="button" class="btn trigger" data-toggle="modal" data-target="#successModal"> MAIL REPORT </button>
         <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -410,7 +410,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> *@
 </div>
 
  @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

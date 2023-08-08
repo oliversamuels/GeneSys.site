@@ -352,6 +352,27 @@ moduleItem.forEach((item) => {
     })
 })
 
+
+//About
+
+function scrollL() {
+    var arrowLeft = document.querySelector(".flexpp");
+    arrowLeft.scrollBy(-250, 0);
+}
+
+function scrollR() {
+    var arrowRight = document.querySelector(".flexpp");
+    arrowRight.scrollBy(250, 0)
+}
+
+function aboutTestimonySlide() {
+    var move = document.querySelector(".aboutTest");
+    console.log("Working");
+    move.scrollBy(420, 0);
+}
+
+setInterval(aboutTestimonySlide, 5000);
+
 //Home Image Slider
 const imgContainer = document.querySelector('.inner-img-container');
 const slides = imgContainer.getElementsByTagName('img');
@@ -370,29 +391,33 @@ const box = document.getElementById("testi-cap");
     console.log((box.offsetWidth + 47));
     console.log(box.scrollLeft);
 } */
+/* function leftScroll(x){
+    x.scrollBy(-350, 0);
+}
+
+function rightScroll(x){
+    x.scrollBy(350, 0);
+} */
 
 function testimonySlide() {
     var move = document.querySelector(".testi-cap");
+
+    // if ((box.offsetWidth + 47) - box.scrollLeft === 0)
+    // {
+    //     move.scrollBy(-350, 0);
+    //     console.log("The End!");
+    // }
+
+    move.scrollBy(420, 0);
+/*
+    while ((box.offsetWidth + 47) > box.scrollLeft) {
+        rightScroll(move);
+    }
     if ((box.offsetWidth + 47) - box.scrollLeft === 0)
     {
-        while (box.scrollLeft > 0) {
-            move.scrollBy(-350, 0);
-        }
-    }
-    move.scrollBy(350, 0);
+        box.scrollLeft = 0;
+    } */
 }
 
 setInterval(nextSlide, 5000);
-setInterval(testimonySlide, 1000);
-
-//About
-
-function scrollL() {
-    var arrowLeft = document.querySelector(".flexpp");
-    arrowLeft.scrollBy(-350, 0);
-}
-
-function scrollR() {
-    var arrowRight = document.querySelector(".flexpp");
-    arrowRight.scrollBy(350, 0)
-}
+setInterval(testimonySlide, 5000);

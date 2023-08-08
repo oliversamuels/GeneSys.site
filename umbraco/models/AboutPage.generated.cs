@@ -186,6 +186,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SecondImg => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetSecondImg(this, _publishedValueFallback);
 
 		///<summary>
+		/// TestimonialHeading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonialHeading")]
+		public virtual string TestimonialHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetTestimonialHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// Testimonials: List of Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testimonials")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetTestimonials(this, _publishedValueFallback);
+
+		///<summary>
 		/// Vision: Company's Vision
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]

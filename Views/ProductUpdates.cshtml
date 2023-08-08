@@ -1,57 +1,17 @@
-﻿@inherits UmbracoViewPage<ContentModels.NewsPage>
+﻿@inherits UmbracoViewPage<ContentModels.ProductUpdates>
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-    var newsletters = Model.Value<BlockGridModel>("news");
-    List<BlockGridItem> product_update = new List<BlockGridItem>();
-    List<BlockGridItem> news_letter = new List<BlockGridItem>();
-    List<BlockGridItem> case_study = new List<BlockGridItem>();
-    
-    @*Random List of all News (3)*@
-    List<BlockGridItem> listOfNews = new List<BlockGridItem>();
-    List<BlockGridItem> listOfRandomNews = new List<BlockGridItem>();
-
-    if(newsletters != null)
-    {
-        foreach(var newsletter in newsletters)
-        {
-            listOfNews.Add(newsletter);
-        }
-
-        @foreach(var newsletter in newsletters)
-        {
-            if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
-            {
-                product_update.Add(newsletter);
-            } 
-            else if(newsletter.Content.Value<string>("newsCategory") == "Newsletters")
-            {
-                news_letter.Add(newsletter);
-            }
-            else if(newsletter.Content.Value<string>("newsCategory") == "Case Studies")
-            {
-                case_study.Add(newsletter);
-            }
-        }
-    }
-
-    static List<BlockGridItem> GetRandomElements<BlockGridItem>(IEnumerable<BlockGridItem> list, int elementCount)
-    {
-        return list.OrderBy(x => Guid.NewGuid()).Take(elementCount).ToList();
-    }
-
-    listOfRandomNews = GetRandomElements(listOfNews, 2);
-    @*End of Random List*@
 }
 
 <div class="container-fluid p-0">
     <div class="newshead">
         <div class="container-fluid px-0">
             <div>
-                <h2 class="text-center">@Model.Heading</h2>
+                <h2 class="text-center">Latest Product Updates</h2>
                 <div class="container w-75 px-5">
                     <p class="text-center fs-4">
-                        @Model.SubHeading
+                        Get latest news on our latest product
                     </p>
                 </div>
             </div>
@@ -64,13 +24,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-id="0">
-                            <img src="@Model?.MainImage?.Url()" alt="">
+                            <img src="~/assets/images/News/ChatGPT.png" alt="">
                         </div>
                         <div class="carousel-item" data-id="1">
-                            <img src="@Model?.MainImage?.Url()" alt="">
+                            <img src="~/assets/images/News/ChatGPT.png" alt="">
                         </div>
                         <div class="carousel-item" data-id="2">
-                            <img src="@Model?.MainImage?.Url()" alt="">
+                            <img src="~/assets/images/News/ChatGPT.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -79,7 +39,6 @@
     </div>
 
     <div class="container-fluid news">
-        <h2 class="text-center fs-1">Newsletter</h2>
         <div class="row newslet">
             <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
                 <div class="imgBxII">
@@ -87,12 +46,7 @@
                         <div class="newstinner">
                             <div class="imgcont">
                                 <a href="#">
-                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
-                                </a>
-                            </div>
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
+                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
                                 </a>
                             </div>
                         </div>
@@ -116,10 +70,6 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="seeAll">See All</a>
-    </div>
-    <div class="container-fluid productUpdate">
-        <h2 class="text-center fs-1">Product Updates</h2>
         <div class="row newslet">
             <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
                 <div class="imgBxII">
@@ -137,24 +87,20 @@
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
                 <div class="w-75">
                     <div>
-                        <p class="fs-4 title-date">PRODUCT UPDATE - JULY 31, 2023 </p>
+                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
                     <div>
-                        <h3 class="fw-bold fs-1">Genesys Patient Self Service App is Live!!</h3>
+                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
                     </div>
                     <div>
-                        <p class="fs-4">10mins ago</p>
+                        <p class="fs-4">8mins ago</p>
                     </div>
                     <div>
-                        <a class="fs-2" href="#">READ MORE</a>
+                        <a class="fs-2" href="#">View Live Project</a>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="seeAll">See All</a>
-    </div>
-    <div class="container-fluid caseStudy">
-        <h2 class="text-center fs-1">Case Studies</h2>
         <div class="row newslet">
             <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
                 <div class="imgBxII">
@@ -162,7 +108,7 @@
                         <div class="newstinner">
                             <div class="imgcont">
                                 <a href="#">
-                                    <img src="~/assets/images/News/Dashboard ERP.png" alt=""/>
+                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
                                 </a>
                             </div>
                         </div>
@@ -172,21 +118,51 @@
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
                 <div class="w-75">
                     <div>
-                        <p class="fs-4 title-date">CASE STUDY - JULY 01, 2022 </p>
+                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
                     <div>
-                        <h3 class="fw-bold fs-1">Version 2 Case Study</h3>
+                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
                     </div>
                     <div>
-                        <p class="fs-4">2mins ago</p>
+                        <p class="fs-4">8mins ago</p>
                     </div>
                     <div>
-                        <a class="fs-2" href="#">READ MORE</a>
+                        <a class="fs-2" href="#">View Live Project</a>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="seeAll">See All</a>
+        <div class="row newslet">
+            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                <div class="imgBxII">
+                    <div class="newst">
+                        <div class="newstinner">
+                            <div class="imgcont">
+                                <a href="#">
+                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                <div class="w-75">
+                    <div>
+                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
+                    </div>
+                    <div>
+                        <p class="fs-4">8mins ago</p>
+                    </div>
+                    <div>
+                        <a class="fs-2" href="#">View Live Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container newsletter">
