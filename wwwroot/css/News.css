@@ -140,6 +140,10 @@
     text-transform: uppercase;
 }
 
+.quest-case {
+    border-bottom: 1px solid #000;
+}
+
 @media (max-width: 991px) {
     .head li {
         padding: 5px 10px;

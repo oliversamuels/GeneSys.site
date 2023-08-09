@@ -1,0 +1,174 @@
+.patient-sevice {
+    height: 90vh;
+    background-color: #F2F5FF;
+}
+
+.app-features {
+    margin: 4rem 0;
+    padding-bottom: 3rem;
+}
+
+.app-features-text {
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    margin-bottom: 5rem;
+}
+
+.app-features-text h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.app-features-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 110%;
+}
+
+.app-feature-item {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: .1rem 2rem;
+    border-radius: 2rem;
+    margin: 1rem 0;
+    background: #F2F5FF;
+    width: fit-content;
+}
+
+.app-feature-item p{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.app-feature-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-feature-img img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.feature-access-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.steps-item {
+    width: 22rem;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2.5rem;
+    margin: 2rem;
+}
+
+.steps-item:nth-child(even) {
+    background-color: #F2F5FF;
+    color: #0A79F8;
+}
+
+.steps-item:nth-child(odd) {
+    background-color: #0A79F8;
+    color: #FFF;
+}
+
+.steps-item p {
+    font-size: 1.4rem;
+    line-height: 110%;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.screenshot-app {
+    background-color: #F2F5FF;
+    margin: 0;
+    width: 100%;
+    margin: 2rem;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.screenshot-app h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.screenshot-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.screenshot-item {
+    width: 20rem;
+    height: 30rem;
+    margin: 0 3rem;
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.download-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.our-clients {
+    width: 100%;
+    background-color: #F2F5FF;
+    text-align: center;
+    margin: 3rem 0;
+    padding: 3rem 0;
+}
+
+.our-clients h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.clients-cont {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding: 8rem 2rem;
+}
+
+.clients-cont::-webkit-scrollbar {
+    width: 0;
+}
+
+.client-item {
+    min-width: 20rem;
+    height: 10rem;
+    margin: 0 3rem;
+}
+
+.client-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
