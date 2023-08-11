@@ -22,12 +22,13 @@
 }
 
 .topHead .topHeadImg h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 
 .topHead .topHeadImg p {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    line-height: 100%;
     font-weight: 600;
 }
 
@@ -36,9 +37,11 @@
 }
 
 .topHead .topHeadText {
-    margin-top: 2.4rem;
     text-align: center;
     color: #fff;
+    width: 100%;
+    margin: auto;
+    margin-top: 3rem;
 }
 
 .topHead .topHeadText h2 {
@@ -59,6 +62,23 @@
 .module {
     margin-top: 20rem;
     padding: 1rem 3rem;
+}
+
+.brief-intro {
+    margin-top: 20rem;
+    padding: 1rem 3rem;
+    line-height: 140%;
+    text-align: justify;
+}
+
+.brief-intro h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.brief-intro p {
+    font-size: 1.6rem;
 }
 
 .module h3 {
@@ -311,20 +331,19 @@
 }
 
 .productJoin {
-    margin: 10rem 3rem;
     display: flex;
     justify-content: center;
-    color : #fff;
+    color: #324054;
 }
 
 .productJoin .joinCont {
-    width: 90%;
+    width: 100%;
+    margin: 0 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem;
-    border-radius: 3rem;
-    background-color: #145fd9;
+    justify-content: space-between;
+    padding: 0 3rem;
 }
 
 .productJoin .joinCont .joinImgCont {
@@ -361,17 +380,16 @@
 }
 
 .support {
-    margin: 3rem 0;
+    margin: 0;
 }
 
-.support .container {
+.support .container-fluid {
     background-color: #2460FB;
-    padding: 4rem 2rem;
-    border-radius: 1.4rem;
+    padding: 6rem 2rem;
     color: #fff;
 }
 
-.support .container .tag{
+.support .container-fluid .tag{
     background-color: #F59E0B;
     border-radius: 3rem;
     width: fit-content;
@@ -379,13 +397,13 @@
     margin-bottom: 2rem;
 }
 
-.support .container .tag p{
+.support .container-fluid .tag p{
     margin: 0;
     padding: 0;
     font-size: 1.2rem;
 }
 
-.support .container p{
+.support .container-fluid p{
     line-height: 1.4rem;
 }
 
@@ -403,6 +421,129 @@
     margin: 3rem 0;
 }
 
+.module-feature {
+    justify-content: flex-start;
+    margin: 4rem 2rem;
+}
+
+.modules-row {
+    width: 40%;
+}
+
+.features-row {
+    width: 60%;
+}
+
+.modules-row, .features-row {
+    padding: 3rem 1rem;
+}
+
+.modules-row, .features-row {
+    padding: 3rem 0;
+}
+
+
+.module-feature h3 {
+    padding:  0 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.features-row h3 {
+    padding:  0 2rem;
+}
+
+.module-list, .feature-list {
+    margin: 3rem 0;
+}
+
+.feature-list {
+    margin: 3rem 1.5rem;
+}
+
+.module-item {
+    cursor: pointer;
+    padding: .5rem 1.5rem;
+}
+
+.feature-item {
+    padding: .5rem;
+    border-bottom: 1px solid #E0DEDE;
+}
+
+.feature-item p{
+    padding: .5rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.module-item:hover {
+    background-color: #0A79F8;
+    color: #FFF;
+}
+
+.module-list .active {
+    background-color: #0A79F8;
+    color: #FFF;
+}
+
+.module-item p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.features-row {
+    background-color: #F2F5FF;
+}
+
+.related-products {
+    width: 100%;
+    background-color: #F2F5FF;
+    padding: 3rem;
+}
+
+.all-products {
+    width: 100%;
+    height: 90vh;
+    background-color: #F2F5FF;
+    padding: 3rem;
+    display: flex;
+}
+
+.rp-text {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.rp-text h2{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.rp-text p{
+    font-size: 1.4rem;
+    line-height: 110%;
+}
+
+.rp-products {
+    margin: 0;
+}
+
+.rp-products .productDisplay{
+    margin: 0;
+}
+
+.rp-products .productDisplay .productCard{
+    border-radius: 1.3rem;
+    width: 70%;
+    height: 32rem;
+}
+
 @media screen and (min-width: 800px) {
     .topHead {
         height: 76vh;
@@ -417,9 +558,19 @@
         width: 50%;
     }
 
+    .topHead .topHeadImg h3 {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    
+    .topHead .topHeadImg p {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
     .topHead .topHeadText h2 {
         font-size: 4.4rem;
-        line-height: 4.8rem;
+        line-height: 100%;
         padding: 0;
     }
 
@@ -429,12 +580,18 @@
 
     .topHead .topHeadText {
         margin-top: 0;
+        width: 50%;
         text-align: center;
     }
 
     .module {
         margin-top: 42vh;
         padding: 1rem 6rem;
+    }
+
+    .brief-intro {
+        margin-top: 42vh;
+        padding: 1rem 10rem;
     }
 
     .features {
@@ -500,7 +657,7 @@
 
     .productJoin .joinCont {
         flex-direction: row;
-        padding: 8rem 6rem;
+        padding: 0 2.5rem;
     }
 
     .productJoin .joinCont .joinImgCont {
@@ -548,5 +705,173 @@
 
     .productPlans .planText {
         width: 70%;
+    }
+
+    .module-feature {
+        margin: 3rem 9rem;
+    }
+
+    .modules-row {
+        width: 20%;
+    }
+
+    .features-row {
+        width: 80%;
+    }
+
+    .modules-row, .features-row {
+        padding: 3rem 0;
+    }
+
+    .module-feature h3 {
+        padding:  1rem 2rem;
+    }
+
+    .features-row h3{
+        padding: 1rem 3.5rem;
+    }
+    
+    .module-list, .feature-list {
+        margin: 3rem 0;
+    }
+    
+    .module-item {
+        padding: 1rem 2rem;
+    }
+
+    .feature-list {
+        margin: 3rem 1.5rem;
+    }
+
+    .feature-item {
+        padding: 1rem 2rem;
+    }
+    
+    .module-item p {
+        font-size: 1.6rem;
+    }
+
+    .rp-text {
+        width: 50%;
+    }
+
+    .rp-products {
+        margin: 0;
+    }
+    
+    .rp-products .productDisplay{
+        margin: 0;
+    }
+
+    .all-products {
+        width: 100%;
+        height: 90vh;
+        background-color: #F2F5FF;
+        padding: 3rem;
+        display: flex;
+    }
+
+    .all-product-demo {
+        background-color: #F2F5FF;
+        width: 100%;
+        height: 95vh;
+    }
+
+    .all-product-demo .demo-img {
+        width: 60%;
+        height: 90%;
+        position: relative;
+    }
+
+    .all-product-demo .demo-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .all-product-demo .demo-img .demo-outer {
+        position: absolute;
+        background: #FFF;
+        padding: 3rem;
+        top: 4rem;
+        right: -30rem;
+        width: 60%;
+        height: 90%;
+    }
+
+    .all-product-demo .demo-img .demo-outer .demoText{
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 120%;
+        margin-bottom: 3rem;
+    }
+
+    .all-product-demo .demo-img .demo-outer .demoform{
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .all-product-demo .demo-img .demo-outer .demoform .form-label{
+        font-weight: 600;
+    }
+
+    .all-product-demo .demo-img .demo-outer .demoform .form-control:active{
+        outline: none;
+    }
+
+    .all-product-demo .demo-img .demo-outer .demoform input{
+        font-size: 1.3rem;
+        height: 3.5rem;
+    }
+    
+    .all-products .rp-text {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .all-products .rp-products {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .all-products .rp-products .all-products-arrow {
+        position: absolute;
+        right: 10rem;
+        font-size: 3rem;
+        color: #0A79F8;
+        cursor: pointer;
+        opacity: 0.2;
+    }
+
+    .all-products .rp-products .all-products-arrow .bi:hover {
+        color: #324054;
+    }
+
+    .all-products .rp-products .productDisplay {
+        margin: 0 4rem;
+        height: 70%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+
+    .all-products .rp-products .productDisplay::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .all-products .rp-products .productDisplay .productCard {
+        min-width: 30rem;
     }
 }

@@ -2,4 +2,223 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+	var products = Model.Value<BlockGridModel>("products");
+    var planItems = Model.Value<BlockGridModel>("PlanItems");
 }
+
+<section class="topHead">
+    <div class="topHeadImg position-absolute top-100 start-50 translate-middle">
+        <img src="~/assets/images/Products/digital.png" alt="Digital">
+        <div class="d-flex align-items-center justify-content-evenly w-100 mt-4">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>100<span>K</span></h3>
+                <p>Client satisfaction</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>24<span>h</span></h3>
+                <p>Expert Support Team</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <h3>208<span>+</span></h3>
+                <p>Client worldwide</p>
+            </div>
+        </div>
+    </div>
+    <div class="topHeadText">
+        <h2>
+            @Model.Header
+        </h2>
+        <p>
+            @Model.SubHeading
+        </p>
+        <a href="/demo" class="btn btn-primary">Request Demo</a>
+    </div>
+</section>
+
+<section class="brief-intro">
+	<h4>
+		Are you a primary care provider or part of a small practice looking to take the first step towards digitizing your patient records and processes?
+	</h4>
+	<p>
+		Look no further than our SaaS EMR! Designed with your needs in mind, our platform offers just the right balance of functionality and simplicity to help you streamline your operations and join the digital healthcare revolution. With our easy-to-use, intuitive interface and robust set of features, you'll be able to manage your patient data with confidence, freeing up valuable time and resources to focus on what really matters – providing the best possible care to your patients. So why wait? Join the Genesys-verse – our burgeoning digital healthcare ecosystem today and see the difference for yourself! 
+	</p>
+</section>
+
+<section class="row module-feature">
+	<div class="modules-row shadow">
+		<h3>Modules</h3>
+		<div class="module-list">
+			<div class="module-item">
+				<p>Patient Management</p>
+			</div>
+			<div class="module-item">
+				<p>Nurse Workbench</p>
+			</div>
+			<div class="module-item">
+				<p>Inpatient Suite</p>
+			</div>
+			<div class="module-item">
+				<p>Doctor Workbench</p>
+			</div>
+			<div class="module-item">
+				<p>Billing/Finance</p>
+			</div>
+			<div class="module-item">
+				<p>Pharmacy</p>
+			</div>
+			<div class="module-item">
+				<p>Laboratory</p>
+			</div>
+			<div class="module-item">
+				<p>Radiology</p>
+			</div>
+			<div class="module-item">
+				<p>Inventory/Store</p>
+			</div>
+			<div class="module-item">
+				<p>Manager Dashboard</p>
+			</div>
+			<div class="module-item">
+				<p>Queue Management</p>
+			</div>
+		</div>
+	</div>
+	<div class="features-row shadow">
+		<h3>Features</h3>
+		<div class="feature-list">
+			<div class="feature-item">
+				<p>Registration</p>
+			</div>
+			<div class="feature-item">
+				<p>Appointment Scheduling/Mgmt</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid packages px-5 pt-4">
+    <div class="row w-100 d-flex justify-content-center align-items-center">
+        <div class="planText text-center">
+            <h1 class="m-0 p-0">Flexible For All Sizes</h1>
+            <div class="m-auto" style="width: 70%;">
+                <p class="m-0 p-0 fs-3">
+					We understand one shoe doesn’t sometimes fit all and that’s why we have scalable solutions tailored to your unique practice needs.
+				</p>
+            </div>
+        </div>
+    </div>
+    <div class="row card-container px-5 pt-5">
+		@if (planItems != null)
+        {
+            @foreach(var plan in planItems)
+            {
+                var content = plan.Content;
+                var name = content.Value<string>("planName");
+                var type = content.Value<string>("planType");
+                var icon = content.Value<MediaWithCrops>("planIcon");
+                var link = content.Value<Link>("planLink");
+                var cost = content.Value<int>("planCost");
+                var benefits = content.Value<IEnumerable<string>>("planBenefits");
+                    
+                if (link != null)
+                {
+                    <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 card pt-3">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <img class="sm me-2" src="@icon?.MediaUrl()" alt=""/>
+                            <h3 class="m-0">@name <span class="title">(@type)</span></h3>
+                        </div>
+                        <div class="mt-3">
+                            <p><span class="cost">&#8358;@cost</span><span class="month">/month</span></p>
+                        </div>
+                        <div class="">
+                            <p>What will you get</p>
+                        </div>
+                        <div class="mt-0">
+                            @if (benefits != null)
+                            {
+                                @foreach (var benefit in benefits)
+                                {
+                                    <div class="d-flex justify-content-start align-items-center w-100 mb-3 ms-2">
+                                        <i class="bi bi-check me-3"></i>
+                                        <div class="w-75">
+                                            <p class="m-0 pt-2 details pb-2">@benefit</p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            <div class="text-center pe-3">
+                                <a href="@link.Url" class="btn text-nowrap getst btn-primary w-50 mt-4">Dive In</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</section>
+
+<section class="related-products">
+	<div class="rp-text">
+		<h2>@Model?.ProductHeading</h2>
+        <p>
+            @Model?.ProductSubheading
+        </p>
+	</div>
+	<div class="productSec rp-products">
+		<div class="productDisplay">
+			 @if(products != null)
+			{
+				@foreach (var item in products)
+				{
+					var content = item.Content;
+					var name = content.Value<string>("packageTitle");
+					var img = content.Value<MediaWithCrops>("packageIMG");
+					var desc = content.Value<string>("packageDesc");
+					var link = content.Value<Link>("packageLink");
+					
+
+					<div class="productCard rounded shadow bg-body">
+						<img src="@img?.MediaUrl()" alt="">
+						<h3>@name</h3>
+						<p>
+							@desc
+						</p>
+						<div class="rdm">
+							<a href="@link.Url" class="btn btn-primary py-2 px-3">Read More</a>
+						</div>
+					</div>
+				}
+			}
+		</div>
+	</div>
+</section>
+
+<section class="support">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between flex-column px-5">
+            <div class="col-lg-5 col-md-8">
+                <div class="tag"> <p>Support</p></div>
+                <h3 class="sbns mb-3">Hey There!</h3>
+                <p class="fs-5">
+                    Just Incase you didnt find what you were looking for, You can send us a message for a more customizable package for your practice. We are always happy to assist.
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-8 d-flex align-items-center">
+                <form class="mt-5 validate w-100">
+                    <div class="form-group position-relative">
+                        <div class="p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Send Message" required style="border-radius: 30px;"/>
+                        </div>
+                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
+                            <button type="submit" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #324054; color:white; padding: 5px 12px;">
+                                <i class="bi bi-send fs-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

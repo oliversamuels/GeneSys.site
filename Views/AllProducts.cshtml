@@ -1,0 +1,91 @@
+﻿@inherits UmbracoViewPage<ContentModels.AllProducts>
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+	var products = Model.Value<BlockGridModel>("products");
+    var planItems = Model.Value<BlockGridModel>("PlanItems");
+	DemoViewModel Demo = new DemoViewModel();
+}
+
+<section class="all-products">
+	<div class="rp-text">
+		<h2>@Model?.ProductHeading</h2>
+        <p>
+            @Model?.ProductSubheading
+        </p>
+	</div>
+	<div class="productSec rp-products">
+		<div class="productDisplay">
+			 @if(products != null)
+			{
+				@foreach (var item in products)
+				{
+					var content = item.Content;
+					var name = content.Value<string>("packageTitle");
+					var img = content.Value<MediaWithCrops>("packageIMG");
+					var desc = content.Value<string>("packageDesc");
+					var link = content.Value<Link>("packageLink");
+					
+
+					<div class="productCard rounded shadow bg-body">
+						<img src="@img?.MediaUrl()" alt="">
+						<h3>@name</h3>
+						<p>
+							@desc
+						</p>
+						<div class="rdm">
+							<a href="@link.Url" class="btn btn-primary py-2 px-3">Read More</a>
+						</div>
+					</div>
+				}
+			}
+		</div>
+		<div class="all-products-arrow">
+			<div class="up" onclick="scrollU()"><i class="bi bi-arrow-up-circle-fill"></i></div>
+			<div class="down" onclick="scrollD()"><i class="bi bi-arrow-down-circle-fill"></i></div>
+		</div>
+	</div>
+</section>
+
+@* <section class="container-fluid demo">
+    <div class="row h-100 m-0 p-0">
+        <div class="col-lg-9 col-md-12 p-0">
+            <div>
+                <h1 style="margin-left:55px;font-size:30px;" class="demoText">Talk to an expert</h1>
+                <div class="demoform">
+                    @await Html.PartialAsync("~/Views/Partials/_Demo.cshtml", Demo)
+                </div>
+            </div>
+        </div>
+        <div class="col-3 p-0 hide">
+            <div style="height:100%; width:100%; background: #E0E8FB;" class="position-relative">
+                <img src="~/assets/images/Demo/girl.png" class="img-fluid" alt=""/>
+                <div class="sign d-flex justify-content-center align-items-center" 
+                style="">
+                    <div style="width:70%;height:50%">
+                        <p class="fs-4">I WOULD LIKE TO…</p>
+                        <ul>
+                            <li class="fs-5 spt" data-id="expert"><span class="span spd"></span>Talk to an expert</li>
+                            <li class="fs-5 spt" data-id="demo"><span class="span"></span>Request a demo</li>
+                            <li class="fs-5 spt" data-id="support"><span class="span"></span>Get technical support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> *@
+
+<section class="all-product-demo">
+	<div class="demo-img">
+		<img src="~/assets/images/Products/demoImg.png" alt="">
+		<div class="demo-outer shadow rounded">
+			<h1 class="demoText">Request a demo</h1>
+			<div class="demoform">
+				@await Html.PartialAsync("~/Views/Partials/_Demo.cshtml", Demo)
+			</div>
+		</div>
+	</div>
+</section>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

@@ -36,6 +36,7 @@
         <a href="/demo" class="btn btn-primary">Request Demo</a>
     </div>
 </section>
+
 <section class="module">
     <div class="row">
         <div class="col-lg-8 col-md-12 second">
@@ -57,7 +58,6 @@
                 <div class="moduleItem active">Doctor workbench</div>
                 <div class="moduleItem active">+Others</div>
             </div>
-            <a class="mBtn" href="#">View all features</a>
         </div>
         <div class="col-lg-4 col-md-12">
             <div class="d-flex justify-content-center align-items-center">
@@ -66,163 +66,57 @@
         </div>
     </div>
 </section>
-@if(products != null)
-{
-    <section class="productSec">
-        <div class="productSecText">
-            @* <h3>Our <span class="text-primary">products</span></h3> *@
-            <h3>@Model?.ProductHeading</h3>
-            <p>
-                @Model?.ProductSubheading
-            </p>
-        </div>
-        <div class="productDisplay">
+
+<section class="productSec">
+    <div class="productSecText">
+        <h3>@Model?.ProductHeading</h3>
+        <p>
+            @Model?.ProductSubheading
+        </p>
+    </div>
+    <div class="productDisplay">
+        @if(products != null)
+        {
             @foreach (var item in products)
             {
                 var content = item.Content;
                 var name = content.Value<string>("packageTitle");
                 var img = content.Value<MediaWithCrops>("packageIMG");
                 var desc = content.Value<string>("packageDesc");
+                var link = content.Value<Link>("packageLink");
                 
-                @if (item == products[1])
-                {
-                    <div class="productCard active rounded shadow bg-body" data-id="feature" data-title="@name" data-item=@number>
-                        <img src="@img?.MediaUrl()" alt="">
-                        <h3>@name</h3>
-                        <p>
-                            @desc
-                        </p>
+
+                <div class="productCard rounded shadow bg-body">
+                    <img src="@img?.MediaUrl()" alt="">
+                    <h3>@name</h3>
+                    <p>
+                        @desc
+                    </p>
+                    <div class="rdm">
+                        <a href="@link.Url" class="btn btn-primary py-2 px-3">Read More</a>
                     </div>
-                } else
-                {
-                    <div class="productCard active rounded shadow bg-body" data-id="feature" data-title="@name" data-item=@number>
-                        <img src="@img?.MediaUrl()" alt="">
-                        <h3>@name</h3>
-                        <p>
-                            @desc
-                        </p>
-                    </div>
-                }
-                
-                number++;
-            }
-            
-        </div>
-    </section>
-    <section class="features" id="feature">
-        <div class="row">
-            <div class="col">
-                <h3>Features</h3>
-                <ul class="fList">
-                    @foreach (var item in products)
-                    {
-                        @if(item == products[1])
-                        {
-                            var content = item.Content;
-                            var features = content.Value<BlockGridModel>("packageFeatures");
-                            @if(features != null)
-                            {
-                                @foreach (var feature in features)
-                                {
-                                    var list = feature.Content;
-                                    var featureName = list.Value<string>("featureName");
-
-                                    if (feature == features[0])
-                                    {
-                                        <li class="featureItem active" data-name="@featureName">@featureName</li>
-                                    } else
-                                    {
-                                        <li class="featureItem" data-name="@featureName">@featureName</li>
-                                    }
-                                }
-                            }
-                        }
-                    }
-                </ul>
-            </div>
-            <div class="col-lg-8 col-md-12 featureItemDetailsCnt">
-                <h3 id="title">Genesys MIDI</h3>
-                <div class="DetailsCnt">
-                    @foreach (var item in products)
-                    {
-                        @if(item == products[1])
-                        {
-                            var content = item.Content;
-                            var features = content.Value<BlockGridModel>("packageFeatures");
-                            @if(features != null)
-                            {
-                                @foreach (var feature in features)
-                                {
-                                    var list = feature.Content;
-                                    var details = list.Value<BlockGridModel>("details");
-
-                                    @if (feature == features[0])
-                                    {
-                                        @if(details != null )
-                                        {
-                                            @foreach (var detail in details)
-                                            {
-                                                var dtl = detail.Content;
-                                                var title = dtl.Value<string>("title");
-                                                var desc = dtl.Value<string>("desc");
-
-                                                <div class="featureItemDetails">
-                                                    <img src="assets/images/Products/up.png" alt="">
-                                                    <div>
-                                                        <h4>@title</h4>
-                                                        <p>
-                                                            Curabitur egestas consequat lorem, vel fermentum augue porta id. Aliquam lobortis magna neque, gravida consequat velit venenatis at.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 </div>
-            </div>
-        </div>
-        @* <div class="my-4 bTop active">
-            <a href="#feature" class="p-0 m-0" style="text-decoration: none;">Back to top <i class="bi bi-arrow-up"></i></a>
-        </div> *@
-    </section>
-}
-<section class="support">
-    <div class="container">
-        <div class="row d-flex justify-content-between px-5">
-            <div class="col-lg-5 col-md-8">
-                <div class="tag"> <p>Support</p></div>
-                <h3 class="sbns mb-3">Hey There!</h3>
-                <p class="fs-5">
-                    Just Incase you didnt find what you were looking for, You can send us a message for a more customizable package for your practice. We are always happy to assist.
-                </p>
-            </div>
-            <div class="col-lg-5 col-md-8 d-flex align-items-center">
-                <form class="mt-5 validate w-100">
-                    <div class="form-group position-relative">
-                        <div class="p-0 form-group">
-                            <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Send Message" required style="border-radius: 30px;"/>
-                        </div>
-                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
-                            <button type="submit" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;">
-                                <i class="bi bi-send fs-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+            }
+        }
+    </div>
+    <div class="container d-flex justify-content-end mb-5">
+        <a href="/products/all-products/" class="sell-all">See All</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="" class="btn btn-primary compare">Compare our products</a>
     </div>
 </section>
-<section class="productPlans">
-    <div class="planText">
-        <h3>@Model?.PlanHeading</h3>
-        <p>@Model?.PlanSubHeading</p>
+
+<section class="container-fluid packages px-5 pt-4">
+    <div class="row w-100 d-flex justify-content-center align-items-center">
+        <div class="planText text-center">
+            <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
+            <div class="m-auto" style="width: 70%;">
+                <p class="m-0 p-0 fs-3">@Model?.PlanSubHeading</p>
+            </div>
+        </div>
     </div>
-    <div class="planCont">
+    <div class="row card-container px-5 pt-5">
         @if (planItems != null)
         {
             @foreach(var plan in planItems)
@@ -237,7 +131,7 @@
                     
                 if (link != null)
                 {
-                    <div class="shadow planCard">
+                    <div class="col-lg-3 col-md-6 shadow ps-4 mb-5 card pt-3">
                         <div class="d-flex justify-content-start align-items-center">
                             <img class="sm me-2" src="@icon?.MediaUrl()" alt=""/>
                             <h3 class="m-0">@name <span class="title">(@type)</span></h3>
@@ -271,38 +165,7 @@
         }
     </div>
 </section>
-<section class="testimony-pd px-5 pt-5">
-    <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
-        <div class="mb-5">
-            <h1 class="m-0 p-0">@Model?.TestimonialHeading</h1>
-            <p class="m-0 p-0">@Model?.TestimonialSubHeading</p>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center align-items-center testi-cap mt-5 mb-5">
-        @if(testimonials != null)
-        {
-            @foreach (var testimony in testimonials)
-            {
-                var content = testimony.Content;
-                var image = content.Value<MediaWithCrops>("clientPicture");
-                var statement = content.Value<string>("testimony");
-                var name = content.Value<string>("clientName");
-                var designation = content.Value<string>("clientDesignation");
 
-                <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi rounded-4 shadow pt-5 px-4">
-                    <div class="position-absolute top-0 start-50 translate-middle">
-                        <img src="@image?.MediaUrl()" alt="" width="70px" />
-                    </div>
-                    <div class="mt-5">
-                        <p class="fs-4">@statement</p>
-                        <p class="m-0 p-0">@name</p>
-                        <p class="p-0 m-0 fs-5">@designation</p>
-                    </div>
-                </div>
-            }
-        }
-    </div>
-</section>
 <section class="productJoin">
     <div class="joinCont">
         <div class="joinImgCont">
@@ -315,7 +178,35 @@
             <p>
                 Make your patients smile and get your medical practice a fast and efficient EMR/HMIS with GeneSys today! We make running your medical practice easy for you.
             </p>
-            <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5" style="background-color:#0ABFF8; color:#fff; border-radius:40px;padding:10px 20px;">MAKE THE SWITCH TODAY</a>
+            <a href="http://genesyshmis-001-site1.etempurl.com/availablemodules" class="btn fs-5" style="background-color:#0A79F8; color:#fff; border-radius:10px;padding:10px 20px;">Take the Switch Today</a>
+        </div>
+    </div>
+</section>
+
+<section class="support">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-between flex-column px-5">
+            <div class="col-lg-5 col-md-8">
+                <div class="tag"> <p>Support</p></div>
+                <h3 class="sbns mb-3">Hey There!</h3>
+                <p class="fs-5">
+                    Just Incase you didnt find what you were looking for, You can send us a message for a more customizable package for your practice. We are always happy to assist.
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-8 d-flex align-items-center">
+                <form class="mt-5 validate w-100">
+                    <div class="form-group position-relative">
+                        <div class="p-0 form-group">
+                            <input type="email" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Send Message" required style="border-radius: 30px;"/>
+                        </div>
+                        <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
+                            <button type="submit" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #324054; color:white; padding: 5px 12px;">
+                                <i class="bi bi-send fs-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>

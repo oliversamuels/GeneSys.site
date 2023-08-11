@@ -373,6 +373,18 @@ function aboutTestimonySlide() {
 
 setInterval(aboutTestimonySlide, 5000);
 
+//Product
+
+function scrollU() {
+    var arrowLeft = document.querySelector(".productDisplay");
+    arrowLeft.scrollBy(0, -340);
+}
+
+function scrollD() {
+    var arrowRight = document.querySelector(".productDisplay");
+    arrowRight.scrollBy(0, 340)
+}
+
 //Home Image Slider
 const imgContainer = document.querySelector('.inner-img-container');
 const slides = imgContainer.getElementsByTagName('img');
