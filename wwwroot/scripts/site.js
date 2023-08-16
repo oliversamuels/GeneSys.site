@@ -277,7 +277,7 @@ window.addEventListener("DOMContentLoaded", function (){
 
 const productCard = document.querySelectorAll(".productCard");
 const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
-let featureItem = document.querySelectorAll(".featureItem");
+let featureItem = document.querySelectorAll(".module-item");
 
 productCard.forEach((item) => {
     item.addEventListener("click", () => {
@@ -308,9 +308,9 @@ productCard.forEach((item) => {
     });
 });
 
-featureItem.forEach((item) => {
+/* featureItem.forEach((item) => {
     item.addEventListener("click", ()=>{
-        let activeFeature = document.querySelector(".features .active");
+        let activeFeature = document.querySelector(".module-list .active");
         let element = document.getElementById("title");
         let name = item.dataset.name;
         console.log(name);
@@ -341,6 +341,17 @@ featureItem.forEach((item) => {
             top:position,
         })
     })
+}) */
+
+featureItem.forEach((item) => {
+    item.addEventListener("click", ()=>{
+        let ElementId = item.dataset.name;
+        const featureItems = document.querySelectorAll(".feature-item");
+        let activeItems = document.querySelectorAll(".online");
+        let activeFeature = document.querySelector(".module-list .active");
+        activeFeature.classList.remove("active");
+        item.classList.add("active");
+    })
 })
 
 
@@ -367,7 +378,6 @@ function scrollR() {
 
 function aboutTestimonySlide() {
     var move = document.querySelector(".aboutTest");
-    console.log("Working");
     move.scrollBy(420, 0);
 }
 
@@ -433,3 +443,4 @@ function testimonySlide() {
 
 setInterval(nextSlide, 5000);
 setInterval(testimonySlide, 5000);
+

@@ -37,10 +37,10 @@
 
 <section class="brief-intro">
 	<h4>
-		Are you a primary care provider or part of a small practice looking to take the first step towards digitizing your patient records and processes?
+		@Model.DescHeader
 	</h4>
 	<p>
-		Look no further than our SaaS EMR! Designed with your needs in mind, our platform offers just the right balance of functionality and simplicity to help you streamline your operations and join the digital healthcare revolution. With our easy-to-use, intuitive interface and robust set of features, you'll be able to manage your patient data with confidence, freeing up valuable time and resources to focus on what really matters – providing the best possible care to your patients. So why wait? Join the Genesys-verse – our burgeoning digital healthcare ecosystem today and see the difference for yourself! 
+		@Model.Desc 
 	</p>
 </section>
 
@@ -63,7 +63,7 @@
                             var list = feature.Content;
                             var featureName = list.Value<string>("featureName");
 
-                            if (feature == features[0])
+                            if (feature == features[3])
                             {
                                 <div class="module-item active" data-name="@featureName">
                                     <p>@featureName</p>
@@ -99,7 +99,7 @@
                             var featureName = list.Value<string>("featureName");
                             var details = list.Value<BlockGridModel>("details");
 
-                            @if (feature == features[0])
+                            @if (feature == features[3])
                             {
                                 @if(details != null )
                                 {

@@ -37,10 +37,10 @@
 
 <section class="brief-intro">
 	<h4>
-		Are you a primary care provider or part of a small practice looking to take the first step towards digitizing your patient records and processes?
+		@Model.DescHeader
 	</h4>
 	<p>
-		Look no further than our SaaS EMR! Designed with your needs in mind, our platform offers just the right balance of functionality and simplicity to help you streamline your operations and join the digital healthcare revolution. With our easy-to-use, intuitive interface and robust set of features, you'll be able to manage your patient data with confidence, freeing up valuable time and resources to focus on what really matters – providing the best possible care to your patients. So why wait? Join the Genesys-verse – our burgeoning digital healthcare ecosystem today and see the difference for yourself! 
+		@Model.Desc
 	</p>
 </section>
 
@@ -48,50 +48,77 @@
 	<div class="modules-row shadow">
 		<h3>Modules</h3>
 		<div class="module-list">
-			<div class="module-item">
-				<p>Patient Management</p>
-			</div>
-			<div class="module-item">
-				<p>Nurse Workbench</p>
-			</div>
-			<div class="module-item">
-				<p>Inpatient Suite</p>
-			</div>
-			<div class="module-item">
-				<p>Doctor Workbench</p>
-			</div>
-			<div class="module-item">
-				<p>Billing/Finance</p>
-			</div>
-			<div class="module-item">
-				<p>Pharmacy</p>
-			</div>
-			<div class="module-item">
-				<p>Laboratory</p>
-			</div>
-			<div class="module-item">
-				<p>Radiology</p>
-			</div>
-			<div class="module-item">
-				<p>Inventory/Store</p>
-			</div>
-			<div class="module-item">
-				<p>Manager Dashboard</p>
-			</div>
-			<div class="module-item">
-				<p>Queue Management</p>
-			</div>
+            @if(products != null)
+            {
+                @foreach (var item in products)
+                {
+                    var content = item.Content;
+                    var name = content.Value<string>("packageTitle");
+                    var features = content.Value<BlockGridModel>("packageFeatures");
+
+                    @if(name.ToLower() == "genesys erp" && features != null)
+                    {
+                        @foreach (var feature in features)
+                        {
+                            var list = feature.Content;
+                            var featureName = list.Value<string>("featureName");
+
+                            if (feature == features[2])
+                            {
+                                <div class="module-item active" data-name="@featureName">
+                                    <p>@featureName</p>
+                                </div>
+                            } else
+                            {
+                                <div class="module-item" data-name="@featureName">
+                                    <p>@featureName</p>
+                                </div>
+                            }
+                        }
+                    }
+                }
+            }
 		</div>
 	</div>
 	<div class="features-row shadow">
 		<h3>Features</h3>
 		<div class="feature-list">
-			<div class="feature-item">
-				<p>Registration</p>
-			</div>
-			<div class="feature-item">
-				<p>Appointment Scheduling/Mgmt</p>
-			</div>
+            @if(products != null)
+            {
+                @foreach (var item in products)
+                {
+                    var content = item.Content;
+                    var name = content.Value<string>("packageTitle");
+                    var features = content.Value<BlockGridModel>("packageFeatures");
+
+                    @if(name.ToLower() == "genesys erp" && features != null)
+                    {
+                        @foreach (var feature in features)
+                        {
+                            var list = feature.Content;
+                            var featureName = list.Value<string>("featureName");
+                            var details = list.Value<BlockGridModel>("details");
+
+                            @if (feature == features[2])
+                            {
+                                @if(details != null )
+                                {
+                                    @foreach (var detail in details)
+                                    {
+                                        var dtl = detail.Content;
+                                        var title = dtl.Value<string>("title");
+                                        var desc = dtl.Value<string>("desc");
+
+                                        <div class="feature-item">
+                                            <p>@title</p>
+                                        </div>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 		</div>
 	</div>
 </section>

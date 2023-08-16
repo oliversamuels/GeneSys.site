@@ -469,6 +469,7 @@
 .feature-item {
     padding: .5rem;
     border-bottom: 1px solid #E0DEDE;
+    display: none;
 }
 
 .feature-item p{
@@ -498,6 +499,10 @@
 
 .features-row {
     background-color: #F2F5FF;
+}
+
+.online {
+    display: block;
 }
 
 .related-products {

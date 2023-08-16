@@ -376,13 +376,13 @@
                         </div>
                     </div>
                 </form> *@
-                <form action="https://a9675586.sibforms.com/serve/MUIFAKY2qRUT3U4w2PqFQ7NUjoX-yztcIqgBjtL8VgNN-u3nZE6RLaYlp92OB9MP0rvtvRH-8IY_C_jlejqYgIMY79W-U40uJjPD5lCz-BNpSl-kBIJ27OZnInk7zGtM8ILhkYGDhEeWhK4hzriz2svT6dAcWZJVJuRXyAKib5-hDTY8HbqAX46_n8JXNCPZX5tA_c-InoWsqntG" method="post" id="sib-form" class="mt-5 validate w-100" data-type="subscription">
+                <form id="sib-form" class="mt-5 validate w-100" data-type="subscription">
                     <div class="form-group position-relative">
                         <div class="p-0 form-group">
                             <input type="email" id="EMAIL" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required style="border-radius: 30px;"/>
                         </div>
                         <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
-                            <button type="submit trigger" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;" data-toggle="modal" data-target="#successModal">
+                            <button type="submit button trigger" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;" data-bs-toggle="modal" data-bs-target="#successModal">
                                 <i class="bi bi-send fs-1"></i>
                             </button>
                         </div>
@@ -411,6 +411,23 @@
             </div>
         </div>
     </div> *@
+
+    <div class="modal" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-none">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    @* <div class="crop"> <img src="https://i.imgur.com/Mdz5Nma.jpg" width="100%"> </div> *@
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
 </div>
 
  @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")
