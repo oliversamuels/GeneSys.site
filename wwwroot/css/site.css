@@ -774,11 +774,11 @@ h2 {
     align-items: center;
 }
 
-.modal {
+/* .modal {
     height: 40rem;
 }
 
-/* .subscribe-success {
+.subscribe-success {
     display: flex;
     justify-content: center;
     margin-top: 200px;
@@ -856,8 +856,49 @@ h2 {
     padding-top: 5px
 } */
 
+.mod-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mod-footer {
+    text-align: center;
+    padding: 2rem 4rem;
+}
+
+.mod-footer p{
+    font-size: 1.6rem;
+    line-height: 120%;
+    font-weight: 600;
+}
+
+.mod-footer h2{
+    color: #0b5ed7;
+}
+
+.crop {
+    width: 50%;
+    height: 50%;
+}
+
 .questionText .cs-p{
     padding: 1rem 3rem;
+}
+
+.newsletter-modal {
+    position: fixed;
+    top: 20%;
+    right: 35%;
+    margin: auto;
+    width: 40rem;
+    height: 40rem;
+    text-align: center;
+    background-color: #FFF;
+    color: #000000;
+    z-index: 4;
+    box-sizing: border-box;
+    display: none;
 }
 
 @media (max-width: 1240px) {

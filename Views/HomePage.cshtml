@@ -364,7 +364,7 @@
                     Stay Informed and Get Exclusive Access to the Latest Industry Insights and Innovations for Your Hospital.
                 </p>
             </div>
-            <div class="col-lg-5 col-md-8 d-flex align-items-center ">
+            <div class="col-lg-5 col-md-8 d-flex align-items-center">
                 @* <form action="https://genesys-health.us14.list-manage.com/subscribe/post?u=ab97c0ec2b3935027b5fb874e&amp;id=21d3b63641&amp;f_id=003709e0f0" method="post" id="mc-embedded-subscribe-form" class="mt-5 validate w-100" target="_blank" nonvalidate>
                     <div class="form-group position-relative">
                         <div class="p-0 form-group">
@@ -377,13 +377,13 @@
                         </div>
                     </div>
                 </form> *@
-                <form id="sib-form" class="mt-5 validate w-100" data-type="subscription">
+                <form id="newsletter-form" method="POST" action="https://a9675586.sibforms.com/serve/MUIFAK_CIkmdbFlB-_4gAkMva-WfvKHAwlqRP8hiVNFLZ4NjR2mZfK39SEuWt-lC5W6iRP6f1YHG0_u1LcD_BefHOidkojpdWCAPYMdDKe9nqAcPXUgW0cfJM0dYHiMSgg9iTTrJuZw7In5DN1H6s552N4EQPmXJmkC6sdd944Pw7Ag_Q3TvuCVbgJ5iNscnToId6sY9Pl2Sy-vY" target="_blank" data-type="subscription" class="mt-5 validate w-100">
                     <div class="form-group position-relative">
                         <div class="p-0 form-group">
                             <input type="email" id="EMAIL" name="EMAIL" class="form-control py-4 fw-bold fs-5 ps-3" placeholder="Email Address" required style="border-radius: 30px;"/>
                         </div>
                         <div class="p-0 form-group position-absolute top-50 end-0 translate-middle-y">
-                            <button type="submit button trigger" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;" data-bs-toggle="modal" data-bs-target="#successModal">
+                            <button type="submit" form="newsletter-form" name="subscribe" style="border-radius:50%; border: 1px solid transparent; background: #0ABFF8; color:white; padding: 5px 12px;">
                                 <i class="bi bi-send fs-1"></i>
                             </button>
                         </div>
@@ -392,40 +392,16 @@
             </div>
         </div>
     </div>
-    @* <div class='container subscribe-success'><button type="button" class="btn trigger" data-toggle="modal" data-target="#successModal"> MAIL REPORT </button>
-        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-none"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>
-                    <div class="modal-body p-0">
-                        <div class="crop"> <img src="https://i.imgur.com/Mdz5Nma.jpg" width="100%"> </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <h2>Woohoo</h2>
-                    <p class="text-center"><small class="text-muted">Thank you for your subscription. You'll be sent the next issue of our newspaper shortly </small></p>
-                    <div class="d-flex justify-content-center"> <button type="button" class="okay btn">ok</button>
-                        <p class="setting"><small><strong><u>Setting</u></strong></small></p>
-                        <p><strong></strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> *@
-
-    <div class="modal" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog">
+    <div class="newsletter-modal rounded shadow" id="successModal">
+        <div class="newsletter-modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header border-none">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    @* <div class="crop"> <img src="https://i.imgur.com/Mdz5Nma.jpg" width="100%"> </div> *@
+                <div class="mod-body p-0">
+                    <div class="crop"> <img src="https://static.thenounproject.com/png/3383823-200.png" width="100%"> </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+            <div class="mod-footer">
+                <h2>Success</h2>
+                <p class="text-center"><small class="text-muted">Thank you for your subscription. You'll be sent the next issue of our newspaper shortly. </small></p>
             </div>
         </div>
     </div>

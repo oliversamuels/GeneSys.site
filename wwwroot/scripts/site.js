@@ -428,6 +428,41 @@ function scrollD() {
 }
 
 //Home Image Slider
+
+const form = document.getElementById('newsletter-form');
+const successModal = document.getElementById('successModal');
+const emailInput = document.getElementById('EMAIL');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    setTimeout(() => {
+        showSuccessModal();
+        submitForm();
+        resetForm();
+    }, 1000);
+});
+
+function showSuccessModal() {
+    successModal.style.display = "flex";
+
+    setTimeout(() => {
+        hideSuccessModal();
+    }, 3000);
+}
+
+function hideSuccessModal() {
+    successModal.style.display = "none";
+}
+
+function resetForm() {
+    emailInput.value = '';
+}
+
+function submitForm(){
+    form.submit();
+}
+
 const imgContainer = document.querySelector('.inner-img-container');
 const slides = imgContainer.getElementsByTagName('img');
 var i = 0;

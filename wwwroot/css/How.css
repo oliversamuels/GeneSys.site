@@ -7,8 +7,27 @@
     padding: 50px 0;
 }
 
+.howhead .headText {
+    text-align: center;
+    width: 60%;
+}
+
+.howhead .headText h1{
+    font-size: 3rem;
+    line-height: 120%;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.howhead .headText p{
+    font-size: 1.6rem;
+    line-height: 120%;
+}
+
 .headVideo {
-    width: 50%;
+    width: 80%;
+    cursor: pointer;
 }
 
 .how .howImgBox{
