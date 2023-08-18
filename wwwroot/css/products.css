@@ -549,6 +549,132 @@
     height: 32rem;
 }
 
+.comparisonPage {
+    background-color: #F2F5FF;
+    padding: 4rem 5rem;
+}
+
+.comparisonPage .text h3 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.comparisonPage .text p {
+    font-size: 1.3rem;
+}
+
+.comparisonPage .button .btn {
+    padding: 1rem 3rem;
+    border: 1px solid #0A79F8;
+    border-radius: 3rem;
+    background-color: #FFF;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.comparisonPage .button .mon {
+    margin-right: -1.7rem;
+    padding-right: 4rem;
+}
+
+.comparisonPage .button .yer {
+    margin-left: -1.7rem;
+    padding-left: 4rem;
+}
+
+.comparisonPage .button .act {
+    background-color: #0A79F8;
+    padding: 1rem 3rem;
+    color: #FFF;
+    z-index: 2;
+}
+
+.comparisonTable {
+    margin: 6rem 2rem;
+}
+
+.comparisonPage .Colhead {
+    height: 8rem;
+    overflow: hidden;
+}
+
+.comparisonPage .Colhead .cost{
+    font-size: 2.3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.comparisonCol {
+    padding: 3rem;
+    width: 22rem;
+}
+
+.mainCol {
+    width: 40rem;
+}
+
+.bgBlue {
+    background-color: #0A79F8;
+    color: #FFF;
+}
+
+.bgBlue .title, .bgBlue .cost, .bgBlue .month{
+    color: #FFF;
+}
+
+.colBody {
+    margin: 2rem 0;
+}
+
+.colItem, .colDesc {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+}
+
+.colDesc {
+    margin-top: 2rem;
+}
+
+.statusCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2.4rem;
+}
+
+.statusCol li {
+    list-style: none;
+}
+
+.statusCol i {
+    font-size: 1.94rem;
+    padding: .3rem 0;
+    color: #2460FB;
+}
+
+.bgBlue i {
+    color: #FFF;
+}
+
+.statusCol .bi-x-lg {
+    color: red;
+}
+
+.hideCost {
+    display: none;
+}
+
+.showCost {
+    display: inline;
+}
+
 @media screen and (min-width: 800px) {
     .topHead {
         height: 76vh;

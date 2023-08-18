@@ -108,6 +108,7 @@
                 var name = content.Value<string>("packageTitle");
                 var img = content.Value<MediaWithCrops>("packageIMG");
                 var desc = content.Value<string>("packageDesc");
+                var link = content.Value<Link>("packageLink");
                 
                 <div class="productCard rounded shadow bg-body">
                     <img src="@img?.MediaUrl()" alt="">
@@ -116,17 +117,17 @@
                         @desc
                     </p>
                     <div class="rdm">
-                        <a href="" class="btn btn-primary py-2 px-3">Read More</a>
+                        <a href="@link.Url" class="btn btn-primary py-2 px-3">Read More</a>
                     </div>
                 </div>
             }
         }
     </div>
     <div class="container d-flex justify-content-end mb-5">
-        <a href="" class="sell-all">See All</a>
+        <a href="/products/all-products/" class="sell-all">See All</a>
     </div>
     <div class="d-flex justify-content-center">
-        <a href="" class="btn btn-primary compare">Compare our products</a>
+        <a href="/products/comparison/" class="btn btn-primary compare">Compare our products</a>
     </div>
 </section>
 

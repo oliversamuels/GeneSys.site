@@ -85,7 +85,7 @@
 .newst {
     width: 100%;
     height: 100%;
-    background: #E0E8FB;
+    /* background: #E0E8FB; */
     padding: 10px;
 }
 
@@ -110,6 +110,71 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.newsRead {
+    position: fixed;
+    width: 70vw;
+    height: calc(100vh - 7.5rem);
+    top: 7.5rem;
+    border-radius: 1rem;
+    background-color: white;
+    z-index: 99;
+    display: none;
+}
+
+.newsContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 3.5rem;
+    overflow: auto;
+}
+
+.imgcont-newsRead {
+    height: 40rem;
+    width: 40rem;
+    margin: auto;
+}
+
+.imgcont-newsRead img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.newsContent::-webkit-scrollbar {
+    width: 2px;
+}
+
+.newsClose {
+    position: absolute;
+    color: red;
+    right: 3rem;
+    top: 3rem;
+    cursor: pointer;
+}
+
+.newsClose i{
+    font-size: 2rem;
+}
+
+.newsContent .headText {
+    text-align: center;
+}
+
+.newsContent .headText h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.newsContent .bodyText{
+    padding: 2rem 5rem;
+}
+
+.newsContent .bodyText p{
+    font-size: 1.4rem;
+    text-align: justify;
 }
 
 .head {
@@ -140,8 +205,44 @@
     text-transform: uppercase;
 }
 
+.carousel-cas {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-cas .cs-p{
+    padding: 1rem 3rem;
+}
+
+.carousel-cas .smm img{
+    object-fit: contain;
+}
+
 .quest-case {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #c7c5c5;
+    margin: 1.5rem 0;
+}
+
+.carousel-pu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-pu, .smm{
+    width: 70%;
+    height: 90%;
+    margin: auto;
+}
+
+.smm img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 @media (max-width: 991px) {

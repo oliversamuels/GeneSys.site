@@ -1,0 +1,726 @@
+﻿@inherits UmbracoViewPage<ContentModels.ComparisonPage>
+@{
+	Layout = "Master.cshtml";
+	ViewData["Title"] = Model.Title;
+}
+
+<section class="comparisonPage">
+	<div class="row mx-3">
+		<div class="col d-flex justify-content-start">
+			<div class="text">
+				<h3>Simple, transparent pricing</h3>
+				<p>Choose a plan that works best for you and your hospital</p>
+			</div>
+		</div>
+		<div class="col d-flex justify-content-end">
+			<div class="button">
+				<button class="btn mon act" data-id="mon">monthly</button>
+				<button class="btn yer" data-id="yer">yearly</button>
+			</div>
+		</div>
+	</div>
+	<div class="row container comparisonTable">
+		<div class="col-3 comparisonCol mainCol">
+			<div class="Colhead"></div>
+			<div class="colBody">
+				<p class="colDesc">Patient Management</p>
+				<ul>
+					<li class="colItem">Registration</li>
+					<li class="colItem">Appointment Scheduling/Mgt</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Nurse Workbench</p>
+				<ul>
+					<li class="colItem">Patient Triaging</li>
+					<li class="colItem">Nursing Services</li>
+					<li class="colItem">Immunization</li>
+					<li class="colItem">Antenatal & delivery suite</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Inpatient Suite</p>
+				<ul>
+					<li class="colItem">General Menu</li>
+					<li class="colItem">Labour Menu</li>
+					<li class="colItem">New Born</li>
+					<li class="colItem">Antenatal Menu</li>
+					<li class="colItem">Nursing Initial Assessment</li>
+					<li class="colItem">Finalize</li>
+					<li class="colItem">Accident & Emergency (A&E)</li>
+					<li class="colItem">Intensive Care Unit (ICU)</li>
+					<li class="colItem">Surgery</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Doctor Workbench</p>
+				<ul>
+					<li class="colItem">GP Templates</li>
+					<li class="colItem">Dental template</li>
+					<li class="colItem">Neruo spinal template</li>
+					<li class="colItem">EENT template</li>
+					<li class="colItem">Ophthalmology examination template</li>
+					<li class="colItem">Optometry examination template</li>
+					<li class="colItem">Dermatology Template</li>
+					<li class="colItem">Obstetric & Gynecology</li>
+					<li class="colItem">Newborn examination template</li>
+					<li class="colItem">Mental examination template</li>
+					<li class="colItem">Audiology examination template</li>
+					<li class="colItem">Physiotherapy Examination template</li>
+					<li class="colItem">Theatre booking & Surgery</li>
+					<li class="colItem">Accident & Emmergency</li>
+					<li class="colItem">ICU</li>
+					<li class="colItem">CPOE</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Billing/Finance</p>
+				<ul>
+					<li class="colItem">Automated billing & payment receipt</li>
+					<li class="colItem">Corporate profile management</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Pharmacy</p>
+				<ul>
+					<li class="colItem">Medication vetting & dispensing</li>
+					<li class="colItem">Retail pharmacy</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Laboratory</p>
+				<ul>
+					<li class="colItem">Basic sample collection & result entry</li>
+					<li class="colItem">Advanced laboratory workflow</li>
+					<li class="colItem">Retail laboratory</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Radiology</p>
+				<ul>
+					<li class="colItem">Image upload & result entry</li>
+					<li class="colItem">Retail radiology</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Inventory/Store</p>
+				<ul>
+					<li class="colItem">Inventory management</li>
+					<li class="colItem">Procurement management</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Manager Dashboard</p>
+				<ul>
+					<li class="colItem">Basic reports</li>
+					<li class="colItem">Graphics dashboard</li>
+					<li class="colItem">Audit trail</li>
+					<li class="colItem">Report builder</li>
+					<li class="colItem">Advanced custom built report</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Queue Management</p>
+				<ul>
+					<li class="colItem">Queue Management</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Others</p>
+				<ul>
+					<li class="colItem">Customization option</li>
+					<li class="colItem">Multi location</li>
+					<li class="colItem">Teleconsultation</li>
+					<li class="colItem">Patient self-service app</li>
+				</ul>
+			</div>
+			<div class="colBody">
+				<p class="colDesc">Services</p>
+				<ul>
+					<li class="colItem">Requirement gathering & process re-engineering</li>
+					<li class="colItem">On-premise training</li>
+					<li class="colItem">Hand-holding</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/flower.png" alt=""/>
+					<h3 class="m-0">LITE<span class="title">(EMR)</span></h3>
+				</div>
+				<div class="mt-3 mon hideCost showCost">
+					<p><span class="cost">&#8358;5000</span><span class="month">/month</span></p>
+				</div>
+				<div class="mt-3 yer hideCost">
+					<p><span class="cost">&#8358;60,000</span><span class="month">/year</span></p>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol bgBlue">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/cross.png" alt=""/>
+					<h3 class="m-0">MIDI<span class="title">(EMR)</span></h3>
+				</div>
+				<div class="mt-3 mon hideCost showCost">
+					<p><span class="cost">&#8358;5200</span><span class="month">/month</span></p>
+				</div>
+				<div class="mt-3 yer hideCost">
+					<p><span class="cost">&#8358;62,400</span><span class="month">/year</span></p>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-x-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/crown.png" alt=""/>
+					<h3 class="m-0">ERP<span class="title">(HMIS)</span></h3>
+				</div>
+				<div class="mt-3 mon hideCost showCost">
+					<p><span class="cost">&#8358;5500</span><span class="month">/month</span></p>
+				</div>
+				<div class="mt-3 yer hideCost">
+					<p><span class="cost">&#8358;66,000</span><span class="month">/year</span></p>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+		</div>
+		@* <div class="col-3 comparisonCol mainCol">
+			<div class="Colhead"></div>
+			<div class="colBody">
+				<p class="colDesc">Patient Management</p>
+				<ul>
+					<li class="colItem">Registration</li>
+					<li class="colItem">Appointment Scheduling/Mgt</li>
+				</ul>
+				<p class="colDesc">Nurse Workbench</p>
+				<ul>
+					<li class="colItem">Patient Triaging</li>
+					<li class="colItem">Nursing Services</li>
+					<li class="colItem">Immunization</li>
+					<li class="colItem">Antenatal & delivery suite</li>
+				</ul>
+				<p class="colDesc">Inpatient Suite</p>
+				<ul>
+					<li class="colItem">General Menu</li>
+					<li class="colItem">Labour Menu</li>
+					<li class="colItem">New Born</li>
+					<li class="colItem">Antenatal Menu</li>
+					<li class="colItem">Nursing Initial Assessment</li>
+					<li class="colItem">Finalize</li>
+					<li class="colItem">Accident & Emergency (A&E)</li>
+					<li class="colItem">Intensive Care Unit (ICU)</li>
+					<li class="colItem">Surgery</li>
+				</ul>
+				<p class="colDesc">Doctor Workbench</p>
+				<ul>
+					<li class="colItem">GP Templates</li>
+					<li class="colItem">Dental template</li>
+					<li class="colItem">Neruo spinal template</li>
+					<li class="colItem">EENT template</li>
+					<li class="colItem">Ophthalmology examination template</li>
+					<li class="colItem">Optometry examination template</li>
+					<li class="colItem">Dermatology Template</li>
+					<li class="colItem">Obstetric & Gynecology</li>
+					<li class="colItem">Newborn examination template</li>
+					<li class="colItem">Mental examination template</li>
+					<li class="colItem">Audiology examination template</li>
+					<li class="colItem">Physiotherapy Examination template</li>
+					<li class="colItem">Theatre booking & Surgery</li>
+					<li class="colItem">ICU</li>
+					<li class="colItem">CPOE</li>
+				</ul>
+				<p class="colDesc">Billing/Finance</p>
+				<ul>
+					<li class="colItem">Automated billing & payment receipt</li>
+					<li class="colItem">Corporate profile management</li>
+				</ul>
+				<p class="colDesc">Pharmacy</p>
+				<ul>
+					<li class="colItem">Medication vetting & dispensing</li>
+					<li class="colItem">Retail pharmacy</li>
+				</ul>
+				<p class="colDesc">Laboratory</p>
+				<ul>
+					<li class="colItem">Basic sample collection & result entry</li>
+					<li class="colItem">Advanced laboratory workflow</li>
+					<li class="colItem">Retail laboratory</li>
+				</ul>
+				<p class="colDesc">Radiology</p>
+				<ul>
+					<li class="colItem">Image upload & result entry</li>
+					<li class="colItem">Retail radiology</li>
+				</ul>
+				<p class="colDesc">Inventory/Store</p>
+				<ul>
+					<li class="colItem">Inventory management</li>
+					<li class="colItem">Procurement management</li>
+				</ul>
+				<p class="colDesc">Manager Dashboard</p>
+				<ul>
+					<li class="colItem">Basic reports</li>
+					<li class="colItem">Graphics dashboard</li>
+					<li class="colItem">Audit trail</li>
+					<li class="colItem">Report builder</li>
+					<li class="colItem">Advanced custom built report</li>
+				</ul>
+				<p class="colDesc">Queue Management</p>
+				<ul>
+					<li class="colItem">Queue Management</li>
+				</ul>
+				<p class="colDesc">Others</p>
+				<ul>
+					<li class="colItem">Customization option</li>
+					<li class="colItem">Multi location</li>
+					<li class="colItem">Teleconsultation</li>
+					<li class="colItem">Patient self-service app</li>
+				</ul>
+				<p class="colDesc">Services</p>
+				<ul>
+					<li class="colItem">Requirement gathering & process re-engineering</li>
+					<li class="colItem">On-premise training</li>
+					<li class="colItem">Hand-holding</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/flower.png" alt=""/>
+					<h3 class="m-0">LITE<span class="title">(EMR)</span></h3>
+				</div>
+				<div class="mt-3">
+					<p><span class="cost">&#8358;5000</span><span class="month">/month</span></p>
+				</div>
+			</div>
+			<div class="colBody">
+				<div class="statusCol">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+				<div class="statusCol othr">
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+					<li><i class="bi bi-check-lg"></i></li>
+				</div>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol bgBlue">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/cross.png" alt=""/>
+					<h3 class="m-0">MIDI<span class="title">(EMR)</span></h3>
+				</div>
+				<div class="mt-3">
+					<p><span class="cost">&#8358;5200</span><span class="month">/month</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-2 comparisonCol">
+			<div class="Colhead">
+				<div class="d-flex justify-content-start align-items-center">
+					<img class="sm me-2" src="~/assets/images/crown.png" alt=""/>
+					<h3 class="m-0">ERP<span class="title">(HMIS)</span></h3>
+				</div>
+				<div class="mt-3">
+					<p><span class="cost">&#8358;5500</span><span class="month">/month</span></p>
+				</div>
+			</div>
+		</div> *@
+	</div>
+</section>
+
+ @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

@@ -15,6 +15,18 @@ items.forEach(item => {
     })
 })
 
+function closeNewsRead(e) {
+    let id = e.dataset.id;
+    document.getElementById(id).style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function openNewsRead(d) {
+    let id = d.dataset.id;
+    document.getElementById(id).style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
 /*Index-Question Script*/
 const questions = document.querySelectorAll(".question");
 
@@ -384,6 +396,26 @@ function aboutTestimonySlide() {
 setInterval(aboutTestimonySlide, 5000);
 
 //Product
+
+let priceButton = document.querySelectorAll(".comparisonPage .button .btn");
+
+priceButton.forEach((item) => {
+    item.addEventListener("click", ()=> {
+        let activeButton = document.querySelector(".comparisonPage .button .act");
+        let activePrice = document.querySelectorAll(".showCost")
+        let bottonId = item.dataset.id;
+        let priceBlock = document.querySelectorAll("."+bottonId);
+        activeButton.classList.remove("act");
+        item.classList.add("act");
+
+        activePrice.forEach((e) => {
+            e.classList.remove("showCost");
+        })
+        priceBlock.forEach((i) => {
+            i.classList.add("showCost");
+        })
+    })
+})
 
 function scrollU() {
     var arrowLeft = document.querySelector(".productDisplay");
