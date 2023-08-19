@@ -287,38 +287,40 @@ window.addEventListener("DOMContentLoaded", function (){
     DetailsCnt.innerHTML = displayModuleDetails */;
 });
 
-const productCard = document.querySelectorAll(".productCard");
-const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
+// const productCard = document.querySelectorAll(".productCard");
+// const moduleTitle = document.querySelector(".featureItemDetailsCnt h3");
 let featureItem = document.querySelectorAll(".module-item");
+let featureItems = document.querySelectorAll(".feature-item");
 
-productCard.forEach((item) => {
-    item.addEventListener("click", () => {
-        const activeCard = document.querySelector(".productDisplay .active");
-        const id = item.dataset.id;
-        const title = item.dataset.title;
-        moduleINumber = item.dataset.item;
-        activeCard.classList.remove("active");
-        item.classList.add("active");
 
-        const element = document.getElementById(id);
-        let position = element.offsetTop;
-        window.scrollTo({
-            left:0,
-            top:position,
-        })
+// productCard.forEach((item) => {
+//     item.addEventListener("click", () => {
+//         const activeCard = document.querySelector(".productDisplay .active");
+//         const id = item.dataset.id;
+//         const title = item.dataset.title;
+//         moduleINumber = item.dataset.item;
+//         activeCard.classList.remove("active");
+//         item.classList.add("active");
 
-        moduleTitle.textContent = `${title}`;
+//         const element = document.getElementById(id);
+//         let position = element.offsetTop;
+//         window.scrollTo({
+//             left:0,
+//             top:position,
+//         })
 
-        let list = Object.keys(modules[moduleINumber].feature);
-        let displayNewModuleList = list.map(function (item){
-            if (item === list[0])
-                return `<li class="featureItem active" data-name="${item}">${item}</li>`;
-            return `<li class="featureItem" data-name="${item}">${item}</li>`;
-        }).join("");
+//         moduleTitle.textContent = `${title}`;
+
+//         let list = Object.keys(modules[moduleINumber].feature);
+//         let displayNewModuleList = list.map(function (item){
+//             if (item === list[0])
+//                 return `<li class="featureItem active" data-name="${item}">${item}</li>`;
+//             return `<li class="featureItem" data-name="${item}">${item}</li>`;
+//         }).join("");
     
-        //fList.innerHTML = displayNewModuleList;
-    });
-});
+//         //fList.innerHTML = displayNewModuleList;
+//     });
+// });
 
 /* featureItem.forEach((item) => {
     item.addEventListener("click", ()=>{
@@ -358,11 +360,22 @@ productCard.forEach((item) => {
 featureItem.forEach((item) => {
     item.addEventListener("click", ()=>{
         let ElementId = item.dataset.name;
-        const featureItems = document.querySelectorAll(".feature-item");
-        let activeItems = document.querySelectorAll(".online");
         let activeFeature = document.querySelector(".module-list .active");
+        let activeItems = document.querySelectorAll(".online");
+
+        console.log(ElementId);
         activeFeature.classList.remove("active");
         item.classList.add("active");
+
+        activeItems.forEach((y) => {
+            y.classList.remove("online");
+        })
+
+        featureItems.forEach((x) => {
+            if (x.classList.contains(ElementId)) {
+                x.classList.add("online");
+            }
+        })
     })
 })
 

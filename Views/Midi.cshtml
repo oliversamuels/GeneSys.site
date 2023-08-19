@@ -62,15 +62,16 @@
                         {
                             var list = feature.Content;
                             var featureName = list.Value<string>("featureName");
+                            var fn = featureName.Substring(0,5);
 
-                            if (feature == features[3])
+                            if (feature == features[0])
                             {
-                                <div class="module-item active" data-name="@featureName">
+                                <div class="module-item active" data-name="@fn">
                                     <p>@featureName</p>
                                 </div>
                             } else
                             {
-                                <div class="module-item" data-name="@featureName">
+                                <div class="module-item" data-name="@fn">
                                     <p>@featureName</p>
                                 </div>
                             }
@@ -93,13 +94,13 @@
 
                     @if(name.ToLower() == "genesys midi" && features != null)
                     {
-                        @foreach (var feature in features)
+                         @foreach (var feature in features)
                         {
                             var list = feature.Content;
-                            var featureName = list.Value<string>("featureName");
+                            var featureName = list.Value<string>("featureName").Substring(0,5);
                             var details = list.Value<BlockGridModel>("details");
 
-                            @if (feature == features[3])
+                            @if (feature == features[0])
                             {
                                 @if(details != null )
                                 {
@@ -109,10 +110,22 @@
                                         var title = dtl.Value<string>("title");
                                         var desc = dtl.Value<string>("desc");
 
-                                        <div class="feature-item">
+                                        <div class="feature-item online @featureName">
                                             <p>@title</p>
                                         </div>
                                     }
+                                }
+                            } else 
+                            {
+                                @foreach (var detail in details)
+                                {
+                                    var dtl = detail.Content;
+                                    var title = dtl.Value<string>("title");
+                                    var desc = dtl.Value<string>("desc");
+
+                                    <div class="feature-item @featureName">
+                                        <p>@title</p>
+                                    </div>
                                 }
                             }
                         }
