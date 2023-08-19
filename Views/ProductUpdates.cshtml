@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-75">
+                <div class="w-md-75 w-md-100">
                     <div>
                         <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-75">
+                <div class="w-md-75 w-md-100">
                     <div>
                         <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
@@ -150,7 +150,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="newsClose" data-id="222" onclick="closeNewsRead()">
+                <div class="newsClose" data-id="222" onclick="closeNewsRead(this)">
                     <i class="bi bi-x-lg"></i>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-75">
+                <div class="w-md-75 w-md-100">
                     <div>
                         <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
@@ -228,7 +228,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-75">
+                <div class="w-md-75 w-md-100">
                     <div>
                         <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
                     </div>
@@ -266,7 +266,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="newsClose" data-id="444" onclick="closeNewsRead()">
+                <div class="newsClose" data-id="444" onclick="closeNewsRead(this)">
                     <i class="bi bi-x-lg"></i>
                 </div>
             </div>
@@ -283,10 +283,10 @@
                     of health and tech. 
                     We urge you to kick back, chill and relax, while you read.
                 </p>
-                <form id="newsletter-form" method="POST" action="https://a9675586.sibforms.com/serve/MUIFAK_CIkmdbFlB-_4gAkMva-WfvKHAwlqRP8hiVNFLZ4NjR2mZfK39SEuWt-lC5W6iRP6f1YHG0_u1LcD_BefHOidkojpdWCAPYMdDKe9nqAcPXUgW0cfJM0dYHiMSgg9iTTrJuZw7In5DN1H6s552N4EQPmXJmkC6sdd944Pw7Ag_Q3TvuCVbgJ5iNscnToId6sY9Pl2Sy-vY" data-type="subscription" class="mt-5 validate w-100" target="_blank">
+                <form id="newsletter-form" method="POST" action="https://a9675586.sibforms.com/serve/MUIFAK_CIkmdbFlB-_4gAkMva-WfvKHAwlqRP8hiVNFLZ4NjR2mZfK39SEuWt-lC5W6iRP6f1YHG0_u1LcD_BefHOidkojpdWCAPYMdDKe9nqAcPXUgW0cfJM0dYHiMSgg9iTTrJuZw7In5DN1H6s552N4EQPmXJmkC6sdd944Pw7Ag_Q3TvuCVbgJ5iNscnToId6sY9Pl2Sy-vY" data-type="subscription" class="mt-5 validate w-100" target="display-frame">
                     <div class="row gap-2 form-group">
                         <div class="col-7 p-0 form-group">
-                            <input type="email" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Enter your e-mail address" required/>
+                            <input type="email" id="EMAIL" name="EMAIL" class="form-control rounded-start py-4 fw-bold fs-5 ps-3" placeholder="Enter your e-mail address" required/>
                         </div>
                         <div class="col-4 d-grid p-0 form-group">
                             <button type="submit" name="subscribe" class="fw-bold fs-5" style="border-radius:0 5px 5px 0; background: #005AC0; border:1px solid transparent; color:white;">Subscribe</button>
@@ -294,7 +294,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 col-md-8">
+            <div class="col-lg-6 col-md-8 nl-img">
                 <img src="~/assets/images/ffv 1.png" width="420px" alt="" />
             </div>
         </div>
@@ -312,6 +312,7 @@
             </div>
         </div>
     </div>
+    <iframe name="display-frame" style="display:none;"></iframe>
 </div>
 
  @await Html.PartialAsync("~/Views/Partials/_footer.cshtml")

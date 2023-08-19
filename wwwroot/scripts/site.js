@@ -17,12 +17,14 @@ items.forEach(item => {
 
 function closeNewsRead(e) {
     let id = e.dataset.id;
+    console.log(id);
     document.getElementById(id).style.display = "none";
     document.body.style.overflow = "auto";
 }
 
 function openNewsRead(d) {
     let id = d.dataset.id;
+    console.log(id);
     document.getElementById(id).style.display = "block";
     document.body.style.overflow = "hidden";
 }

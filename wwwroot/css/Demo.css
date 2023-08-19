@@ -11,6 +11,11 @@
     object-fit : cover;
 }
 
+.demoText {
+    margin-left:55px;
+    font-size:30px;
+}
+
 .demo .sign {
     position: absolute;
     height: 250px;
@@ -51,10 +56,11 @@
     font-size : 14px;
     color : #000;
 }
-    .demoform form input, select, option {
-        height: 40px;
-        font-size: 14px;
-    }
+
+.demoform form input, select, option {
+    height: 40px;
+    font-size: 14px;
+}
 
 @media (max-width: 991px) {
     .demo {
@@ -62,7 +68,13 @@
     }
 
     .demoform {
-        width: 80%;
+        width: 94%;
+        max-width: 50rem;
         padding: 50px;
+        margin: auto;
+    }
+
+    .demoText {
+        margin: 0;
     }
 }

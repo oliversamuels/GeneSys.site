@@ -245,6 +245,26 @@
     object-fit: contain;
 }
 
+.carousel-itm {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-itm img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.caseStudyList {
+    padding: 3rem;
+}
+
+.caseStudyList h3{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
 @media (max-width: 991px) {
     .head li {
         padding: 5px 10px;
@@ -253,11 +273,12 @@
 
     .newslet {
         height: fit-content;
+        padding: 0 2rem;
         margin-bottom: 5rem;
     }
 
     .imgBxII {
-        width: 40rem;
+        width: 100%;
         height: 30rem;
     }
 
@@ -267,5 +288,35 @@
 
     .newsletter {
         height: fit-content;
+    }
+
+    .seeAll {
+        bottom: -3rem;
+        right: 3rem;
+    }
+
+    .nl-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nl-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .newsSlider {
+        width: 100%;
+        background-color: #F2F5FF;
+        height: 30rem;
+    }
+
+    .csText {
+        margin: 3rem 1rem;
+    }
+
+    .csText h2{
+        line-height: 120%;
     }
 }

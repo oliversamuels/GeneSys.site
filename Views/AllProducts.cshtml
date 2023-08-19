@@ -7,7 +7,7 @@
 	DemoViewModel Demo = new DemoViewModel();
 }
 
-<section class="all-products">
+<section class="all-products row">
 	<div class="rp-text">
 		<h2>@Model?.ProductHeading</h2>
         <p>
@@ -47,38 +47,9 @@
 	</div>
 </section>
 
-@* <section class="container-fluid demo">
-    <div class="row h-100 m-0 p-0">
-        <div class="col-lg-9 col-md-12 p-0">
-            <div>
-                <h1 style="margin-left:55px;font-size:30px;" class="demoText">Talk to an expert</h1>
-                <div class="demoform">
-                    @await Html.PartialAsync("~/Views/Partials/_Demo.cshtml", Demo)
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 hide">
-            <div style="height:100%; width:100%; background: #E0E8FB;" class="position-relative">
-                <img src="~/assets/images/Demo/girl.png" class="img-fluid" alt=""/>
-                <div class="sign d-flex justify-content-center align-items-center" 
-                style="">
-                    <div style="width:70%;height:50%">
-                        <p class="fs-4">I WOULD LIKE TO…</p>
-                        <ul>
-                            <li class="fs-5 spt" data-id="expert"><span class="span spd"></span>Talk to an expert</li>
-                            <li class="fs-5 spt" data-id="demo"><span class="span"></span>Request a demo</li>
-                            <li class="fs-5 spt" data-id="support"><span class="span"></span>Get technical support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> *@
-
 <section class="all-product-demo">
 	<div class="demo-img">
-		<img src="~/assets/images/Products/demoImg.png" alt="">
+		<img src="~/assets/images/Products/demoImg.png" alt="" class="hide">
 		<div class="demo-outer shadow rounded">
 			<h1 class="demoText">Request a demo</h1>
 			<div class="demoform">

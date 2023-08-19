@@ -760,6 +760,24 @@
     .personnel-arrow-right{
         right: 2rem;
     }
+
+    .galleryImg {
+        flex-wrap: nowrap;
+        overflow: auto;
+        margin: 0;
+    }
+
+    .galleryImg::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .galCont {
+        min-width: 25rem;
+    }
+
+    .carousel {
+        height: 30rem;
+    }
 }
 
 @media screen and (max-width: 576px){

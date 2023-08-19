@@ -157,7 +157,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
+    max-width: 30rem;
+    min-width: 30rem;
     padding: 2rem;
     margin: 1.4rem 0;
     height: 35rem;
@@ -305,9 +307,13 @@
     text-align: center;
 }
 
+.productPlans .planText div {
+    width: 90%;
+}
+
 .productPlans .planText h3{
     font-size: 3rem;
-    line-height: 4rem;
+    line-height: 120%;
     font-weight: 700;
 }
 
@@ -334,6 +340,7 @@
     display: flex;
     justify-content: center;
     color: #324054;
+    margin-bottom: 3rem;
 }
 
 .productJoin .joinCont {
@@ -513,10 +520,11 @@
 
 .all-products {
     width: 100%;
-    height: 90vh;
+    height: fit-content;
     background-color: #F2F5FF;
     padding: 3rem;
     display: flex;
+    flex-direction: column;
 }
 
 .rp-text {
@@ -551,7 +559,7 @@
 
 .comparisonPage {
     background-color: #F2F5FF;
-    padding: 4rem 5rem;
+    padding: 4rem 2rem;
 }
 
 .comparisonPage .text h3 {
@@ -594,12 +602,16 @@
 }
 
 .comparisonTable {
-    margin: 6rem 2rem;
+    margin: 3rem .5rem;
 }
 
 .comparisonPage .Colhead {
     height: 8rem;
     overflow: hidden;
+}
+
+.comparisonPage .Colhead *{
+    transform: scale(0.7);
 }
 
 .comparisonPage .Colhead .cost{
@@ -609,12 +621,12 @@
 }
 
 .comparisonCol {
-    padding: 3rem;
-    width: 22rem;
+    padding: .5rem;
+    width: 30%;
 }
 
 .mainCol {
-    width: 40rem;
+    width: 20rem;
 }
 
 .bgBlue {
@@ -673,6 +685,21 @@
 
 .showCost {
     display: inline;
+}
+
+.gp-img {
+    width: 100%;
+    height: 100%;
+}
+
+.gp-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.all-product-demo {
+    margin: 3rem 0;
 }
 
 @media screen and (min-width: 800px) {
@@ -883,7 +910,8 @@
     }
 
     .rp-text {
-        width: 50%;
+        width: 80%;
+        margin: auto;
     }
 
     .rp-products {
@@ -895,17 +923,16 @@
     }
 
     .all-products {
-        width: 100%;
         height: 90vh;
-        background-color: #F2F5FF;
         padding: 3rem;
-        display: flex;
+        flex-direction: row;
     }
 
     .all-product-demo {
         background-color: #F2F5FF;
         width: 100%;
         height: 95vh;
+        margin: 0;
     }
 
     .all-product-demo .demo-img {
@@ -1004,5 +1031,30 @@
 
     .all-products .rp-products .productDisplay .productCard {
         min-width: 30rem;
+    }
+
+    .productPlans .planText div {
+        width: 70%;
+    }
+
+    .comparisonPage {
+        padding: 4rem 5rem;
+    }
+
+    .comparisonTable {
+        margin: 6rem 2rem;
+    }
+
+    .comparisonCol {
+        padding: 3rem;
+        width: 22rem;
+    }
+
+    .mainCol {
+        width: 40rem;
+    }
+
+    .comparisonPage .Colhead *{
+        transform: scale(1);
     }
 }

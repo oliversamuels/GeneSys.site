@@ -96,4 +96,17 @@
     .testimonial {
         width: 80%;
     }
+    .howhead .headText {
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .digital {
+        width: 120% !important;
+    }
+
+    .digital img{
+        width: 100%;
+        height: 100%;
+    }
 }
