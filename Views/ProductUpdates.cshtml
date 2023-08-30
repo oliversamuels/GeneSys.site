@@ -2,6 +2,20 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+    var newsletters = Model.Value<BlockGridModel>("news");
+    List<BlockGridItem> product_update = new List<BlockGridItem>();
+
+
+    if(newsletters != null)
+    {
+        @foreach(var newsletter in newsletters)
+        {
+            if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
+            {
+                product_update.Add(newsletter);
+            } 
+        }
+    }
 }
 
 <div class="container-fluid p-0 position-relative">
@@ -39,6 +53,87 @@
     </div>
 
     <div class="container-fluid news">
+        @if(product_update.Any())
+        {
+            foreach (var item in product_update)
+            {
+                var content = item.Content;
+                var date = content.Value<DateTime>("newsDate");
+                var link = content.Value<Link>("newsLink");
+                var summary = content.Value<string>("newsSummary");
+                var title = content.Value<string>("newsTitle");
+                var news = content.Value<BlockGridModel>("news");
+                var category = content.Value<string>("newsCategory");
+                
+                <div class="row newslet">
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                        <div class="imgBxII">
+                            <div class="newst">
+                                <div class="newstinner">
+                                    @if(news != null)
+                                    {
+                                        @foreach (var comp in news)
+                                        {
+                                            var newsItem = comp.Content;
+                                            var newsLink = newsItem.Value<Link>("bookLink");
+                                            var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+                                            var newsContent = newsItem.Value<IHtmlEncodedString>("bookContent");
+
+                                            <div class="imgcont">
+                                                <a href="@newsLink?.Url">
+                                                    <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                </a>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                        <div class="w-75">
+                            <div>
+                                <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-1">@title</h3>
+                            </div>
+                            <div>
+                                <p class="fs-4">@summary</p>
+                            </div>
+                            <div>
+                                <a style="cursor: pointer;" class="fs-2" data-id="111" onclick="openNewsRead(this)">View Live Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsRead" id="111">
+                    <div class="newsContent">
+                        <div class="headText">
+                            <h2>@title</h2>
+                        </div>
+                        <div class="imgcont-newsRead">
+                            <img src="@newsImage?.MediaUrl()" alt=""/>
+                        </div>
+                        <div class="bodyText">
+                            <p>
+                                @newsContent
+                            </p>
+                        </div>
+                    </div>
+                    <div class="newsClose" data-id="111" onclick="closeNewsRead(this)">
+                        <i class="bi bi-x-lg"></i>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="newslet">
+                @*If Empty*@
+                <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
+            </div>
+        }
         <div class="row newslet">
             <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
                 <div class="imgBxII">

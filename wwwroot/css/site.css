@@ -17,7 +17,6 @@ body::-webkit-scrollbar {
 
 body {
     -ms-overflow-style: none;
-    scroll-snap-type: y mandatory;
     height: fit-content;
     position:relative;
     overflow-x: hidden;
@@ -82,14 +81,12 @@ ul > li {
     position: relative;
     top: 70px;
     padding:0;
-    scroll-snap-type: y mandatory;
 }
 
 
 .intro {
     background-color: #F2F5FF;
     height: calc(100vh - 70px);
-    scroll-snap-align: start;
 }
 
 .mainImage {
@@ -115,14 +112,12 @@ ul > li {
 .info {
     background-color: #FFF;
     height: 120vh;
-    scroll-snap-align: start;
 }
 
 .packages {
     background-color: #FFF;
     height: fit-content;
     padding: 4rem 0;
-    scroll-snap-align: start;
 }
 
 .sell-all {
@@ -140,7 +135,6 @@ ul > li {
 .trophy, .testimony {
     background-color: #F2F5FF;
     height: fit-content;
-    scroll-snap-align: start;
     padding: 4rem 0;
 }
 
@@ -159,7 +153,6 @@ ul > li {
 .newsletter-home {
     background-color: #FFF;
     height: 80vh;
-    scroll-snap-align: start;
     padding: 80px;
     color: #FFF;
 }
@@ -191,7 +184,6 @@ ul > li {
 .contact {
     height: fit-content;
     background-color: #F2F5FF;
-    scroll-snap-align: start;
 }
 
 .footer {

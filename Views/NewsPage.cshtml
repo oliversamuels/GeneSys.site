@@ -8,16 +8,12 @@
     List<BlockGridItem> case_study = new List<BlockGridItem>();
     
     @*Random List of all News (3)*@
-    List<BlockGridItem> listOfNews = new List<BlockGridItem>();
-    List<BlockGridItem> listOfRandomNews = new List<BlockGridItem>();
+    List<BlockGridItem> randomNews = new List<BlockGridItem>();
+    List<BlockGridItem> randomProductUpdate = new List<BlockGridItem>();
+    List<BlockGridItem> randomCaseStudy = new List<BlockGridItem>();
 
     if(newsletters != null)
     {
-        foreach(var newsletter in newsletters)
-        {
-            listOfNews.Add(newsletter);
-        }
-
         @foreach(var newsletter in newsletters)
         {
             if(newsletter.Content.Value<string>("newsCategory") == "Product Updates")
@@ -40,7 +36,9 @@
         return list.OrderBy(x => Guid.NewGuid()).Take(elementCount).ToList();
     }
 
-    listOfRandomNews = GetRandomElements(listOfNews, 2);
+    randomNews = GetRandomElements(news_letter, 1);
+    randomProductUpdate = GetRandomElements(product_update, 1);
+    randomCaseStudy = GetRandomElements(case_study, 2);
     @*End of Random List*@
 }
 
@@ -69,77 +67,134 @@
 
     <div class="container-fluid news">
         <h2 class="text-center fs-1">Newsletter</h2>
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/Newsletter.png" alt=""/>
-                                </a>
+        @if(randomNews.Any())
+        {
+            foreach (var item in randomNews)
+            {
+                var content = item.Content;
+                var date = content.Value<DateTime>("newsDate");
+                var link = content.Value<Link>("newsLink");
+                var summary = content.Value<string>("newsSummary");
+                var title = content.Value<string>("newsTitle");
+                var news = content.Value<BlockGridModel>("news");
+                var category = content.Value<string>("newsCategory");
+                
+                <div class="row newslet">
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                        <div class="imgBxII">
+                            <div class="newst">
+                                <div class="newstinner">
+                                    @if(news != null)
+                                    {
+                                        @foreach (var comp in news)
+                                        {
+                                            var newsItem = comp.Content;
+                                            var newsLink = newsItem.Value<Link>("bookLink");
+                                            var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                            <div class="imgcont">
+                                                <a href="@newsLink?.Url">
+                                                    <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                </a>
+                                            </div>
+                                        }
+                                    }
+                                </div>
                             </div>
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/Newsletter2.png" alt=""/>
-                                </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                        <div class="w-75">
+                            <div>
+                                <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-1">@title</h3>
+                            </div>
+                            <div>
+                                <p class="fs-4">@summary</p>
+                            </div>
+                            <div>
+                                <a class="fs-2" href="@link?.Url">READ MORE</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            }
+        }
+        else
+        {
+            <div class="newslet">
+                @*If Empty*@
+                <h3 class="text-center">No Newsletter Update yet<br/>Check back later</h3>
             </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">8mins ago</p>
-                    </div>
-                    <div>
-                        <a class="fs-2" href="#">View Live Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
         <a href="#" class="seeAll">See All</a>
     </div>
     <div class="container-fluid productUpdate">
         <h2 class="text-center fs-1">Product Updates</h2>
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                                </a>
+        @if(randomProductUpdate.Any())
+        {
+            foreach (var item in randomProductUpdate)
+            {
+                var content = item.Content;
+                var date = content.Value<DateTime>("newsDate");
+                var link = content.Value<Link>("newsLink");
+                var summary = content.Value<string>("newsSummary");
+                var title = content.Value<string>("newsTitle");
+                var news = content.Value<BlockGridModel>("news");
+                var category = content.Value<string>("newsCategory");
+                
+                <div class="row newslet">
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
+                        <div class="imgBxII">
+                            <div class="newst">
+                                <div class="newstinner">
+                                    @if(news != null)
+                                    {
+                                        @foreach (var comp in news)
+                                        {
+                                            var newsItem = comp.Content;
+                                            var newsLink = newsItem.Value<Link>("bookLink");
+                                            var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
+
+                                            <div class="imgcont">
+                                                <a href="@newsLink?.Url">
+                                                    <img src="@newsImage?.MediaUrl()" alt=""/>
+                                                </a>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
+                        <div class="w-75">
+                            <div>
+                                <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-1">@title</h3>
+                            </div>
+                            <div>
+                                <p class="fs-4">@summary</p>
+                            </div>
+                            <div>
+                                <a class="fs-2" href="@link?.Url">READ MORE</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            }
+        }
+        else
+        {
+            <div class="newslet">
+                @*If Empty*@
+                <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
             </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">PRODUCT UPDATE - JULY 31, 2023 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Genesys Patient Self Service App is Live!!</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">10mins ago</p>
-                    </div>
-                    <div>
-                        <a class="fs-2" href="#">READ MORE</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
         <a href="#" class="seeAll">See All</a>
     </div>
     <div class="container-fluid caseStudy">
