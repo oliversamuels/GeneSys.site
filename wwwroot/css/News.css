@@ -169,12 +169,11 @@
 }
 
 .newsContent .bodyText{
-    padding: 2rem 5rem;
+    padding: 2rem 4rem;
 }
 
 .newsContent .bodyText p{
-    font-size: 1.4rem;
-    text-align: justify;
+    font-size: 1.8rem;
 }
 
 .head {
@@ -288,6 +287,7 @@
 
     .newsletter {
         height: fit-content;
+        padding: 3rem;
     }
 
     .seeAll {
@@ -318,5 +318,22 @@
 
     .csText h2{
         line-height: 120%;
+    }
+
+    .newsRead {
+        width: 95vw;
+    }
+
+    .imgcont-newsRead {
+        height: 30rem;
+        width: 100%;
+    }
+
+    .newsContent .headText h2{
+        line-height: 120%;
+    }
+
+    .newsContent .bodyText{
+        padding: 2rem;
     }
 }

@@ -2,7 +2,9 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-    var newsletters = Model.Value<BlockGridModel>("news");
+    IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
+    var newsletters = globalContent.Value<BlockGridModel>("news");
+    
     List<BlockGridItem> product_update = new List<BlockGridItem>();
     List<BlockGridItem> news_letter = new List<BlockGridItem>();
     List<BlockGridItem> case_study = new List<BlockGridItem>();

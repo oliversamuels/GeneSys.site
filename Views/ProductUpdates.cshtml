@@ -2,8 +2,11 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-    var newsletters = Model.Value<BlockGridModel>("news");
+    IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
+    var newsletters = globalContent.Value<BlockGridModel>("news");
     List<BlockGridItem> product_update = new List<BlockGridItem>();
+    
+
 
 
     if(newsletters != null)
@@ -55,6 +58,7 @@
     <div class="container-fluid news">
         @if(product_update.Any())
         {
+            var id = 0;
             foreach (var item in product_update)
             {
                 var content = item.Content;
@@ -64,6 +68,8 @@
                 var title = content.Value<string>("newsTitle");
                 var news = content.Value<BlockGridModel>("news");
                 var category = content.Value<string>("newsCategory");
+                var newsContent = content.Value<System.String>("newsContent");
+                var image = content.Value<MediaWithCrops>("newsImage");
                 
                 <div class="row newslet">
                     <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
@@ -77,7 +83,6 @@
                                             var newsItem = comp.Content;
                                             var newsLink = newsItem.Value<Link>("bookLink");
                                             var newsImage = newsItem.Value<MediaWithCrops>("bookImage");
-                                            var newsContent = newsItem.Value<IHtmlEncodedString>("bookContent");
 
                                             <div class="imgcont">
                                                 <a href="@newsLink?.Url">
@@ -91,7 +96,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                        <div class="w-75">
+                        <div class="w-md-75 w-md-100">
                             <div>
                                 <p class="fs-4 title-date">@category - @date.ToLongDateString() </p>
                             </div>
@@ -102,29 +107,28 @@
                                 <p class="fs-4">@summary</p>
                             </div>
                             <div>
-                                <a style="cursor: pointer;" class="fs-2" data-id="111" onclick="openNewsRead(this)">View Live Project</a>
+                                <a style="cursor: pointer;" class="fs-2" data-id="@id" onclick="openNewsRead(this)">View Live Project</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="newsRead" id="111">
-                    <div class="newsContent">
-                        <div class="headText">
-                            <h2>@title</h2>
+                    <div class="newsRead" id="@id">
+                        <div class="newsContent">
+                            <div class="headText">
+                                <h2>@title</h2>
+                            </div>
+                            <div class="imgcont-newsRead">
+                                <img src="@image?.MediaUrl()" alt=""/>
+                            </div>
+                            <div class="bodyText">
+                                    @Html.Raw(newsContent)
+                            </div>
                         </div>
-                        <div class="imgcont-newsRead">
-                            <img src="@newsImage?.MediaUrl()" alt=""/>
-                        </div>
-                        <div class="bodyText">
-                            <p>
-                                @newsContent
-                            </p>
+                        <div class="newsClose" data-id="@id" onclick="closeNewsRead(this)">
+                            <i class="bi bi-x-lg"></i>
                         </div>
                     </div>
-                    <div class="newsClose" data-id="111" onclick="closeNewsRead(this)">
-                        <i class="bi bi-x-lg"></i>
-                    </div>
                 </div>
+                id++;
             }
         }
         else
@@ -134,238 +138,6 @@
                 <h3 class="text-center">No Product Update yet<br/>Check back later</h3>
             </div>
         }
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst prodUp">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">8mins ago</p>
-                    </div>
-                    <div>
-                        <a style="cursor: pointer;" class="fs-2" data-id="111" onclick="openNewsRead(this)">View Live Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="newsRead" id="111">
-                <div class="newsContent">
-                    <div class="headText">
-                        <h2>GeneSys Health Self Service App</h2>
-                    </div>
-                    <div class="imgcont-newsRead">
-                        <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                    </div>
-                    <div class="bodyText">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Vulputate pellentesque cursus nibh vehicula tortor massa duis nulla sed. Tortor blandit ante suspendisse tellus viverra euismod. Sit pulvinar egestas enim euismod eu volutpat ullamcorper purus at. Ac amet nunc rhoncus morbi et quis nibh. Quam quam ut aliquam elementum. Nisl viverra nisi pulvinar lobortis. Enim sit faucibus ultrices id amet duis eget. Nulla convallis mauris nulla eget ultrices nunc facilisis tincidunt.
-                            Mi felis integer nisi morbi imperdiet sed id eget. Sed at ipsum mi praesent odio in nulla. Placerat viverra eget pellentesque viverra lacus. At ultricies cras nunc pretium feugiat velit ut cursus. Eros vitae donec diam varius porta. Aliquam suspendisse odio ipsum egestas. Non nunc in nec enim facilisis nec tellus ac. Eget sed tortor sem orci nec feugiat. Viverra odio nunc in quam urna amet.
-                            Faucibus etiam eget morbi egestas malesuada. Volutpat in bibendum pulvinar lacus. Cursus in lacus ipsum lorem quis. Tellus nunc ullamcorper nibh sit ligula dictumst volutpat. Tincidunt elit eu enim varius feugiat. Maecenas pellentesque dapibus eros id sed tellus. Vitae placerat justo accumsan consequat faucibus diam quis. Feugiat neque nisi purus nisi nulla lacus bibendum morbi. Venenatis eleifend turpis purus elementum faucibus at at elementum morbi. Arcu id faucibus molestie pellentesque donec nec cursus adipiscing nibh. Augue aenean vitae accumsan morbi odio eget accumsan lobortis. Tempus ac scelerisque et in non quisque fermentum vel non. Integer quis id nulla commodo et viverra. Pulvinar nunc sapien metus neque.
-                            Suscipit tortor amet pretium non mauris risus facilisis. Diam eros aliquam suspendisse nunc aenean. Mattis nisl enim tempus augue vel massa bibendum. Rhoncus non eu condimentum lobortis commodo nullam erat. Elementum eu augue lectus ac et gravida. Sed morbi purus vel diam iaculis egestas integer. Viverra facilisi adipiscing tortor elit amet felis. Morbi viverra lorem faucibus tincidunt. Viverra duis proin lacus pellentesque consequat nunc lobortis nullam mi. Eu eget sed vivamus tincidunt mauris pellentesque aliquam metus. Diam dignissim etiam urna volutpat feugiat aliquet. Vulputate ut quisque turpis tristique magna quisque. Mattis commodo posuere fusce aliquet. Non ut laoreet non elit nibh. Elementum etiam tortor nisl pulvinar egestas.
-                            Pretium porttitor gravida ut sit massa amet bibendum egestas id. Placerat commodo ultricies sit commodo molestie sit. Auctor etiam aliquet quis porttitor in nulla velit. Tortor risus ultrices diam pharetra. Interdum porta diam tortor duis quis cursus arcu. Ullamcorper laoreet sed velit cursus mi. Etiam amet ut scelerisque porta sapien pharetra varius egestas sodales. Mauris mus feugiat nunc nunc. Sit elementum sit dui consectetur praesent. Morbi diam lectus risus euismod eleifend varius. Lobortis accumsan velit amet feugiat nibh fermentum. Interdum tortor fusce dictumst magna ut tristique sed leo vestibulum. Feugiat eu tortor massa tellus aliquet semper vitae magna. Metus morbi id ac porta.
-                            Laoreet ac erat diam urna pharetra. Pharetra tristique eget ultrices commodo tellus. Mauris dictum mattis sodales hac amet bibendum cursus tincidunt vestibulum. In eget egestas vitae maecenas lacus mauris lacus aliquam. Sed risus integer condimentum amet varius nisl. Nunc eget rhoncus nec enim facilisis accumsan. Sagittis ante risus cursus id morbi porta. Eget porttitor hac interdum sem laoreet tempor sit. Porta eget in nibh volutpat amet eget neque pellentesque. Nulla consequat turpis vel velit curabitur.
-                            A habitasse mi faucibus integer ridiculus. Vulputate sagittis sapien pulvinar commodo orci vitae commodo viverra. Integer sapien rutrum fermentum mattis consequat libero mi pellentesque. Molestie etiam interdum adipiscing quam nulla sed. Rhoncus cras interdum malesuada odio ultricies. Nunc vitae lobortis purus est et sed donec habitant.
-                            Luctus donec commodo risus sed magna pretium sodales dui gravida. Viverra venenatis leo lorem nec lorem. Sem commodo tellus sed ullamcorper suspendisse porttitor non. Proin eget mauris est tincidunt porttitor varius viverra facilisis fames. Lectus faucibus sed placerat nunc tellus netus ipsum. Gravida viverra sed nullam neque nisl arcu. Sodales leo nunc suspendisse nec adipiscing ac nullam velit. Et morbi adipiscing lacus lectus. Nunc nunc sit ac ut tellus euismod. Pretium ullamcorper elit tellus tristique ullamcorper mi accumsan consectetur.
-                            Mollis quis tellus amet sem. Quisque bibendum fusce aliquam scelerisque nunc sed. In pulvinar vestibulum malesuada quam sodales. Ac mauris ut dictumst sagittis sed augue gravida massa elementum. Accumsan tortor sem pulvinar blandit lorem elementum. Nibh enim dui pretium aenean amet.
-                            Suspendisse pulvinar suspendisse feugiat pretium. Semper bibendum lacus lacus nunc duis tempor. Urna vel id libero facilisis. Lectus in id eros neque id pharetra facilisis pellentesque odio. Quam amet ac maecenas quis donec scelerisque lectus. Lectus cras sagittis malesuada porttitor habitant libero aliquam feugiat. Tristique morbi adipiscing tortor massa. Sed pretium tincidunt quisque enim eget consectetur posuere elit aliquet. Aliquet placerat risus venenatis faucibus quis sed condimentum id amet. Feugiat rhoncus nunc suscipit molestie.
-                        </p>
-                    </div>
-                </div>
-                <div class="newsClose" data-id="111" onclick="closeNewsRead(this)">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-            </div>
-        </div>
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst prodUp">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">8mins ago</p>
-                    </div>
-                    <div>
-                        <a style="cursor: pointer;" class="fs-2" data-id="222" onclick="openNewsRead(this)">View Live Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="newsRead" id="222">
-                <div class="newsContent">
-                    <div class="headText">
-                        <h2>GeneSys Health Self Service App</h2>
-                    </div>
-                    <div class="imgcont-newsRead">
-                        <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                    </div>
-                    <div class="bodyText">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Vulputate pellentesque cursus nibh vehicula tortor massa duis nulla sed. Tortor blandit ante suspendisse tellus viverra euismod. Sit pulvinar egestas enim euismod eu volutpat ullamcorper purus at. Ac amet nunc rhoncus morbi et quis nibh. Quam quam ut aliquam elementum. Nisl viverra nisi pulvinar lobortis. Enim sit faucibus ultrices id amet duis eget. Nulla convallis mauris nulla eget ultrices nunc facilisis tincidunt.
-                            Mi felis integer nisi morbi imperdiet sed id eget. Sed at ipsum mi praesent odio in nulla. Placerat viverra eget pellentesque viverra lacus. At ultricies cras nunc pretium feugiat velit ut cursus. Eros vitae donec diam varius porta. Aliquam suspendisse odio ipsum egestas. Non nunc in nec enim facilisis nec tellus ac. Eget sed tortor sem orci nec feugiat. Viverra odio nunc in quam urna amet.
-                            Faucibus etiam eget morbi egestas malesuada. Volutpat in bibendum pulvinar lacus. Cursus in lacus ipsum lorem quis. Tellus nunc ullamcorper nibh sit ligula dictumst volutpat. Tincidunt elit eu enim varius feugiat. Maecenas pellentesque dapibus eros id sed tellus. Vitae placerat justo accumsan consequat faucibus diam quis. Feugiat neque nisi purus nisi nulla lacus bibendum morbi. Venenatis eleifend turpis purus elementum faucibus at at elementum morbi. Arcu id faucibus molestie pellentesque donec nec cursus adipiscing nibh. Augue aenean vitae accumsan morbi odio eget accumsan lobortis. Tempus ac scelerisque et in non quisque fermentum vel non. Integer quis id nulla commodo et viverra. Pulvinar nunc sapien metus neque.
-                            Suscipit tortor amet pretium non mauris risus facilisis. Diam eros aliquam suspendisse nunc aenean. Mattis nisl enim tempus augue vel massa bibendum. Rhoncus non eu condimentum lobortis commodo nullam erat. Elementum eu augue lectus ac et gravida. Sed morbi purus vel diam iaculis egestas integer. Viverra facilisi adipiscing tortor elit amet felis. Morbi viverra lorem faucibus tincidunt. Viverra duis proin lacus pellentesque consequat nunc lobortis nullam mi. Eu eget sed vivamus tincidunt mauris pellentesque aliquam metus. Diam dignissim etiam urna volutpat feugiat aliquet. Vulputate ut quisque turpis tristique magna quisque. Mattis commodo posuere fusce aliquet. Non ut laoreet non elit nibh. Elementum etiam tortor nisl pulvinar egestas.
-                            Pretium porttitor gravida ut sit massa amet bibendum egestas id. Placerat commodo ultricies sit commodo molestie sit. Auctor etiam aliquet quis porttitor in nulla velit. Tortor risus ultrices diam pharetra. Interdum porta diam tortor duis quis cursus arcu. Ullamcorper laoreet sed velit cursus mi. Etiam amet ut scelerisque porta sapien pharetra varius egestas sodales. Mauris mus feugiat nunc nunc. Sit elementum sit dui consectetur praesent. Morbi diam lectus risus euismod eleifend varius. Lobortis accumsan velit amet feugiat nibh fermentum. Interdum tortor fusce dictumst magna ut tristique sed leo vestibulum. Feugiat eu tortor massa tellus aliquet semper vitae magna. Metus morbi id ac porta.
-                            Laoreet ac erat diam urna pharetra. Pharetra tristique eget ultrices commodo tellus. Mauris dictum mattis sodales hac amet bibendum cursus tincidunt vestibulum. In eget egestas vitae maecenas lacus mauris lacus aliquam. Sed risus integer condimentum amet varius nisl. Nunc eget rhoncus nec enim facilisis accumsan. Sagittis ante risus cursus id morbi porta. Eget porttitor hac interdum sem laoreet tempor sit. Porta eget in nibh volutpat amet eget neque pellentesque. Nulla consequat turpis vel velit curabitur.
-                            A habitasse mi faucibus integer ridiculus. Vulputate sagittis sapien pulvinar commodo orci vitae commodo viverra. Integer sapien rutrum fermentum mattis consequat libero mi pellentesque. Molestie etiam interdum adipiscing quam nulla sed. Rhoncus cras interdum malesuada odio ultricies. Nunc vitae lobortis purus est et sed donec habitant.
-                            Luctus donec commodo risus sed magna pretium sodales dui gravida. Viverra venenatis leo lorem nec lorem. Sem commodo tellus sed ullamcorper suspendisse porttitor non. Proin eget mauris est tincidunt porttitor varius viverra facilisis fames. Lectus faucibus sed placerat nunc tellus netus ipsum. Gravida viverra sed nullam neque nisl arcu. Sodales leo nunc suspendisse nec adipiscing ac nullam velit. Et morbi adipiscing lacus lectus. Nunc nunc sit ac ut tellus euismod. Pretium ullamcorper elit tellus tristique ullamcorper mi accumsan consectetur.
-                            Mollis quis tellus amet sem. Quisque bibendum fusce aliquam scelerisque nunc sed. In pulvinar vestibulum malesuada quam sodales. Ac mauris ut dictumst sagittis sed augue gravida massa elementum. Accumsan tortor sem pulvinar blandit lorem elementum. Nibh enim dui pretium aenean amet.
-                            Suspendisse pulvinar suspendisse feugiat pretium. Semper bibendum lacus lacus nunc duis tempor. Urna vel id libero facilisis. Lectus in id eros neque id pharetra facilisis pellentesque odio. Quam amet ac maecenas quis donec scelerisque lectus. Lectus cras sagittis malesuada porttitor habitant libero aliquam feugiat. Tristique morbi adipiscing tortor massa. Sed pretium tincidunt quisque enim eget consectetur posuere elit aliquet. Aliquet placerat risus venenatis faucibus quis sed condimentum id amet. Feugiat rhoncus nunc suscipit molestie.
-                        </p>
-                    </div>
-                </div>
-                <div class="newsClose" data-id="222" onclick="closeNewsRead(this)">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-            </div>
-        </div>
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst prodUp">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">8mins ago</p>
-                    </div>
-                    <div>
-                        <a style="cursor: pointer;" class="fs-2" data-id="333" onclick="openNewsRead(this)">View Live Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="newsRead" id="333">
-                <div class="newsContent">
-                    <div class="headText">
-                        <h2>GeneSys Health Self Service App</h2>
-                    </div>
-                    <div class="imgcont-newsRead">
-                        <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                    </div>
-                    <div class="bodyText">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Vulputate pellentesque cursus nibh vehicula tortor massa duis nulla sed. Tortor blandit ante suspendisse tellus viverra euismod. Sit pulvinar egestas enim euismod eu volutpat ullamcorper purus at. Ac amet nunc rhoncus morbi et quis nibh. Quam quam ut aliquam elementum. Nisl viverra nisi pulvinar lobortis. Enim sit faucibus ultrices id amet duis eget. Nulla convallis mauris nulla eget ultrices nunc facilisis tincidunt.
-                            Mi felis integer nisi morbi imperdiet sed id eget. Sed at ipsum mi praesent odio in nulla. Placerat viverra eget pellentesque viverra lacus. At ultricies cras nunc pretium feugiat velit ut cursus. Eros vitae donec diam varius porta. Aliquam suspendisse odio ipsum egestas. Non nunc in nec enim facilisis nec tellus ac. Eget sed tortor sem orci nec feugiat. Viverra odio nunc in quam urna amet.
-                            Faucibus etiam eget morbi egestas malesuada. Volutpat in bibendum pulvinar lacus. Cursus in lacus ipsum lorem quis. Tellus nunc ullamcorper nibh sit ligula dictumst volutpat. Tincidunt elit eu enim varius feugiat. Maecenas pellentesque dapibus eros id sed tellus. Vitae placerat justo accumsan consequat faucibus diam quis. Feugiat neque nisi purus nisi nulla lacus bibendum morbi. Venenatis eleifend turpis purus elementum faucibus at at elementum morbi. Arcu id faucibus molestie pellentesque donec nec cursus adipiscing nibh. Augue aenean vitae accumsan morbi odio eget accumsan lobortis. Tempus ac scelerisque et in non quisque fermentum vel non. Integer quis id nulla commodo et viverra. Pulvinar nunc sapien metus neque.
-                            Suscipit tortor amet pretium non mauris risus facilisis. Diam eros aliquam suspendisse nunc aenean. Mattis nisl enim tempus augue vel massa bibendum. Rhoncus non eu condimentum lobortis commodo nullam erat. Elementum eu augue lectus ac et gravida. Sed morbi purus vel diam iaculis egestas integer. Viverra facilisi adipiscing tortor elit amet felis. Morbi viverra lorem faucibus tincidunt. Viverra duis proin lacus pellentesque consequat nunc lobortis nullam mi. Eu eget sed vivamus tincidunt mauris pellentesque aliquam metus. Diam dignissim etiam urna volutpat feugiat aliquet. Vulputate ut quisque turpis tristique magna quisque. Mattis commodo posuere fusce aliquet. Non ut laoreet non elit nibh. Elementum etiam tortor nisl pulvinar egestas.
-                            Pretium porttitor gravida ut sit massa amet bibendum egestas id. Placerat commodo ultricies sit commodo molestie sit. Auctor etiam aliquet quis porttitor in nulla velit. Tortor risus ultrices diam pharetra. Interdum porta diam tortor duis quis cursus arcu. Ullamcorper laoreet sed velit cursus mi. Etiam amet ut scelerisque porta sapien pharetra varius egestas sodales. Mauris mus feugiat nunc nunc. Sit elementum sit dui consectetur praesent. Morbi diam lectus risus euismod eleifend varius. Lobortis accumsan velit amet feugiat nibh fermentum. Interdum tortor fusce dictumst magna ut tristique sed leo vestibulum. Feugiat eu tortor massa tellus aliquet semper vitae magna. Metus morbi id ac porta.
-                            Laoreet ac erat diam urna pharetra. Pharetra tristique eget ultrices commodo tellus. Mauris dictum mattis sodales hac amet bibendum cursus tincidunt vestibulum. In eget egestas vitae maecenas lacus mauris lacus aliquam. Sed risus integer condimentum amet varius nisl. Nunc eget rhoncus nec enim facilisis accumsan. Sagittis ante risus cursus id morbi porta. Eget porttitor hac interdum sem laoreet tempor sit. Porta eget in nibh volutpat amet eget neque pellentesque. Nulla consequat turpis vel velit curabitur.
-                            A habitasse mi faucibus integer ridiculus. Vulputate sagittis sapien pulvinar commodo orci vitae commodo viverra. Integer sapien rutrum fermentum mattis consequat libero mi pellentesque. Molestie etiam interdum adipiscing quam nulla sed. Rhoncus cras interdum malesuada odio ultricies. Nunc vitae lobortis purus est et sed donec habitant.
-                            Luctus donec commodo risus sed magna pretium sodales dui gravida. Viverra venenatis leo lorem nec lorem. Sem commodo tellus sed ullamcorper suspendisse porttitor non. Proin eget mauris est tincidunt porttitor varius viverra facilisis fames. Lectus faucibus sed placerat nunc tellus netus ipsum. Gravida viverra sed nullam neque nisl arcu. Sodales leo nunc suspendisse nec adipiscing ac nullam velit. Et morbi adipiscing lacus lectus. Nunc nunc sit ac ut tellus euismod. Pretium ullamcorper elit tellus tristique ullamcorper mi accumsan consectetur.
-                            Mollis quis tellus amet sem. Quisque bibendum fusce aliquam scelerisque nunc sed. In pulvinar vestibulum malesuada quam sodales. Ac mauris ut dictumst sagittis sed augue gravida massa elementum. Accumsan tortor sem pulvinar blandit lorem elementum. Nibh enim dui pretium aenean amet.
-                            Suspendisse pulvinar suspendisse feugiat pretium. Semper bibendum lacus lacus nunc duis tempor. Urna vel id libero facilisis. Lectus in id eros neque id pharetra facilisis pellentesque odio. Quam amet ac maecenas quis donec scelerisque lectus. Lectus cras sagittis malesuada porttitor habitant libero aliquam feugiat. Tristique morbi adipiscing tortor massa. Sed pretium tincidunt quisque enim eget consectetur posuere elit aliquet. Aliquet placerat risus venenatis faucibus quis sed condimentum id amet. Feugiat rhoncus nunc suscipit molestie.
-                        </p>
-                    </div>
-                </div>
-                <div class="newsClose" data-id="333" onclick="closeNewsRead(this)">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-            </div>
-        </div>
-        <div class="row newslet">
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center second">
-                <div class="imgBxII">
-                    <div class="newst">
-                        <div class="newstinner">
-                            <div class="imgcont">
-                                <a href="#">
-                                    <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 d-flex justify-content-center pb-5">
-                <div class="w-md-75 w-md-100">
-                    <div>
-                        <p class="fs-4 title-date">NEWSLETTER - JULY 01, 2022 </p>
-                    </div>
-                    <div>
-                        <h3 class="fw-bold fs-1">Health Tech Insider - Maiden Edition</h3>
-                    </div>
-                    <div>
-                        <p class="fs-4">8mins ago</p>
-                    </div>
-                    <div>
-                        <a style="cursor: pointer;" class="fs-2" data-id="444" onclick="openNewsRead(this)">View Live Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="newsRead" id="444">
-                <div class="newsContent">
-                    <div class="headText">
-                        <h2>GeneSys Health Self Service App</h2>
-                    </div>
-                    <div class="imgcont-newsRead">
-                        <img src="~/assets/images/News/ChatGPT.png" alt=""/>
-                    </div>
-                    <div class="bodyText">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur. Vulputate pellentesque cursus nibh vehicula tortor massa duis nulla sed. Tortor blandit ante suspendisse tellus viverra euismod. Sit pulvinar egestas enim euismod eu volutpat ullamcorper purus at. Ac amet nunc rhoncus morbi et quis nibh. Quam quam ut aliquam elementum. Nisl viverra nisi pulvinar lobortis. Enim sit faucibus ultrices id amet duis eget. Nulla convallis mauris nulla eget ultrices nunc facilisis tincidunt.
-                            Mi felis integer nisi morbi imperdiet sed id eget. Sed at ipsum mi praesent odio in nulla. Placerat viverra eget pellentesque viverra lacus. At ultricies cras nunc pretium feugiat velit ut cursus. Eros vitae donec diam varius porta. Aliquam suspendisse odio ipsum egestas. Non nunc in nec enim facilisis nec tellus ac. Eget sed tortor sem orci nec feugiat. Viverra odio nunc in quam urna amet.
-                            Faucibus etiam eget morbi egestas malesuada. Volutpat in bibendum pulvinar lacus. Cursus in lacus ipsum lorem quis. Tellus nunc ullamcorper nibh sit ligula dictumst volutpat. Tincidunt elit eu enim varius feugiat. Maecenas pellentesque dapibus eros id sed tellus. Vitae placerat justo accumsan consequat faucibus diam quis. Feugiat neque nisi purus nisi nulla lacus bibendum morbi. Venenatis eleifend turpis purus elementum faucibus at at elementum morbi. Arcu id faucibus molestie pellentesque donec nec cursus adipiscing nibh. Augue aenean vitae accumsan morbi odio eget accumsan lobortis. Tempus ac scelerisque et in non quisque fermentum vel non. Integer quis id nulla commodo et viverra. Pulvinar nunc sapien metus neque.
-                            Suscipit tortor amet pretium non mauris risus facilisis. Diam eros aliquam suspendisse nunc aenean. Mattis nisl enim tempus augue vel massa bibendum. Rhoncus non eu condimentum lobortis commodo nullam erat. Elementum eu augue lectus ac et gravida. Sed morbi purus vel diam iaculis egestas integer. Viverra facilisi adipiscing tortor elit amet felis. Morbi viverra lorem faucibus tincidunt. Viverra duis proin lacus pellentesque consequat nunc lobortis nullam mi. Eu eget sed vivamus tincidunt mauris pellentesque aliquam metus. Diam dignissim etiam urna volutpat feugiat aliquet. Vulputate ut quisque turpis tristique magna quisque. Mattis commodo posuere fusce aliquet. Non ut laoreet non elit nibh. Elementum etiam tortor nisl pulvinar egestas.
-                            Pretium porttitor gravida ut sit massa amet bibendum egestas id. Placerat commodo ultricies sit commodo molestie sit. Auctor etiam aliquet quis porttitor in nulla velit. Tortor risus ultrices diam pharetra. Interdum porta diam tortor duis quis cursus arcu. Ullamcorper laoreet sed velit cursus mi. Etiam amet ut scelerisque porta sapien pharetra varius egestas sodales. Mauris mus feugiat nunc nunc. Sit elementum sit dui consectetur praesent. Morbi diam lectus risus euismod eleifend varius. Lobortis accumsan velit amet feugiat nibh fermentum. Interdum tortor fusce dictumst magna ut tristique sed leo vestibulum. Feugiat eu tortor massa tellus aliquet semper vitae magna. Metus morbi id ac porta.
-                            Laoreet ac erat diam urna pharetra. Pharetra tristique eget ultrices commodo tellus. Mauris dictum mattis sodales hac amet bibendum cursus tincidunt vestibulum. In eget egestas vitae maecenas lacus mauris lacus aliquam. Sed risus integer condimentum amet varius nisl. Nunc eget rhoncus nec enim facilisis accumsan. Sagittis ante risus cursus id morbi porta. Eget porttitor hac interdum sem laoreet tempor sit. Porta eget in nibh volutpat amet eget neque pellentesque. Nulla consequat turpis vel velit curabitur.
-                            A habitasse mi faucibus integer ridiculus. Vulputate sagittis sapien pulvinar commodo orci vitae commodo viverra. Integer sapien rutrum fermentum mattis consequat libero mi pellentesque. Molestie etiam interdum adipiscing quam nulla sed. Rhoncus cras interdum malesuada odio ultricies. Nunc vitae lobortis purus est et sed donec habitant.
-                            Luctus donec commodo risus sed magna pretium sodales dui gravida. Viverra venenatis leo lorem nec lorem. Sem commodo tellus sed ullamcorper suspendisse porttitor non. Proin eget mauris est tincidunt porttitor varius viverra facilisis fames. Lectus faucibus sed placerat nunc tellus netus ipsum. Gravida viverra sed nullam neque nisl arcu. Sodales leo nunc suspendisse nec adipiscing ac nullam velit. Et morbi adipiscing lacus lectus. Nunc nunc sit ac ut tellus euismod. Pretium ullamcorper elit tellus tristique ullamcorper mi accumsan consectetur.
-                            Mollis quis tellus amet sem. Quisque bibendum fusce aliquam scelerisque nunc sed. In pulvinar vestibulum malesuada quam sodales. Ac mauris ut dictumst sagittis sed augue gravida massa elementum. Accumsan tortor sem pulvinar blandit lorem elementum. Nibh enim dui pretium aenean amet.
-                            Suspendisse pulvinar suspendisse feugiat pretium. Semper bibendum lacus lacus nunc duis tempor. Urna vel id libero facilisis. Lectus in id eros neque id pharetra facilisis pellentesque odio. Quam amet ac maecenas quis donec scelerisque lectus. Lectus cras sagittis malesuada porttitor habitant libero aliquam feugiat. Tristique morbi adipiscing tortor massa. Sed pretium tincidunt quisque enim eget consectetur posuere elit aliquet. Aliquet placerat risus venenatis faucibus quis sed condimentum id amet. Feugiat rhoncus nunc suscipit molestie.
-                        </p>
-                    </div>
-                </div>
-                <div class="newsClose" data-id="444" onclick="closeNewsRead(this)">
-                    <i class="bi bi-x-lg"></i>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="container newsletter">

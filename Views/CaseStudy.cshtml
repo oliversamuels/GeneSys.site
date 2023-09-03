@@ -2,6 +2,23 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
+	IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
+    var newsletters = globalContent.Value<BlockGridModel>("news");
+    List<BlockGridItem> case_study = new List<BlockGridItem>();
+    
+
+
+
+    if(newsletters != null)
+    {
+        @foreach(var newsletter in newsletters)
+        {
+            if(newsletter.Content.Value<string>("newsCategory") == "Case Studies")
+            {
+                case_study.Add(newsletter);
+            } 
+        }
+    }
 }
 
 <div class="container p-0">

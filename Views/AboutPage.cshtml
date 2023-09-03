@@ -2,8 +2,9 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-    var personnels = Model.Value<BlockGridModel>("personnelList");
-    var testimonials = Model.Value<BlockGridModel>("testimonials");
+    IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
+    var testimonials = globalContent.Value<BlockGridModel>("testimonials");
+    var personnels = globalContent.Value<BlockGridModel>("personnelList");
 }
 
 <div class="container-fluid p-0 m-0">
@@ -269,20 +270,6 @@
                         var statement = content.Value<string>("testimony");
                         var name = content.Value<string>("clientName");
                         var hospital = content.Value<string>("clientHospital");
-
-                        <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi shadow pt-5 px-4">
-                            <div class="position-absolute top-0 start-50 translate-middle testi-img">
-                                <img src="@image?.MediaUrl()" alt="" width="70px" />
-                            </div>
-                            <div class="text-center mt-4">
-                                <p class="m-0 p-0 text-primary fw-bold fs-4">@name</p>
-                                <p class="p-0 m-0 fs-5">@hospital</p>
-                                <div><i class="bi bi-quote fs-1"></i></div>
-                            </div>
-                            <div class="mt-2 text-center p-4">
-                                <p class="fs-4" style="line-height:110%;">@statement</p>
-                            </div>
-                        </div>
 
                         <div class="col-lg-3 col-md-5 col-sm-6 position-relative testi shadow pt-5 px-4">
                             <div class="position-absolute top-0 start-50 translate-middle testi-img">
