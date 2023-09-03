@@ -702,6 +702,10 @@
     margin: 3rem 0;
 }
 
+.all-products .rp-products .all-products-arrow {
+    display: none;
+}
+
 @media screen and (min-width: 800px) {
     .topHead {
         height: 76vh;
@@ -1005,6 +1009,7 @@
 
     .all-products .rp-products .all-products-arrow {
         position: absolute;
+        display: block;
         right: 10rem;
         font-size: 3rem;
         color: #0A79F8;

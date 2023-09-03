@@ -77,40 +77,15 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string GalleryTitle { get; }
 
-		/// <summary>MilestoneTitle</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string MilestoneTitle { get; }
-
 		/// <summary>Mission</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string Mission { get; }
 
-		/// <summary>PersonnelList</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PersonnelList { get; }
-
-		/// <summary>PersonnelSectionHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string PersonnelSectionHeading { get; }
-
 		/// <summary>SecondImg</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.MediaWithCrops SecondImg { get; }
-
-		/// <summary>TestimonialHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string TestimonialHeading { get; }
-
-		/// <summary>Testimonials</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials { get; }
 
 		/// <summary>Vision</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -298,19 +273,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static string GetGalleryTitle(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "galleryTitle");
 
 		///<summary>
-		/// MilestoneTitle: Section Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("milestoneTitle")]
-		public virtual string MilestoneTitle => GetMilestoneTitle(this, _publishedValueFallback);
-
-		/// <summary>Static getter for MilestoneTitle</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetMilestoneTitle(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "milestoneTitle");
-
-		///<summary>
 		/// Mission: Company's Mission
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -324,32 +286,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static string GetMission(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mission");
 
 		///<summary>
-		/// PersonnelList: List of available personnels
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("personnelList")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PersonnelList => GetPersonnelList(this, _publishedValueFallback);
-
-		/// <summary>Static getter for PersonnelList</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetPersonnelList(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "personnelList");
-
-		///<summary>
-		/// PersonnelSectionHeading: Section Heading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("personnelSectionHeading")]
-		public virtual string PersonnelSectionHeading => GetPersonnelSectionHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for PersonnelSectionHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetPersonnelSectionHeading(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "personnelSectionHeading");
-
-		///<summary>
 		/// SecondImg: Second Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -361,32 +297,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetSecondImg(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "secondImg");
-
-		///<summary>
-		/// TestimonialHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialHeading")]
-		public virtual string TestimonialHeading => GetTestimonialHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for TestimonialHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetTestimonialHeading(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "testimonialHeading");
-
-		///<summary>
-		/// Testimonials: List of Testimonials
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonials")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => GetTestimonials(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Testimonials</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetTestimonials(IAboutPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "testimonials");
 
 		///<summary>
 		/// Vision: Company's Vision

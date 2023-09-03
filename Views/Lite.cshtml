@@ -2,8 +2,11 @@
 @{
 	Layout = "Master.cshtml";
 	ViewData["Title"] = Model.Title;
-	var products = Model.Value<BlockGridModel>("products");
-    var planItems = Model.Value<BlockGridModel>("PlanItems");
+	IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
+    var products = globalContent.Value<BlockGridModel>("products");
+    var planItems = globalContent.Value<BlockGridModel>("planItems");
+    var productHeading = globalContent.Value<string>("productHeading");
+    var productSubheading = globalContent.Value<string>("productSubheading");
 }
 
 <section class="topHead">
@@ -199,9 +202,9 @@
 
 <section class="related-products">
 	<div class="rp-text">
-		<h2>@Model?.ProductHeading</h2>
+		<h2>@productHeading</h2>
         <p>
-            @Model?.ProductSubheading
+            @productSubheading
         </p>
 	</div>
 	<div class="productSec rp-products">

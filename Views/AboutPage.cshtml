@@ -5,6 +5,7 @@
     IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
     var testimonials = globalContent.Value<BlockGridModel>("testimonials");
     var personnels = globalContent.Value<BlockGridModel>("personnelList");
+    var testimonialHeading = globalContent.Value<string>("testimonialHeading");
 }
 
 <div class="container-fluid p-0 m-0">
@@ -256,7 +257,7 @@
     <div class="container-fluid testimony px-5 pt-5">
         <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
             <div class="mb-5">
-                <h2 class="m-0 p-0 text-center fs-1 fw-bold">@Model?.TestimonialHeading</h2>
+                <h2 class="m-0 p-0 text-center fs-1 fw-bold">@testimonialHeading</h2>
             </div>
         </div>
         <div class="testi-cap-cont d-flex justify-content-center flex-column align-items-center">

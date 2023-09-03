@@ -22,11 +22,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 	/// <summary>Product Page Properties</summary>
 	public partial interface IProductPageProperties : IPublishedElement
 	{
-		/// <summary>Product Heading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProductHeading { get; }
-
 		/// <summary>ProductMainHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -41,31 +36,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string ProductMainSubHeading { get; }
-
-		/// <summary>Products</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products { get; }
-
-		/// <summary>Product Subheading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProductSubheading { get; }
-
-		/// <summary>TestimonialHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string TestimonialHeading { get; }
-
-		/// <summary>Testimonials</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials { get; }
-
-		/// <summary>TestimonialSubHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string TestimonialSubHeading { get; }
 	}
 
 	/// <summary>Product Page Properties</summary>
@@ -98,19 +68,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
-
-		///<summary>
-		/// Product Heading: Main Heading for the product section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productHeading")]
-		public virtual string ProductHeading => GetProductHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Product Heading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProductHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productHeading");
 
 		///<summary>
 		/// ProductMainHeading: Title or Section heading for the Product Intro Page
@@ -150,70 +107,5 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetProductMainSubHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productMainSubHeading");
-
-		///<summary>
-		/// Products: Products/Package Object
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("products")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products => GetProducts(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Products</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetProducts(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "products");
-
-		///<summary>
-		/// Product Subheading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productSubheading")]
-		public virtual string ProductSubheading => GetProductSubheading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Product Subheading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProductSubheading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productSubheading");
-
-		///<summary>
-		/// TestimonialHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialHeading")]
-		public virtual string TestimonialHeading => GetTestimonialHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for TestimonialHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetTestimonialHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "testimonialHeading");
-
-		///<summary>
-		/// Testimonials
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonials")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => GetTestimonials(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Testimonials</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetTestimonials(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "testimonials");
-
-		///<summary>
-		/// TestimonialSubHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialSubHeading")]
-		public virtual string TestimonialSubHeading => GetTestimonialSubHeading(this, _publishedValueFallback);
-
-		/// <summary>Static getter for TestimonialSubHeading</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetTestimonialSubHeading(IProductPageProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "testimonialSubHeading");
 	}
 }

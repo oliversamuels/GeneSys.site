@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IHeaderProperties, IHomePageProperties, IPlanProperties
+	public partial class HomePage : PublishedContentModel, IHeaderProperties, IHomePageProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -82,30 +82,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops FaqImage => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetFaqImage(this, _publishedValueFallback);
 
 		///<summary>
-		/// Info Package
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoPackage")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel InfoPackage => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetInfoPackage(this, _publishedValueFallback);
-
-		///<summary>
-		/// Info SubHeading: Info section subheading text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoSubHeading")]
-		public virtual string InfoSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetInfoSubHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Info Title: Info  section heading text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoTitle")]
-		public virtual string InfoTitle => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetInfoTitle(this, _publishedValueFallback);
-
-		///<summary>
 		/// Main Heading: Intro Section main heading text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -136,53 +112,5 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("questions")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Questions => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetQuestions(this, _publishedValueFallback);
-
-		///<summary>
-		/// TestimonialHeading: Testimonial Section Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialHeading")]
-		public virtual string TestimonialHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonialHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Testimonials: List of testimonials
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonials")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonials(this, _publishedValueFallback);
-
-		///<summary>
-		/// TestimonialSubHeading: Testimonial Section SubHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialSubHeading")]
-		public virtual string TestimonialSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.HomePageProperties.GetTestimonialSubHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Plan Heading: Heading of the plan section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planHeading")]
-		public virtual string PlanHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Plan Items: Plan Object
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planItems")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanItems(this, _publishedValueFallback);
-
-		///<summary>
-		/// Plan SubHeading: Subheading of the plan section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planSubHeading")]
-		public virtual string PlanSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanSubHeading(this, _publishedValueFallback);
 	}
 }

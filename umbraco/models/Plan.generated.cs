@@ -18,34 +18,34 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "productProperties"
-	/// <summary>Product Properties</summary>
-	public partial interface IProductProperties : IPublishedElement
+	// Mixin Content Type with alias "plan"
+	/// <summary>Plan</summary>
+	public partial interface IPlan : IPublishedElement
 	{
-		/// <summary>Product Heading</summary>
+		/// <summary>Plan Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProductHeading { get; }
+		string PlanHeading { get; }
 
-		/// <summary>Products</summary>
+		/// <summary>Plan Items</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products { get; }
+		global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems { get; }
 
-		/// <summary>Product Subheading</summary>
+		/// <summary>Plan SubHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ProductSubheading { get; }
+		string PlanSubHeading { get; }
 	}
 
-	/// <summary>Product Properties</summary>
-	[PublishedModel("productProperties")]
-	public partial class ProductProperties : PublishedElementModel, IProductProperties
+	/// <summary>Plan</summary>
+	[PublishedModel("plan")]
+	public partial class Plan : PublishedElementModel, IPlan
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		public new const string ModelTypeAlias = "productProperties";
+		public new const string ModelTypeAlias = "plan";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -54,14 +54,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ProductProperties, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Plan, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public ProductProperties(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public Plan(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -70,42 +70,42 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Product Heading
+		/// Plan Heading: Heading of the plan section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productHeading")]
-		public virtual string ProductHeading => GetProductHeading(this, _publishedValueFallback);
+		[ImplementPropertyType("planHeading")]
+		public virtual string PlanHeading => GetPlanHeading(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Product Heading</summary>
+		/// <summary>Static getter for Plan Heading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProductHeading(IProductProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productHeading");
+		public static string GetPlanHeading(IPlan that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "planHeading");
 
 		///<summary>
-		/// Products
+		/// Plan Items: Plan Object
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("products")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products => GetProducts(this, _publishedValueFallback);
+		[ImplementPropertyType("planItems")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => GetPlanItems(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Products</summary>
+		/// <summary>Static getter for Plan Items</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetProducts(IProductProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "products");
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel GetPlanItems(IPlan that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(publishedValueFallback, "planItems");
 
 		///<summary>
-		/// Product Subheading
+		/// Plan SubHeading: Subheading of the plan section
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productSubheading")]
-		public virtual string ProductSubheading => GetProductSubheading(this, _publishedValueFallback);
+		[ImplementPropertyType("planSubHeading")]
+		public virtual string PlanSubHeading => GetPlanSubHeading(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Product Subheading</summary>
+		/// <summary>Static getter for Plan SubHeading</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetProductSubheading(IProductProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "productSubheading");
+		public static string GetPlanSubHeading(IPlan that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "planSubHeading");
 	}
 }

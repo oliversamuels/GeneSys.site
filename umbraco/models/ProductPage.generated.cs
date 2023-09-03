@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Product Page</summary>
 	[PublishedModel("productPage")]
-	public partial class ProductPage : PublishedContentModel, IHeaderProperties, IPlanProperties, IProductPageProperties
+	public partial class ProductPage : PublishedContentModel, IHeaderProperties, IProductPageProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -66,38 +66,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderProperties.GetTitle(this, _publishedValueFallback);
 
 		///<summary>
-		/// Plan Heading: Heading of the plan section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planHeading")]
-		public virtual string PlanHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Plan Items: Plan Object
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planItems")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PlanItems => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanItems(this, _publishedValueFallback);
-
-		///<summary>
-		/// Plan SubHeading: Subheading of the plan section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("planSubHeading")]
-		public virtual string PlanSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.PlanProperties.GetPlanSubHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Product Heading: Main Heading for the product section
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productHeading")]
-		public virtual string ProductHeading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetProductHeading(this, _publishedValueFallback);
-
-		///<summary>
 		/// ProductMainHeading: Title or Section heading for the Product Intro Page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -120,45 +88,5 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("productMainSubHeading")]
 		public virtual string ProductMainSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetProductMainSubHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Products: Products/Package Object
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("products")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetProducts(this, _publishedValueFallback);
-
-		///<summary>
-		/// Product Subheading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productSubheading")]
-		public virtual string ProductSubheading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetProductSubheading(this, _publishedValueFallback);
-
-		///<summary>
-		/// TestimonialHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialHeading")]
-		public virtual string TestimonialHeading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetTestimonialHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Testimonials
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonials")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetTestimonials(this, _publishedValueFallback);
-
-		///<summary>
-		/// TestimonialSubHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialSubHeading")]
-		public virtual string TestimonialSubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductPageProperties.GetTestimonialSubHeading(this, _publishedValueFallback);
 	}
 }

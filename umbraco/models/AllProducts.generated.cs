@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>All Products</summary>
 	[PublishedModel("allProducts")]
-	public partial class AllProducts : PublishedContentModel, IHeaderProperties, IProductProperties
+	public partial class AllProducts : PublishedContentModel, IHeaderProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -64,29 +64,5 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderProperties.GetTitle(this, _publishedValueFallback);
-
-		///<summary>
-		/// Product Heading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productHeading")]
-		public virtual string ProductHeading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductProperties.GetProductHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Products
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("products")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Products => global::Umbraco.Cms.Web.Common.PublishedModels.ProductProperties.GetProducts(this, _publishedValueFallback);
-
-		///<summary>
-		/// Product Subheading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productSubheading")]
-		public virtual string ProductSubheading => global::Umbraco.Cms.Web.Common.PublishedModels.ProductProperties.GetProductSubheading(this, _publishedValueFallback);
 	}
 }

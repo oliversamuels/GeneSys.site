@@ -82,14 +82,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetMainImage(this, _publishedValueFallback);
 
 		///<summary>
-		/// News
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("news")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel News => global::Umbraco.Cms.Web.Common.PublishedModels.NewsPageProperties.GetNews(this, _publishedValueFallback);
-
-		///<summary>
 		/// SubHeading: Newsletter introduction section subheading text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]

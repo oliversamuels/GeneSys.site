@@ -154,14 +154,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string GalleryTitle => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetGalleryTitle(this, _publishedValueFallback);
 
 		///<summary>
-		/// MilestoneTitle: Section Header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("milestoneTitle")]
-		public virtual string MilestoneTitle => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetMilestoneTitle(this, _publishedValueFallback);
-
-		///<summary>
 		/// Mission: Company's Mission
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
@@ -170,44 +162,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Mission => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetMission(this, _publishedValueFallback);
 
 		///<summary>
-		/// PersonnelList: List of available personnels
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("personnelList")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel PersonnelList => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetPersonnelList(this, _publishedValueFallback);
-
-		///<summary>
-		/// PersonnelSectionHeading: Section Heading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("personnelSectionHeading")]
-		public virtual string PersonnelSectionHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetPersonnelSectionHeading(this, _publishedValueFallback);
-
-		///<summary>
 		/// SecondImg: Second Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("secondImg")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SecondImg => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetSecondImg(this, _publishedValueFallback);
-
-		///<summary>
-		/// TestimonialHeading
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonialHeading")]
-		public virtual string TestimonialHeading => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetTestimonialHeading(this, _publishedValueFallback);
-
-		///<summary>
-		/// Testimonials: List of Testimonials
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testimonials")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Testimonials => global::Umbraco.Cms.Web.Common.PublishedModels.AboutPageProperties.GetTestimonials(this, _publishedValueFallback);
 
 		///<summary>
 		/// Vision: Company's Vision

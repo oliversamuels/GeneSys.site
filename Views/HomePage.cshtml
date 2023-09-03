@@ -4,10 +4,15 @@
 	ViewData["Title"] = Model.Title;
     IPublishedContent globalContent = Model.Value<IPublishedContent>("globalContent");
     var testimonials = globalContent.Value<BlockGridModel>("testimonials");
-    var package = Model.Value<BlockGridModel>("InfoPackage");
-    var planItems = Model.Value<BlockGridModel>("PlanItems");
+    var package = globalContent.Value<BlockGridModel>("products");
+    var planItems = globalContent.Value<BlockGridModel>("planItems");
     var questions = Model.Value<BlockGridModel>("questions");
     var mainImage = Model.Value<IEnumerable<MediaWithCrops>>("MainImage");
+    var testimonialHeading = globalContent.Value<string>("testimonialHeading");
+    var infoTitle = globalContent.Value<string>("productHeading");
+    var infoSubHeading = globalContent.Value<string>("productSubheading");
+    var planHeading = globalContent.Value<string>("planHeading");
+    var planSubHeading = globalContent.Value<string>("planSubHeading");
 
     
     List<BlockGridItem> listOfQuestion = new List<BlockGridItem>();
@@ -95,9 +100,9 @@
 
 <section class="productSec home">
     <div class="productSecText">
-        <h3>@Model?.InfoTitle</h3>
+        <h3>@infoTitle</h3>
         <p>
-            @Model?.InfoSubHeading
+            @infoSubHeading
         </p>
     </div>
     <div class="productDisplay">
@@ -188,9 +193,9 @@
 <div class="container-fluid packages px-5 pt-4">
     <div class="row w-100 d-flex justify-content-center align-items-center">
         <div class="planText text-center">
-            <h1 class="m-0 p-0">@Model?.PlanHeading</h1>
+            <h1 class="m-0 p-0">@planHeading</h1>
             <div class="m-auto" style="width: 70%;">
-                <p class="m-0 p-0 fs-3">@Model?.PlanSubHeading</p>
+                <p class="m-0 p-0 fs-3">@planSubHeading</p>
             </div>
         </div>
     </div>
@@ -284,7 +289,7 @@
 <div class="container-fluid testimony">
     <div class="row w-100 d-flex justify-content-center align-items-center mb-5">
         <div class="mb-5">
-            <h2 class="m-0 p-0 text-center fs-1 fw-bold">@Model?.TestimonialHeading</h2>
+            <h2 class="m-0 p-0 text-center fs-1 fw-bold">@testimonialHeading</h2>
         </div>
     </div>
     <div class="testi-cap-cont d-flex justify-content-center flex-column align-items-center">
